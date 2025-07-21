@@ -1,0 +1,81 @@
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixin;
+
+@mixin menu-item {
+  display: grid;
+  cursor: pointer;
+}
+
+.Lnb {
+  grid-area: LNB;
+  height: 100%;
+  width: 20%;
+
+  background: vars.$primary-color;
+  color: vars.$white-color;
+
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1;
+
+  .Logo {
+    height: 10%;
+    @include mixin.flex-center;
+
+    .image {
+      width: 70%;
+      aspect-ratio: 1/1;
+      background-image: url('../../../assets/images/logo_fff.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+
+  .MenuItem {
+    @include menu-item;
+    .MenuTitle {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .SubMenu {
+      display: grid;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition:
+        max-height 0.3s ease,
+        opacity 0.3s ease;
+
+      &.SubMenuOpen {
+        max-height: 500px; // 충분히 큰 값으로 설정 (내용에 따라 조정)
+        opacity: 1;
+        background-color: vars.$dark-primary-color;
+      }
+    }
+
+    .SubMenuItem {
+      @include menu-item;
+      text-decoration: none;
+      color: vars.$white-color;
+    }
+
+    .arrow {
+      width: 10%;
+      height: auto;
+      transform: rotate(-90deg);
+      transition: all 0.3s ease;
+    }
+
+    .active {
+      transform: rotate(0deg);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use '@/styles/_variables' as vars;
+@use '@/styles/_mixins' as mixin;
+
+.popupWrapper {
+  @include mixin.flex-center();
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.178);
+}
+
+.popup {
+  max-width: 400px;
+  width: 50%;
+  max-height: 200px;
+  height: 20%;
+  background-color: vars.$white-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+
+  .text {
+    @include mixin.flex-center();
+
+    height: 100%;
+    text-align: center;
+  }
+
+  .button {
+    margin-top: auto;
+    background-color: vars.$primary-color;
+    color: vars.$white-color;
+    width: 100%;
+    padding: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}

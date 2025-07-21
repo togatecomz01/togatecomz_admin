@@ -1,0 +1,27 @@
+@use '@/styles/_variables' as vars;
+
+.button {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: vars.$primary-color;
+  color: white;
+}
+
+.primary {
+  background-color: vars.$primary-color;
+}
+
+.disabled {
+  background-color: vars.$mid-color;
+}
+
+.cancel {
+  background-color: white;
+  border: 1px solid vars.$mid-color;
+  color: vars.$mid-color;
+}
+
+.fullWidth {
+  width: 100%;
+}
