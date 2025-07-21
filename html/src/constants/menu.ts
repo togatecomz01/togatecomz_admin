@@ -1,16 +1,22 @@
 const MENU = [
   {
-    name: "계정관리",
+    name: '관리',
     children: [
-      { name: "메인관리자", path: "account/list" },
-      { name: "부관리자", path: "account/sublist" },
-      { name: "게시판", path: "account/noticelist" },
+      { name: '관리자', path: 'admin' },
+      { name: '이력관리', path: 'policy' },
+      { name: '접속통계', path: 'stats' },
     ],
   },
-
   {
-    name: "메뉴관리",
-    children: [{ name: "메뉴관리", path: "menu/1dep" }],
+    name: '등록/삭제',
+    children: [
+      { name: '공지사항', path: 'notice' },
+      { name: '답변형게시판', path: 'answer-board' },
+      { name: '이벤트', path: 'event' },
+      { name: '자료실', path: 'resources' },
+      { name: 'FAQ', path: 'faq' },
+      { name: '채용공고', path: 'recruitment' },
+    ],
   },
 ];
 
