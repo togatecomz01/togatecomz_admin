@@ -15,7 +15,6 @@ const MENU = [
       { name: '이벤트', path: 'event' },
       { name: '자료실', path: 'resources' },
       { name: 'FAQ', path: 'faq' },
-      { name: '채용공고', path: 'recruitment' },
     ],
   },
 ];
