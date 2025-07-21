@@ -6,8 +6,8 @@
   height: 100%;
   width: 20%;
 
-  background: vars.$primary-color;
-  color: vars.$white-color;
+  background: vars.$white-color;
+  color: vars.$dark-color;
 
   display: flex;
   flex-direction: column;
@@ -42,6 +42,6 @@
     display: grid;
     cursor: pointer;
     text-decoration: none;
-    color: vars.$white-color;
+    color: vars.$dark-color;
   }
 }
