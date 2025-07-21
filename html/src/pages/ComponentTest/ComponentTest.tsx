@@ -1,5 +1,7 @@
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
+import Form from '../../components/Form/Form';
+import Input from '../../components/Input/Input';
 import Container from '../../components/layout/Container/Container';
 import Wrapper from '../../components/layout/Wrapper/Wrapper';
 import RadioInput from '../../components/RadioInput/RadioInput';
@@ -26,6 +28,13 @@ const ComponentTest = () => {
             items={['Option 1', 'Option 2', 'Option 3']}
             name="exampleRadio"
           />
+          <Form
+            label="성명"
+            subText="관리자 등록을 위해 필요한 정보를 입력하세요."
+          >
+            <Input type="text" placeholder="성명을 입력해주세요" />
+            <Button name="중복확인" />
+          </Form>
         </Wrapper>
       </Container>
     </>
