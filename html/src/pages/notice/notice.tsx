@@ -3,6 +3,10 @@ import styles from './notice.module.scss';
 import List from '../../components/layout/List/List';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
+import Container from '../../components/layout/Container/Container';
+import Wrapper from '../../components/layout/Wrapper/Wrapper';
+import EmptyContent from '../../components/EmptyContent/EmptyContent';
+import WarningIcon from '../../assets/images/warning-icon.svg';
 
 const Notice = () => {
   const specialNoticeData = [
@@ -148,31 +152,39 @@ const Notice = () => {
   ];
 
   return (
-    <div className={styles.noticeContainer}>
-      <h1 className={styles.mainTitle}>공지사항</h1>
+    <Container title="공지사항">
+      <Wrapper subTitle="특별공지">
+        <List headers={tableHeaders} listItems={specialNoticeData} />
+      </Wrapper>
 
-      <h2 className={styles.subTitle}>특별공지</h2>
-      <List headers={tableHeaders} listItems={specialNoticeData} />
+      <div className={styles.sectionDivider}></div>
 
-      <div className={styles.sectionDivider}></div> {/* 다시 추가 */}
-
-      <div className={styles.generalNoticeHeader}>
-        <h2 className={styles.subTitle}>일반공지</h2>
-        <div className={styles.searchFilterArea}>
-          {/* Select Input Placeholder */}
-          <div className={styles.selectWrapper}>
-            <Input type="text" placeholder="카테고리 선택 (Select 컴포넌트 필요)" className={styles.selectInputPlaceholder} />
+      <Wrapper
+        subTitle="일반공지"
+        rightContent={
+          <div className={styles.searchFilterArea}>
+            <div className={styles.selectWrapper}>
+              <Input
+                type="text"
+                placeholder="카테고리 선택 (Select 컴포넌트 필요)"
+                className={styles.selectInputPlaceholder}
+              />
+            </div>
+            <Input type="search" placeholder="검색어를 입력하세요" />
+            <Button name="조회" />
           </div>
-
-          {/* Search Input */}
-          <Input type="search" placeholder="검색어를 입력하세요" />
-
-          {/* Search Button */}
-          <Button name="조회" />
-        </div>
-      </div>
-      <List headers={tableHeaders} listItems={generalNoticeData} />
-    </div>
+        }
+      >
+        {generalNoticeData.length > 0 ? (
+          <List headers={tableHeaders} listItems={generalNoticeData} />
+        ) : (
+          <EmptyContent
+            imageSrc={WarningIcon}
+            message="표시할 일반 공지가 없습니다."
+          />
+        )}
+      </Wrapper>
+    </Container>
   );
 };
 
