@@ -1,6 +1,6 @@
-import React from 'react';
+/* import React from 'react'; */
 import { useNavigate } from 'react-router-dom';
-import styles from './div.module.scss';
+import styles from './Divide.module.scss';
 import List from '../../components/layout/List/List';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
@@ -8,7 +8,7 @@ import Container from '../../components/layout/Container/Container';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
 import DS_Store from '../../assets/images/DS_Store.png';
 
-const Div = () => {
+const Divide = () => {
   const navigate = useNavigate();
 
   const generalNoticeData = [
@@ -145,4 +145,4 @@ const Div = () => {
   );
 };
 
-export default Div;
+export default Divide;
