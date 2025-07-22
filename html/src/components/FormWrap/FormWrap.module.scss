@@ -1,0 +1,41 @@
+@use '@/styles/_variables' as vars;
+
+.formWrapContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: vars.$border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.leftContent {
+  flex: 0 0 25%; /* 고정 너비 */
+  text-align: left;
+}
+
+.text {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.subText {
+  font-size: 0.85em;
+  color: #666;
+}
+
+.rightContent {
+  flex: 1; /* 남은넓이 전체 사용 */
+
+  input,
+  textarea {
+    max-width: 500px;
+  }
+
+  textarea {
+    min-height: 250px; /* textarea 최소 높이 설정 */
+  }
+}
