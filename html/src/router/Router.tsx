@@ -5,10 +5,13 @@ import NoticeList from '../pages/notice/noticeList.tsx';
 import ComponentTest from '../pages/ComponentTest/ComponentTest.tsx';
 import Login from '../pages/Login/Login.tsx';
 import AccountManage from '../pages/AccountManage/AccountManage.tsx';
+
 import NoticeEnroll from '../pages/notice/NoticeEnroll.tsx';
 import NoticeModify from '../pages/notice/NoticeModify.tsx';
 import DeptPosition from '../pages/deptposition/deptposition.tsx';
 import Div from '../pages/div/div.tsx';
+import ManagerRegister from '../pages/ManagerRegister/ManagerRegister.tsx';
+
 
 const Router = () => {
   return (
@@ -19,10 +22,11 @@ const Router = () => {
           <Route path="" element={<Home />} />
           <Route path="component-test" element={<ComponentTest />} />
           <Route path="account-manage" element={<AccountManage />} />
+
           <Route path="/notice/enroll" element={<NoticeEnroll />} />
           <Route path="/notice/modify" element={<NoticeModify />} />
           <Route path="/deptposition" element={<DeptPosition />} />
-          <Route path="/div" element={<Div />} />
+          <Route path="manager-register" element={<ManagerRegister />} />
         </Route>
 
         <Route path="login" element={<Login />} />
