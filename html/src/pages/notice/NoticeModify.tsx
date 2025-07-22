@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react'; */
 import Container from '../../components/layout/Container/Container';
 import Wrapper from '../../components/layout/Wrapper/Wrapper';
 import Form from '../../components/Form/Form';

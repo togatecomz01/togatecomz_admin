@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react'; */
 import { useNavigate } from 'react-router-dom';
 import styles from './deptposition.module.scss';
 import List from '../../components/layout/List/List';

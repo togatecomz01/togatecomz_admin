@@ -9,7 +9,7 @@ import AccountManage from '../pages/AccountManage/AccountManage.tsx';
 import NoticeEnroll from '../pages/notice/NoticeEnroll.tsx';
 import NoticeModify from '../pages/notice/NoticeModify.tsx';
 import DeptPosition from '../pages/deptposition/deptposition.tsx';
-import Div from '../pages/div/div.tsx';
+import Divide from '../pages/Divide/Divide.tsx';
 import ManagerRegister from '../pages/ManagerRegister/ManagerRegister.tsx';
 
 
@@ -26,7 +26,8 @@ const Router = () => {
           <Route path="/notice/enroll" element={<NoticeEnroll />} />
           <Route path="/notice/modify" element={<NoticeModify />} />
           <Route path="/deptposition" element={<DeptPosition />} />
-          <Route path="manager-register" element={<ManagerRegister />} />
+          <Route path="/divide" element={<Divide />} />
+          <Route path="/manager-register" element={<ManagerRegister />} />
         </Route>
 
         <Route path="login" element={<Login />} />
