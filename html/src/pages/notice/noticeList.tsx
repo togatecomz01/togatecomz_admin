@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './noticeList.module.scss';
 import List from '../../components/layout/List/List';
 import Input from '../../components/Input/Input';
@@ -9,6 +10,7 @@ import EmptyContent from '../../components/EmptyContent/EmptyContent';
 import DS_Store from '../../assets/images/DS_Store.png';
 
 const NoticeList = () => {
+  const navigate = useNavigate();
   const specialNoticeData = [
     {
       no: 1,
@@ -190,7 +192,7 @@ const NoticeList = () => {
           }
         >
           {generalNoticeData.length > 0 ? (
-            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" />} />
+            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/enroll')} />} />
           ) : (
             <EmptyContent
               imageSrc={DS_Store}
@@ -235,7 +237,7 @@ const NoticeList = () => {
               imageSrc={DS_Store}
               message="조회결과가 없습니다."
             />
-            <Button name="등록" />
+            <Button name="등록" onClick={() => navigate('/notice/enroll')} />
           </div>
         </Wrapper>
       </Container>

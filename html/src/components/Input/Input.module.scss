@@ -65,3 +65,18 @@
     background-size: contain;
   }
 }
+
+.fileInputContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fileNameInput {
+  @include input;
+  flex-grow: 1;
+}
+
+.hiddenFileInput {
+  display: none;
+}
