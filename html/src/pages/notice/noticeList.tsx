@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react'; */
 import { useNavigate } from 'react-router-dom';
 import styles from './noticeList.module.scss';
 import List from '../../components/layout/List/List';
@@ -144,7 +144,7 @@ const NoticeList = () => {
     },
   ];
 
-  const emptyGeneralNoticeData: any[] = [];
+  /* const emptyGeneralNoticeData: any[] = []; */
 
   
 

@@ -3,11 +3,8 @@
 .list {
   border-collapse: separate;
   border-spacing: 0;
-  /* border-left: vars.$border; */
-  /* border-radius: 0.75rem; */
   overflow: hidden;
   width: 100%;
-  /* box-shadow: 0 5px 5px rgba(54, 54, 54, 0.103); */
   border-bottom: vars.$border;
 
   th,
@@ -32,15 +29,6 @@
   }
 
   tbody {
-    tr:last-child {
-      td:first-child {
-        /* border-bottom-left-radius: 0.75rem; */
-      }
-      td:last-child {
-        /* border-bottom-right-radius: 0.75rem; */
-      }
-    }
-
     tr:hover {
       background-color: vars.$bg-color;
     }
