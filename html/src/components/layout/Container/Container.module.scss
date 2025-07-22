@@ -3,8 +3,8 @@
 .container {
   display: grid;
   gap: 1rem;
-
   padding: vars.$padding;
+  position: relative; /* 추가 */
 
   h1 {
     font-size: 32px; /* 250722 변경되나 보게 추가만 해봄 */

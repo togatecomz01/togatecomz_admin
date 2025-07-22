@@ -1,0 +1,14 @@
+.searchFilterArea {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end; /* 오른쪽 정렬 추가 */
+}
+
+.selectWrapper {
+  /* Select 컴포넌트가 들어갈 자리 */
+}
+
+.selectInputPlaceholder {
+  /* Select 컴포넌트가 들어갈 자리의 Input 스타일 */
+}

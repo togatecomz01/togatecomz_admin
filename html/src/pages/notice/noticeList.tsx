@@ -192,7 +192,7 @@ const NoticeList = () => {
           }
         >
           {generalNoticeData.length > 0 ? (
-            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/modify')} />} />
+            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/enroll')} />} />
           ) : (
             <EmptyContent
               imageSrc={DS_Store}
@@ -237,7 +237,7 @@ const NoticeList = () => {
               imageSrc={DS_Store}
               message="조회결과가 없습니다."
             />
-            <Button name="등록" onClick={() => navigate('/notice/modify')} />
+            <Button name="등록" onClick={() => navigate('/notice/enroll')} />
           </div>
         </Wrapper>
       </Container>

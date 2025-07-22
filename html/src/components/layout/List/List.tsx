@@ -1,6 +1,8 @@
-import { useState } from "react";
-import styles from "./List.module.scss";
-import PaginationButton from "./PaginationButton/PaginationButton";
+import styles from './List.module.scss';
+import { useState } from 'react';
+import EmptyContent from '../../EmptyContent/EmptyContent';
+import DS_Store from '../../../assets/images/DS_Store.png';
+import PaginationButton from './PaginationButton/PaginationButton';
 
 function List({
   headers,
@@ -34,16 +36,27 @@ function List({
           </tr>
         </thead>
         <tbody>
-          {currentItems.map((item, index) => (
-            <tr key={index}>
-              {/* headerKey를 순회하면서 key를 가져옴 */}
-              {headerKey.map((key) => (
-                <td key={key + index}>
-                  {item[key]} {/* key로 객체의 값을 출력 */}
-                </td>
-              ))}
+          {currentItems.length > 0 ? (
+            currentItems.map((item, index) => (
+              <tr key={index}>
+                {/* headerKey를 순회하면서 key를 가져옴 */}
+                {headerKey.map((key) => (
+                  <td key={key + index}>
+                    {item[key]} {/* key로 객체의 값을 출력 */}
+                  </td>
+                ))}
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={headers.length}>
+                <EmptyContent
+                  imageSrc={DS_Store}
+                  message="조회결과가 없습니다."
+                />
+              </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
 
