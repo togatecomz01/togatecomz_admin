@@ -1,14 +1,14 @@
 import React from 'react';
-import styles from './notice.module.scss';
+import styles from './noticeList.module.scss';
 import List from '../../components/layout/List/List';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import Container from '../../components/layout/Container/Container';
 import Wrapper from '../../components/layout/Wrapper/Wrapper';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
-import WarningIcon from '../../assets/images/warning-icon.svg';
+import DS_Store from '../../assets/images/DS_Store.png';
 
-const Notice = () => {
+const NoticeList = () => {
   const specialNoticeData = [
     {
       no: 1,
@@ -141,6 +141,10 @@ const Notice = () => {
     },
   ];
 
+  const emptyGeneralNoticeData: any[] = [];
+
+  
+
   const tableHeaders = [
     { text: 'NO', value: 'no' },
     { text: '제목', value: 'title' },
@@ -152,40 +156,91 @@ const Notice = () => {
   ];
 
   return (
-    <Container title="공지사항">
-      <Wrapper subTitle="특별공지">
-        <List headers={tableHeaders} listItems={specialNoticeData} />
-      </Wrapper>
+    <>
+      <Container title="공지사항 (정상 특별 공지)">
+        <Wrapper subTitle="특별공지">
+          {specialNoticeData.length > 0 ? (
+            <List headers={tableHeaders} listItems={specialNoticeData} />
+          ) : (
+            <EmptyContent
+              imageSrc={DS_Store}
+              message="특별공지사항이 등록되지 않았습니다."
+            />
+          )}
+        </Wrapper>
+      </Container>
 
       <div className={styles.sectionDivider}></div>
 
-      <Wrapper
-        subTitle="일반공지"
-        rightContent={
-          <div className={styles.searchFilterArea}>
-            <div className={styles.selectWrapper}>
-              <Input
-                type="text"
-                placeholder="카테고리 선택 (Select 컴포넌트 필요)"
-                className={styles.selectInputPlaceholder}
-              />
+      <Container title="공지사항 (정상 일반 공지)">
+        <Wrapper
+          subTitle="일반공지"
+          rightContent={
+            <div className={styles.searchFilterArea}>
+              <div className={styles.selectWrapper}>
+                <Input
+                  type="text"
+                  placeholder="카테고리 선택 (Select 컴포넌트 필요)"
+                  className={styles.selectInputPlaceholder}
+                />
+              </div>
+              <Input type="search" placeholder="검색어를 입력하세요" />
+              <Button name="조회" />
             </div>
-            <Input type="search" placeholder="검색어를 입력하세요" />
-            <Button name="조회" />
-          </div>
-        }
-      >
-        {generalNoticeData.length > 0 ? (
-          <List headers={tableHeaders} listItems={generalNoticeData} />
-        ) : (
+          }
+        >
+          {generalNoticeData.length > 0 ? (
+            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" />} />
+          ) : (
+            <EmptyContent
+              imageSrc={DS_Store}
+              message="일반공지사항이 등록되지 않았습니다."
+            />
+          )}
+        </Wrapper>
+      </Container>
+
+      <div className={styles.sectionDivider}></div>
+
+      <Container title="공지사항 (빈 특별 공지)">
+        <Wrapper subTitle="특별공지">
           <EmptyContent
-            imageSrc={WarningIcon}
-            message="표시할 일반 공지가 없습니다."
+            imageSrc={DS_Store}
+            message="특별공지사항이 등록되지 않았습니다."
           />
-        )}
-      </Wrapper>
-    </Container>
+        </Wrapper>
+      </Container>
+
+      <div className={styles.sectionDivider}></div>
+
+      <Container title="공지사항 (빈 일반 공지)">
+        <Wrapper
+          subTitle="일반공지"
+          rightContent={
+            <div className={styles.searchFilterArea}>
+              <div className={styles.selectWrapper}>
+                <Input
+                  type="text"
+                  placeholder="카테고리 선택 (Select 컴포넌트 필요)"
+                  className={styles.selectInputPlaceholder}
+                />
+              </div>
+              <Input type="search" placeholder="검색어를 입력하세요" />
+              <Button name="조회" />
+            </div>
+          }
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+            <EmptyContent
+              imageSrc={DS_Store}
+              message="조회결과가 없습니다."
+            />
+            <Button name="등록" />
+          </div>
+        </Wrapper>
+      </Container>
+    </>
   );
 };
 
-export default Notice;
+export default NoticeList;

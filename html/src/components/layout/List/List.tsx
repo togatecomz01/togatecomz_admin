@@ -5,9 +5,11 @@ import PaginationButton from "./PaginationButton/PaginationButton";
 function List({
   headers,
   listItems,
+  actionButton,
 }: {
   headers: { text: string; value: string; className?: string }[];
   listItems: Record<string, string | React.ReactNode>[];
+  actionButton?: React.ReactNode;
 }) {
   const headerKey = headers.map((header) => header.value);
 
@@ -45,14 +47,17 @@ function List({
         </tbody>
       </table>
 
-      {/* 페이지네이션 버튼 */}
-      {listItems.length > itemsPerPage && (
-        <PaginationButton
-          totalPages={totalPages}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
-      )}
+      <div className={styles.paginationAndActionButton}>
+        {/* 페이지네이션 버튼 */}
+        {listItems.length > itemsPerPage && (
+          <PaginationButton
+            totalPages={totalPages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        )}
+        {actionButton}
+      </div>
     </>
   );
 }
