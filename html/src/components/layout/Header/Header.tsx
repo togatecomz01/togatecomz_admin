@@ -13,9 +13,10 @@ function Header() {
       <div className={styles.userInfo}>
         <div className={styles.image}></div>
         <div>
-          <strong>홍길동</strong> 님
+          <strong>홍길동 (ponibo9908@togate.kr)</strong>
+          <div>주임 / 디자인팀</div>
         </div>
-        <Link to="/login">로그아웃</Link>
+        <div className={styles.logout}></div>
       </div>
     </div>
   );
