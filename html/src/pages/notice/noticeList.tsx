@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react'; */
 import { useNavigate } from 'react-router-dom';
 import styles from './noticeList.module.scss';
 import List from '../../components/layout/List/List';
@@ -7,6 +7,7 @@ import Button from '../../components/Button/Button';
 import Container from '../../components/layout/Container/Container';
 import Wrapper from '../../components/layout/Wrapper/Wrapper';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
+import SelectBox from '../../components/SelectBox/SelectBox';
 import DS_Store from '../../assets/images/DS_Store.png';
 
 const NoticeList = () => {
@@ -143,7 +144,7 @@ const NoticeList = () => {
     },
   ];
 
-  const emptyGeneralNoticeData: any[] = [];
+  /* const emptyGeneralNoticeData: any[] = []; */
 
   
 
@@ -158,7 +159,7 @@ const NoticeList = () => {
   ];
 
   return (
-    <>
+    <div style={{ paddingTop: '40px' }}>
       <Container title="공지사항 (정상 특별 공지)">
         <Wrapper subTitle="특별공지">
           {specialNoticeData.length > 0 ? (
@@ -172,27 +173,29 @@ const NoticeList = () => {
         </Wrapper>
       </Container>
 
-      <div className={styles.sectionDivider}></div>
+      {/* <div className={styles.sectionDivider}></div> */}
 
-      <Container title="공지사항 (정상 일반 공지)">
+      <Container title="">
         <Wrapper
           subTitle="일반공지"
           rightContent={
             <div className={styles.searchFilterArea}>
               <div className={styles.selectWrapper}>
-                <Input
-                  type="text"
-                  placeholder="카테고리 선택 (Select 컴포넌트 필요)"
-                  className={styles.selectInputPlaceholder}
+                <SelectBox
+                  title="검색 기준"
+                  placeholder="제목"
+                  options={['제목', '작성자']}
                 />
               </div>
-              <Input type="search" placeholder="검색어를 입력하세요" />
-              <Button name="조회" />
+              <div style={{ width: '350px' }}>
+                <Input type="search" placeholder="검색어를 입력하세요" />
+              </div>
+              <Button name="조회" size="large" />
             </div>
           }
         >
           {generalNoticeData.length > 0 ? (
-            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/enroll')} />} />
+            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/enroll')} size="medium" />} />
           ) : (
             <EmptyContent
               imageSrc={DS_Store}
@@ -202,9 +205,9 @@ const NoticeList = () => {
         </Wrapper>
       </Container>
 
-      <div className={styles.sectionDivider}></div>
+      {/* <div className={styles.sectionDivider}></div> */}
 
-      <Container title="공지사항 (빈 특별 공지)">
+      <Container title="공지사항 (빈 공지)">
         <Wrapper subTitle="특별공지">
           <EmptyContent
             imageSrc={DS_Store}
@@ -213,35 +216,39 @@ const NoticeList = () => {
         </Wrapper>
       </Container>
 
-      <div className={styles.sectionDivider}></div>
+      {/* <div className={styles.sectionDivider}></div> */}
 
-      <Container title="공지사항 (빈 일반 공지)">
+      <Container title="">
         <Wrapper
           subTitle="일반공지"
           rightContent={
             <div className={styles.searchFilterArea}>
               <div className={styles.selectWrapper}>
-                <Input
-                  type="text"
-                  placeholder="카테고리 선택 (Select 컴포넌트 필요)"
-                  className={styles.selectInputPlaceholder}
+                <SelectBox
+                  title="검색 기준"
+                  placeholder="제목"
+                  options={['제목', '작성자']}
                 />
               </div>
-              <Input type="search" placeholder="검색어를 입력하세요" />
-              <Button name="조회" />
+              <div style={{ width: '350px' }}>
+                <Input type="search" placeholder="검색어를 입력하세요" />
+              </div>
+              <Button name="조회" size="large" />
             </div>
           }
         >
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             <EmptyContent
               imageSrc={DS_Store}
               message="조회결과가 없습니다."
             />
-            <Button name="등록" onClick={() => navigate('/notice/enroll')} />
+            <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+              <Button name="등록" onClick={() => navigate('/notice/enroll')} size="medium" />
+            </div>
           </div>
         </Wrapper>
       </Container>
-    </>
+    </div>
   );
 };
 
