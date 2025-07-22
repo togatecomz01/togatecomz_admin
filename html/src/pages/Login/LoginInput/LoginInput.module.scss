@@ -1,0 +1,12 @@
+.loginInput {
+  background-color: white;
+  border: 1px solid #dddddd;
+  ::selection {
+    background-color: #f0f0f0;
+  }
+  box-sizing: border-box;
+  max-width: 530px;
+  max-height: 67px;
+  border-radius: 8px;
+  padding: 20px 25px;
+}
