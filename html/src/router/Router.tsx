@@ -3,6 +3,7 @@ import Layout from '../components/layout/Layout.tsx';
 import Home from '../pages/Home/Home.tsx';
 import Notice from '../pages/notice/notice';
 import ComponentTest from '../pages/ComponentTest/ComponentTest.tsx';
+import Login from '../pages/Login/Login.tsx';
 
 const Router = () => {
   return (
@@ -12,8 +13,9 @@ const Router = () => {
           <Route path="" element={<Notice />} />
           <Route path="" element={<Home />} />
           <Route path="component-test" element={<ComponentTest />} />
-
         </Route>
+
+        <Route path="login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
