@@ -5,6 +5,7 @@ import NoticeList from '../pages/notice/noticeList';
 import ComponentTest from '../pages/ComponentTest/ComponentTest.tsx';
 import Login from '../pages/Login/Login.tsx';
 import AccountManage from '../pages/AccountManage/AccountManage.tsx';
+import ManagerRegister from '../pages/ManagerRegister/ManagerRegister.tsx';
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
           <Route path="" element={<Home />} />
           <Route path="component-test" element={<ComponentTest />} />
           <Route path="account-manage" element={<AccountManage />} />
+          <Route path="manager-register" element={<ManagerRegister />} />
         </Route>
 
         <Route path="login" element={<Login />} />
