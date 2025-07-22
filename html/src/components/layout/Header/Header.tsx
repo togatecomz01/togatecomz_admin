@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <div className={styles.header}>
+      <div className={styles.LogoHomeWrapper}>
+        <div className={styles.Logo}></div>
+        <div className={styles.HomeWrapper}>
+          <Link to="/" className={styles.home} />
+        </div>
+      </div>
       <div className={styles.userInfo}>
         <div className={styles.image}></div>
         <div>

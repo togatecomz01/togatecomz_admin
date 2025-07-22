@@ -2,31 +2,15 @@
 @use '@/styles/_mixins.scss' as mixin;
 
 .Lnb {
-  grid-area: LNB;
+  width: vars.$LNB-width;
   height: 100%;
-  width: 20%;
 
   background: vars.$white-color;
-  color: vars.$dark-color;
 
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  z-index: 1;
-
-  .Logo {
-    height: 10%;
-    @include mixin.flex-center;
-
-    .image {
-      width: 70%;
-      aspect-ratio: 1/1;
-      background-image: url('@/assets/images/logo.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-  }
+  // display: block;
+  // flex-direction: column;
+  // z-index: 0;
+  // padding-top: 300px;
 }
 
 .Menu {

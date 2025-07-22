@@ -4,11 +4,7 @@ import { Link } from 'react-router-dom';
 
 function LNB() {
   return (
-    <nav className={styles.Lnb}>
-      <Link to="/" className={styles.Logo}>
-        <div className={styles.image}></div>
-      </Link>
-
+    <aside className={styles.Lnb}>
       <div className={styles.Menu}>
         {MENU.map(menu => (
           <div key={menu.name}>
@@ -27,7 +23,7 @@ function LNB() {
           </div>
         ))}
       </div>
-    </nav>
+    </aside>
   );
 }
 
