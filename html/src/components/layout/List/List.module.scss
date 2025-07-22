@@ -3,48 +3,41 @@
 .list {
   border-collapse: separate;
   border-spacing: 0;
-  border-left: vars.$border;
-  border-radius: 0.75rem;
+  /* border-left: vars.$border; */
+  /* border-radius: 0.75rem; */
   overflow: hidden;
   width: 100%;
-  box-shadow: 0 5px 5px rgba(54, 54, 54, 0.103);
+  /* box-shadow: 0 5px 5px rgba(54, 54, 54, 0.103); */
+  border-bottom: vars.$border;
 
   th,
   td {
-    border-top: vars.$border;
-    border-right: vars.$border;
+    border-top: vars.$border; /* 기본 border-top */
     padding: 0.75rem;
     text-align: center;
   }
 
-  .narrow {
-    width: 10%;
-  }
-  .middle {
-    width: 20%;
+  th {
+    border-top: 2px solid vars.$bright-color; /* th의 border-top을 더 두껍게 */
   }
 
-  thead {
-    background-color: vars.$bg-color;
-    font-weight: bold;
+  th + th,
+  td + td {
+    border-left: vars.$border;
+  }
 
-    tr:first-child {
-      th:first-child {
-        border-top-left-radius: 0.75rem;
-      }
-      th:last-child {
-        border-top-right-radius: 0.75rem;
-      }
-    }
+  th:last-child,
+  td:last-child {
+    border-right: none;
   }
 
   tbody {
     tr:last-child {
       td:first-child {
-        border-bottom-left-radius: 0.75rem;
+        /* border-bottom-left-radius: 0.75rem; */
       }
       td:last-child {
-        border-bottom-right-radius: 0.75rem;
+        /* border-bottom-right-radius: 0.75rem; */
       }
     }
 
