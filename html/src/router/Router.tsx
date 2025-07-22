@@ -4,8 +4,9 @@ import Home from '../pages/Home/Home.tsx';
 import NoticeList from '../pages/notice/noticeList';
 import ComponentTest from '../pages/ComponentTest/ComponentTest.tsx';
 import Login from '../pages/Login/Login.tsx';
-import AccountManage from '../pages/AccountManage/AccountManage.tsx';
-import ManagerRegister from '../pages/ManagerRegister/ManagerRegister.tsx';
+import AdminList from '../pages/Admin/AdminList.tsx';
+import AdminRegister from '../pages/Admin/AdminRegister.tsx';
+import AdminLayout from '../pages/Admin/AdminLayout.tsx';
 
 const Router = () => {
   return (
@@ -15,8 +16,10 @@ const Router = () => {
           <Route path="" element={<NoticeList />} />
           <Route path="" element={<Home />} />
           <Route path="component-test" element={<ComponentTest />} />
-          <Route path="account-manage" element={<AccountManage />} />
-          <Route path="manager-register" element={<ManagerRegister />} />
+          <Route path="admin" element={<AdminLayout />}>
+            <Route index element={<AdminList />} />
+            <Route path="register" element={<AdminRegister />} />
+          </Route>
         </Route>
 
         <Route path="login" element={<Login />} />
