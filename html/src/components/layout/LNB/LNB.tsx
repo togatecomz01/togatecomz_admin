@@ -4,30 +4,26 @@ import { Link } from 'react-router-dom';
 
 function LNB() {
   return (
-    <nav className={styles.Lnb}>
-      <Link to="/" className={styles.Logo}>
-        <div className={styles.image}></div>
-      </Link>
-
-      <div className={styles.Menu}>
+    <aside className={styles.Lnb}>
+      <nav className={styles.Menu}>
         {MENU.map(menu => (
-          <div key={menu.name}>
+          <section key={menu.name}>
             <h3 className={styles.MenuTitle}>{menu.name}</h3>
-            <ul>
+            <ul className={styles.SubMenu}>
               {menu.children.map(child => (
-                <Link
-                  key={child.name}
-                  to={child.path}
-                  className={styles.SubMenuItem}
-                >
-                  {child.name}
-                </Link>
+                <li key={child.name}>
+                  <Link to={child.path} className={styles.SubMenuItem}>
+                    <i className={`${styles.Icon} ${styles[child.path]}`}></i>
+                    {child.name}
+                  </Link>
+                </li>
               ))}
             </ul>
-          </div>
+          </section>
         ))}
-      </div>
-    </nav>
+      </nav>
+      <p className={styles.Copyright}>ⓒ 2020. Gallery2Gate Co., Ltd All Rights Reserved.</p>
+    </aside>
   );
 }
 
