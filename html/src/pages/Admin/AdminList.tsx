@@ -4,6 +4,7 @@ import ButtonContainer from '../../components/Button/ButtonContainer/ButtonConta
 import Container from '../../components/layout/Container/Container';
 import List from '../../components/layout/List/List';
 import Wrapper from '../../components/layout/Wrapper/Wrapper';
+
 const HEADERS = [
   { text: '성명', value: 'name' },
   { text: '부서', value: 'department' },
