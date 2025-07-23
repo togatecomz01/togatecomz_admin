@@ -6,19 +6,18 @@
 
   padding: vars.$padding;
   background: vars.$white-color;
-  border: vars.$border;
-  box-shadow: 0 5px 5px rgba(54, 54, 54, 0.103);
   border-radius: 1rem;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    h2 {
-        font-size: 26px; /* 250722 변경되나 보게 추가만 해봄 */
-        color: #555;
-        margin-bottom: 20px;
-    }
+  h2 {
+    font-weight: bold;
+    font-size: 26px; /* 250722 변경되나 보게 추가만 해봄 */
+    color: #333333;
+    margin-bottom: 10px;
+  }
 }
