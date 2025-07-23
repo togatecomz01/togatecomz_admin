@@ -7,7 +7,7 @@ import Wrapper from '../../components/layout/Wrapper/Wrapper';
 import RadioInput from '../../components/RadioInput/RadioInput';
 import SelectBox from '../../components/SelectBox/SelectBox';
 
-const ManagerRegister = () => {
+const AdminRegister = () => {
   return (
     <>
       <Container title="계정관리">
@@ -146,4 +146,4 @@ const ManagerRegister = () => {
   );
 };
 
-export default ManagerRegister;
+export default AdminRegister;

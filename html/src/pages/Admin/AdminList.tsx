@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 import Container from '../../components/layout/Container/Container';
@@ -66,7 +67,7 @@ const LIST_ITEMS = [
   },
 ];
 
-const AccountManage = () => {
+const AdminList = () => {
   return (
     <>
       <Container title="계정관리">
@@ -77,11 +78,13 @@ const AccountManage = () => {
           <List headers={HEADERS} listItems={LIST_ITEMS}></List>
         </Wrapper>
         <ButtonContainer>
-          <Button name="등록" />
+          <Link to="/admin/register">
+            <Button name="등록" />
+          </Link>
         </ButtonContainer>
       </Container>
     </>
   );
 };
 
-export default AccountManage;
+export default AdminList;
