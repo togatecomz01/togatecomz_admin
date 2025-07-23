@@ -13,6 +13,14 @@
   background-color: vars.$retrieve-color;
   font-size: 1rem;
 }
+.enrolll {
+  background-color: vars.$enroll-color;
+}
+.delete {
+  background-color:vars.$white-color;
+  border: 1px solid #757575;
+  color: #757575;
+}
 
 .primary {
   background-color: vars.$primary-color;
@@ -42,7 +50,6 @@
 .enroll { /* 버튼 사이즈는 다 공통으로 두고 색깔만 바꾸는 로직이라.. 일단 다른 사이즈들도 필요하니 추가 */
   width: 80px;
   height: 50px;
-  background-color: vars.$enroll-color;
   font-size: 20px;
 }
 

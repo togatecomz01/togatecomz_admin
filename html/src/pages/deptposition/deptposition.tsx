@@ -2,7 +2,7 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './deptposition.module.scss';
 import List from '../../components/layout/List/List';
-import Input from '../../components/Input/Input';
+import SelectBox from '../../components/SelectBox/SelectBox';
 import Button from '../../components/Button/Button';
 import Container from '../../components/layout/Container/Container';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
@@ -136,37 +136,37 @@ const DeptPosition = () => {
 ];
 
     const tableHeaders = [
-        { text: '구분', value: 'category' },
-        { text: '부서명', value: 'department' },
-        { text: '직위', value: 'position' },
-        { text: '등록자', value: 'modifier' },
+        { text: '구분', value: 'category' ,width: "15%"},
+        { text: '부서명', value: 'department',width: "25%" },
+        { text: '등록자', value: 'modifier' ,width: "10%"},
         { text: '등록일', value: 'createdAt' },
-        { text: '수정자', value: 'modifier' },
+        { text: '수정자', value: 'modifier' ,width: '15%'},
         { text: '수정일', value: 'modifiedAt' },
     ];
 
     return (
-    <Container title="부서/직위 관리">
+    <Container title="부서/직책 관리">
         <div className={styles.topArea}>
         <div className={styles.searchFilterArea}>
             <div className={styles.selectWrapper}>
-            <Input
-                type="text"
-                placeholder="카테고리 선택 (Select 컴포넌트 필요)"
-                className={styles.selectInputPlaceholder}
+            <SelectBox
+                title="카테고리"
+                placeholder="부서"
+                
+                options={['부서', '직위']}
             />
             </div>
         </div>
         </div>
 
         {deptPositionData.length > 0 && (
-        <List headers={tableHeaders} listItems={deptPositionData} actionButton={<Button name="등록" onClick={() => navigate('/deptposition/enroll')} />} />
+        <List headers={tableHeaders} listItems={deptPositionData} actionButton={<Button name="등록" size='enroll' onClick={() => navigate('/deptposition/enroll')} />} />
         )}
         <Wrapper subTitle="">
         <EmptyContent imageSrc={DS_Store} message="등록된 [부서]나 [직책]이 없습니다" />
         </Wrapper>
         <div className={styles.bottomRightButtonContainer}>
-        <Button name="등록" onClick={() => navigate('/deptposition/enroll')} />
+        <Button name="등록" size='enroll' onClick={() => navigate('/deptposition/enroll')} />
         </div>
     </Container>
     );

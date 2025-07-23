@@ -12,7 +12,9 @@ function Button({ name, onClick, fullWidth, size }: ButtonProps) {
     if (name === '수정') return 'disabled';
     if (name === '목록') return 'list';
     if (name === '찾아보기') return 'filesearch';
-    if (name === '취소' || name === '삭제') return 'cancel';
+    if (name === '삭제') return 'delete';
+    if (name === '취소') return 'cancel';
+    if (name === '등록') return 'enrolll';
     return 'primary';
   };
 

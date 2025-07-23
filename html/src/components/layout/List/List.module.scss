@@ -1,6 +1,7 @@
 @use '@/styles/_variables' as vars;
 
 .list {
+  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0;
   overflow: hidden;
@@ -15,6 +16,7 @@
   }
 
   th {
+    background-color: #FBFCFD;
     border-top: 2px solid vars.$bright-color; /* th의 border-top을 더 두껍게 */
   }
 

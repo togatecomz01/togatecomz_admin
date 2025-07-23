@@ -149,8 +149,8 @@ const NoticeList = () => {
   
 
   const tableHeaders = [
-    { text: 'NO', value: 'no' },
-    { text: '제목', value: 'title' },
+    { text: 'NO', value: 'no', width : '7%'},
+    { text: '제목', value: 'title' , width : '40%'},
     { text: '조회', value: 'views' },
     { text: '작성자', value: 'author' },
     { text: '작성일', value: 'createdAt' },
@@ -159,8 +159,8 @@ const NoticeList = () => {
   ];
 
   return (
-    <div style={{ paddingTop: '40px' }}>
-      <Container title="공지사항 (정상 특별 공지)">
+    <>
+      <Container title="공지사항 (정상 특별 공지)"/*  paddingTop='40px' */>
         <Wrapper subTitle="특별공지">
           {specialNoticeData.length > 0 ? (
             <List headers={tableHeaders} listItems={specialNoticeData} />
@@ -248,7 +248,7 @@ const NoticeList = () => {
           </div>
         </Wrapper>
       </Container>
-    </div>
+  </>
   );
 };
 
