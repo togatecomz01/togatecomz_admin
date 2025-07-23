@@ -16,7 +16,8 @@
     font-weight: 500;
     line-height: 150%; /* 27px */
   }
-  ::selection {
-    background-color: #f0f0f0;
+  &:focus {
+    border: 1px solid #24b2ff;
+    outline: none;
   }
 }
