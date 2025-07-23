@@ -1,9 +1,20 @@
 .button {
-  width: 55%;
-  height: 60px;
-  margin: 10px;
-  border-radius: 10px;
-  color: white;
-  font-size: clamp(1rem, 1.25rem, 2rem);
+  width: 100%;
+  height: auto;
+  padding: 18px;
+
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+
   background: linear-gradient(90deg, #55a3f6 0%, #555ff9 50.48%, #55a3f6 100%);
+
+  // 텍스트
+  color: #fff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 36px */
 }
