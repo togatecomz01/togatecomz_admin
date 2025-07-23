@@ -190,12 +190,12 @@ const NoticeList = () => {
               <div style={{ width: '350px' }}>
                 <Input type="search" placeholder="검색어를 입력하세요" />
               </div>
-              <Button name="조회" size="large" />
+              <Button name="조회" size="retrieve" />
             </div>
           }
         >
           {generalNoticeData.length > 0 ? (
-            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/enroll')} size="medium" />} />
+            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/enroll')} size="enroll" />} />
           ) : (
             <EmptyContent
               imageSrc={DS_Store}
@@ -233,7 +233,7 @@ const NoticeList = () => {
               <div style={{ width: '350px' }}>
                 <Input type="search" placeholder="검색어를 입력하세요" />
               </div>
-              <Button name="조회" size="large" />
+              <Button name="조회" size="retrieve" />
             </div>
           }
         >
@@ -243,7 +243,7 @@ const NoticeList = () => {
               message="조회결과가 없습니다."
             />
             <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-              <Button name="등록" onClick={() => navigate('/notice/enroll')} size="medium" />
+              <Button name="등록" onClick={() => navigate('/notice/enroll')} size="enroll" />
             </div>
           </div>
         </Wrapper>

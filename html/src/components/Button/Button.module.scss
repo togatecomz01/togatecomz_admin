@@ -8,6 +8,12 @@
   color: white;
 }
 
+.filesearch {
+  height: 50px;
+  background-color: vars.$retrieve-color;
+  font-size: 1rem;
+}
+
 .primary {
   background-color: vars.$primary-color;
 }
@@ -26,16 +32,22 @@
   width: 100%;
 }
 
-.large {
+.retrieve {
   width: 90px;
   height: 50px;
-  padding: 17px 30px;
-  background-color: #24b2ff;
+  background-color: vars.$retrieve-color;
+  font-size: 18px;
 }
 
-.medium {
+.enroll { /* 버튼 사이즈는 다 공통으로 두고 색깔만 바꾸는 로직이라.. 일단 다른 사이즈들도 필요하니 추가 */
   width: 80px;
   height: 50px;
-  padding: 12px 24px;
-  background-color: #1755e5;
+  background-color: vars.$enroll-color;
+  font-size: 20px;
+}
+
+.list {
+  background-color: vars.$bg-color;
+  border: 1.5px solid vars.$primary-color;
+  color: vars.$primary-color;
 }

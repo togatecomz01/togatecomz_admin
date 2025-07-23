@@ -1,4 +1,6 @@
 import styles from './PaginationButton.module.scss';
+import paginationRight1 from '@/assets/images/paginationRight1.png';
+import paginationRight2 from '@/assets/images/paginationRight2.png';
 
 type PaginationProps = {
   totalPages: number;
@@ -20,8 +22,12 @@ const PaginationButton = ({
     <div className={styles.pagination}>
       {currentPage > 1 && (
         <>
-          <button onClick={handleFirstPage}>&lt;&lt;</button>
-          <button onClick={handlePrevPage}>&lt;</button>
+          <button onClick={handleFirstPage}>
+            <img src={paginationRight2} alt="first page" /> {/* 일단 button에 img 두면 별로라고 했는데 숫자와 png를 스타일을 다르게 가져가야해서 편의상 이렇게.. */}
+          </button>
+          <button onClick={handlePrevPage}>
+            <img src={paginationRight1} alt="previous page" />
+          </button>
         </>
       )}
 
@@ -37,8 +43,12 @@ const PaginationButton = ({
 
       {currentPage < totalPages && (
         <>
-          <button onClick={handleNextPage}>&gt;</button>
-          <button onClick={handleLastPage}>&gt;&gt;</button>{/* 기존 다음 버튼에서  >, >> 버튼으로 수정 */}
+          <button onClick={handleNextPage}>
+            <img src={paginationRight1} alt="next page" />
+          </button>
+          <button onClick={handleLastPage}>
+            <img src={paginationRight2} alt="last page" />
+          </button>
         </>
       )}
     </div>
