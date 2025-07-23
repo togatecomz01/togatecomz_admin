@@ -4,12 +4,14 @@ type ButtonProps = {
   name: string;
   onClick?: () => void;
   fullWidth?: boolean;
-  size?: 'large' | 'medium';
+  size?: 'retrieve' | 'enroll';
 };
 
 function Button({ name, onClick, fullWidth, size }: ButtonProps) {
   const resolvedColor = () => {
-    if (name === '목록' || name === '수정') return 'disabled';
+    if (name === '수정') return 'disabled';
+    if (name === '목록') return 'list';
+    if (name === '찾아보기') return 'filesearch';
     if (name === '취소' || name === '삭제') return 'cancel';
     return 'primary';
   };

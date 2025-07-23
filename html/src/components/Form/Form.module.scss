@@ -4,10 +4,10 @@
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  padding: 15px 0;
+  padding: 40px 0;
   border-bottom: vars.$border;
 
-  &:last-child {
+  &.noBorderBottom {
     border-bottom: none;
   }
 
@@ -34,11 +34,11 @@
 
     input,
     textarea {
-      max-width: 500px;
+      max-width: 530px;
     }
 
     textarea {
-      min-height: 150px; /* textarea 최소 높이 설정 */
+      min-height: 413px; /* textarea 최소 높이 설정 */
     }
   }
 }
