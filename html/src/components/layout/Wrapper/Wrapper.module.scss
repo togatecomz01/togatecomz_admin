@@ -13,11 +13,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px; /* 250723 h2에 마진줬던거 이쪽으로 옮김 */
 
   h2 {
     font-weight: bold;
-    font-size: 26px; /* 250722 변경되나 보게 추가만 해봄 */
+    font-size: 26px;
     color: #333333;
-    margin-bottom: 40px;
   }
 }

@@ -9,7 +9,7 @@ function List({
   listItems,
   actionButton,
 }: {
-  headers: { text: string; value: string; className?: string }[];
+  headers: { text: string; value: string; className?: string; width?: string }[];
   listItems: Record<string, string | React.ReactNode>[];
   actionButton?: React.ReactNode;
 }) {
@@ -29,7 +29,7 @@ function List({
         <thead>
           <tr>
             {headers.map((header) => (
-              <th key={header.text} className={styles[`${header.className}`]}>
+              <th key={header.text} className={styles[`${header.className}`]} style={{ width: header.width }}> {/* 20250723 width도 받아올 수 있게 해옴 */}
                 {header.text} {/* 컬럼명 바인딩 */}
               </th>
             ))}
