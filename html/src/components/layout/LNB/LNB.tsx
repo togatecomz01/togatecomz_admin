@@ -1,6 +1,7 @@
-import styles from './LNB.module.scss';
-import MENU from '../../../constants/menu.ts';
 import { Link } from 'react-router-dom';
+import styles from './LNB.module.scss';
+import Copyright from '../Copyright/Copyright.tsx';
+import MENU from '../../../constants/menu.ts';
 
 function LNB() {
   return (
@@ -22,7 +23,7 @@ function LNB() {
           </section>
         ))}
       </nav>
-      <p className={styles.Copyright}>ⓒ 2020. Gallery2Gate Co., Ltd All Rights Reserved.</p>
+      <Copyright position="LNB_bottom" />
     </aside>
   );
 }
