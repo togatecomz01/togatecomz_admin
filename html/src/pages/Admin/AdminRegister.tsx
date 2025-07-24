@@ -11,11 +11,11 @@ import SelectBox from '../../components/SelectBox/SelectBox';
 const AdminRegister = () => {
   return (
     <>
-      <Container title="계정관리">
+      <Container title="계정관리" tag="상세">
         {/* 1. 기본정보 */}
         <Wrapper subTitle="기본정보">
           {/* 성명 */}
-          <FormWrap label="성명" subText="관리자 등록을 위해 필요한 정보를 입력해 주세요.">
+          <FormWrap label="성명" subText="관리자 등록을 위해 필요한 정보를 입력해 주세요." isAsterisk={true}>
             <Input type="text" placeholder="성명을 입력해 주세요." />
           </FormWrap>
 
@@ -121,7 +121,8 @@ const AdminRegister = () => {
         </Wrapper>
         <ButtonContainer>
           <Button name="목록" />
-          <Button name="등록" />
+          <Button name="저장" />
+          <Button name="삭제" />
         </ButtonContainer>
       </Container>
     </>
