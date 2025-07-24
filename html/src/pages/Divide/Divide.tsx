@@ -122,25 +122,20 @@ const Divide = () => {
 
   return (
     <Container title="구분값 등록">
-      <div className={styles.searchFilterArea}> {/* 20250723 컨테이너 컴포넌트를 만들까 싶었는데 .. */}
+      <div className={styles.searchFilterArea}>
+        {' '}
+        {/* 20250723 컨테이너 컴포넌트를 만들까 싶었는데 .. */}
         <div className={styles.selectWrapper}>
-          <SelectBox
-            title="구분값 선택"
-            placeholder="구분"
-            options={['구분', '구분값']}
-          />
+          <SelectBox title="구분값 선택" placeholder="구분" options={['구분', '구분값']} />
         </div>
         <Input type="search" placeholder="검색어를 입력하세요" />
-        <Button name="조회" size='retrieve'/>
+        <Button name="조회" />
       </div>
 
       {generalNoticeData.length > 0 ? (
-        <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" size='enroll' onClick={() => navigate('/notice/enroll')} />} />
+        <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/enroll')} />} />
       ) : (
-        <EmptyContent
-          imageSrc={DS_Store}
-          message="일반공지사항이 등록되지 않았습니다."
-        />
+        <EmptyContent imageSrc={DS_Store} message="일반공지사항이 등록되지 않았습니다." />
       )}
     </Container>
   );

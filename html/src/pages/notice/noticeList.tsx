@@ -146,11 +146,9 @@ const NoticeList = () => {
 
   /* const emptyGeneralNoticeData: any[] = []; */
 
-  
-
   const tableHeaders = [
-    { text: 'NO', value: 'no', width : '7%'},
-    { text: '제목', value: 'title' , width : '40%'},
+    { text: 'NO', value: 'no', width: '7%' },
+    { text: '제목', value: 'title', width: '40%' },
     { text: '조회', value: 'views' },
     { text: '작성자', value: 'author' },
     { text: '작성일', value: 'createdAt' },
@@ -160,16 +158,9 @@ const NoticeList = () => {
 
   return (
     <>
-      <Container title="공지사항 (정상 특별 공지)"/*  paddingTop='40px' */>
+      <Container title="공지사항 (정상 특별 공지)" /*  paddingTop='40px' */>
         <Wrapper subTitle="특별공지">
-          {specialNoticeData.length > 0 ? (
-            <List headers={tableHeaders} listItems={specialNoticeData} />
-          ) : (
-            <EmptyContent
-              imageSrc={DS_Store}
-              message="특별공지사항이 등록되지 않았습니다."
-            />
-          )}
+          {specialNoticeData.length > 0 ? <List headers={tableHeaders} listItems={specialNoticeData} /> : <EmptyContent imageSrc={DS_Store} message="특별공지사항이 등록되지 않았습니다." />}
         </Wrapper>
       </Container>
 
@@ -181,26 +172,19 @@ const NoticeList = () => {
           rightContent={
             <div className={styles.searchFilterArea}>
               <div className={styles.selectWrapper}>
-                <SelectBox
-                  title="검색 기준"
-                  placeholder="제목"
-                  options={['제목', '작성자']}
-                />
+                <SelectBox title="검색 기준" placeholder="제목" options={['제목', '작성자']} />
               </div>
               <div style={{ width: '350px' }}>
                 <Input type="search" placeholder="검색어를 입력하세요" />
               </div>
-              <Button name="조회" size="retrieve" />
+              <Button name="조회" />
             </div>
           }
         >
           {generalNoticeData.length > 0 ? (
-            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/enroll')} size="enroll" />} />
+            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/enroll')} />} />
           ) : (
-            <EmptyContent
-              imageSrc={DS_Store}
-              message="일반공지사항이 등록되지 않았습니다."
-            />
+            <EmptyContent imageSrc={DS_Store} message="일반공지사항이 등록되지 않았습니다." />
           )}
         </Wrapper>
       </Container>
@@ -209,10 +193,7 @@ const NoticeList = () => {
 
       <Container title="공지사항 (빈 공지)">
         <Wrapper subTitle="특별공지">
-          <EmptyContent
-            imageSrc={DS_Store}
-            message="특별공지사항이 등록되지 않았습니다."
-          />
+          <EmptyContent imageSrc={DS_Store} message="특별공지사항이 등록되지 않았습니다." />
         </Wrapper>
       </Container>
 
@@ -224,31 +205,24 @@ const NoticeList = () => {
           rightContent={
             <div className={styles.searchFilterArea}>
               <div className={styles.selectWrapper}>
-                <SelectBox
-                  title="검색 기준"
-                  placeholder="제목"
-                  options={['제목', '작성자']}
-                />
+                <SelectBox title="검색 기준" placeholder="제목" options={['제목', '작성자']} />
               </div>
               <div style={{ width: '350px' }}>
                 <Input type="search" placeholder="검색어를 입력하세요" />
               </div>
-              <Button name="조회" size="retrieve" />
+              <Button name="조회" />
             </div>
           }
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <EmptyContent
-              imageSrc={DS_Store}
-              message="조회결과가 없습니다."
-            />
+            <EmptyContent imageSrc={DS_Store} message="조회결과가 없습니다." />
             <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-              <Button name="등록" onClick={() => navigate('/notice/enroll')} size="enroll" />
+              <Button name="등록" onClick={() => navigate('/notice/enroll')} />
             </div>
           </div>
         </Wrapper>
       </Container>
-  </>
+    </>
   );
 };
 
