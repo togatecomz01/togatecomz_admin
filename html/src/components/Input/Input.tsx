@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './Input.module.scss';
 import Button from '../Button/Button';
 
@@ -39,27 +39,20 @@ const Input = ({ type, placeholder, value, items, onChange, className }: InputPr
     );
 
   if (type === 'file') {
-    const fileInputRef = useRef<HTMLInputElement>(null);
-    const [fileName, setFileName] = useState('선택된 파일 없음');
-
-    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      if (event.target.files && event.target.files.length > 0) {
-        setFileName(event.target.files[0].name);
-      } else {
-        setFileName('선택된 파일 없음');
-      }
-    };
-
-    const handleButtonClick = () => {
-      fileInputRef.current?.click();
+    // 파일명 css 확인용 로직
+    const [fileName, setFileName] = useState('');
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      e.preventDefault();
+      const file = e.target.files?.[0];
+      setFileName(file ? file.name : '');
     };
 
     return (
-      <div className={styles.fileInputContainer}>
+      <form className={`${styles.fileInputContainer} ${fileName ? styles.hasFile : ''}`}>
         <input type="text" readOnly value={fileName} className={styles.fileNameInput} />
-        <input type="file" ref={fileInputRef} onChange={handleFileChange} className={styles.hiddenFileInput} />
-        <Button name="찾아보기" onClick={handleButtonClick} />
-      </div>
+        <input type="file" onChange={handleFileChange} className={styles.hiddenFileInput} />
+        <Button name="찾아보기" />
+      </form>
     );
   }
 

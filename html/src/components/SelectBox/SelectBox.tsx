@@ -21,27 +21,14 @@ const SelectBox = ({ title, placeholder, options }: SelectBoxProps) => {
   return (
     <div className={styles.selectWrapper}>
       <label className={styles.hidden}>{title}</label>
-      <div
-        className={styles.selectBox}
-        onClick={toggleOpen}
-        tabIndex={0}
-        role="button"
-        aria-haspopup="listbox"
-        aria-expanded={open}
-      >
+      <div className={styles.selectBox} onClick={toggleOpen} tabIndex={0} role="button" aria-haspopup="listbox" aria-expanded={open}>
         {selected || placeholder}
         <span className={`${styles.arrow} ${open ? styles.open : ''}`} />
       </div>
       {open && (
         <ul className={styles.optionList} role="listbox">
           {options.map(option => (
-            <li
-              key={option}
-              className={styles.optionItem}
-              onClick={() => handleSelect(option)}
-              role="option"
-              aria-selected={selected === option}
-            >
+            <li key={option} className={styles.optionItem} onClick={() => handleSelect(option)} role="option" aria-selected={selected === option}>
               {option}
             </li>
           ))}

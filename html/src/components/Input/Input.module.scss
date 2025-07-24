@@ -83,11 +83,36 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
+
+  &.hasFile::before {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 24px;
+    height: 24px;
+    background: url('@/assets/images/ico-file.svg') no-repeat center/contain;
+  }
 }
 
 .fileNameInput {
   @include input;
   flex-grow: 1;
+  padding-left: 59px; // 아이콘 공간 확보
+
+  color: #1755e5;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
 }
 
 .hiddenFileInput {

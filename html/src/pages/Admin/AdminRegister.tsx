@@ -22,7 +22,7 @@ const AdminRegister = () => {
             </FormWrap>
 
             {/* 아이디 */}
-            <FormWrap label="아이디" subText="사용하실 아이디를 입력해 주세요.">
+            <FormWrap label="아이디" subText="사용하실 아이디를 입력해 주세요." isAsterisk={true}>
               <InputBtnContainer>
                 <Input type="text" placeholder="아이디를 입력해 주세요." />
                 <Button name="ID 중복확인" />
@@ -30,13 +30,13 @@ const AdminRegister = () => {
             </FormWrap>
 
             {/* 비밀번호 */}
-            <FormWrap label="비밀번호" subText="비밀번호는 영문, 숫자 포함 8자리 이상 입력해야 합니다.">
+            <FormWrap label="비밀번호" subText="비밀번호는 영문, 숫자 포함 8자리 이상 입력해야 합니다." isAsterisk={true}>
               <Input type="password" placeholder="비밀번호를 입력해 주세요." />
               <Input type="password" placeholder="비밀번호를 다시 입력해 주세요." />
             </FormWrap>
 
             {/* 부서/직책 선택 */}
-            <FormWrap label="부서/직책 선택" subText="비밀번호는 영문, 숫자 포함 8자리 이상 입력해야 합니다.">
+            <FormWrap label="부서/직책 선택" subText="비밀번호는 영문, 숫자 포함 8자리 이상 입력해야 합니다." isAsterisk={true}>
               <SelectBox title={'부서/직책 선택'} placeholder={'부서를 선택해 주세요'} options={['부서1', '부서2', '부서3']} />
               <SelectBox title={'부서/직책 선택'} placeholder={'직책을 선택해 주세요'} options={['직책1', '직책2', '직책3']} />
             </FormWrap>
