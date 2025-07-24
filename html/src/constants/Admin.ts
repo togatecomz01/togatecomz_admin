@@ -1,10 +1,10 @@
 export const ADMIN_HEADERS = [
-  { text: '성명', value: 'name', width: '17%' },
-  { text: '부서', value: 'department', width: '10%' },
-  { text: '구분', value: 'role', width: '15%' },
-  { text: '직책', value: 'position' },
-  { text: '연락처', value: 'contact' },
-  { text: '이메일', value: 'email' },
+  { text: '성명', value: 'name', width: 'lg' },
+  { text: '부서', value: 'department', width: 'xs' },
+  { text: '구분', value: 'role', width: 'md' },
+  { text: '직책', value: 'position', width: 'sm' },
+  { text: '연락처', value: 'contact', width: 'xl' },
+  { text: '이메일', value: 'email', width: 'auto' },
 ];
 
 export const ADMIN_LIST_ITEMS_MAIN = [

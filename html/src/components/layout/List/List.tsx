@@ -9,7 +9,7 @@ function List({ headers, listItems }: { headers: { text: string; value: string; 
         <thead>
           <tr>
             {headers.map(header => (
-              <th key={header.text} className={styles[`${header.className}`]}>
+              <th key={header.text} className={header.width && styles[header.width]}>
                 {header.text} {/* 컬럼명 바인딩 */}
               </th>
             ))}
