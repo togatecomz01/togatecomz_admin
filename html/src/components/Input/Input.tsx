@@ -1,30 +1,20 @@
-import styles from "./Input.module.scss";
+import React, { useState } from 'react';
+import styles from './Input.module.scss';
+import Button from '../Button/Button';
 
 type InputProps = {
   type: string;
   placeholder?: string;
   value?: string;
   items?: string[];
-  onChange?: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   className?: string;
 };
 
-const Input = ({
-  type,
-  placeholder,
-  value,
-  items,
-  onChange,
-  className,
-}: InputProps) => {
-  if (type === "textarea")
-    return (
-      <textarea className={styles.contentInput} placeholder={placeholder} />
-    );
+const Input = ({ type, placeholder, value, items, onChange, className }: InputProps) => {
+  if (type === 'textarea') return <textarea className={styles.contentInput} placeholder={placeholder} />;
 
-  if (type === "checkbox")
+  if (type === 'checkbox')
     return (
       <div className={styles.itemsWrapper}>
         {items?.map((item, index) => (
@@ -36,7 +26,7 @@ const Input = ({
       </div>
     );
 
-  if (type === "search")
+  if (type === 'search')
     return (
       <div className={styles.searchBarWrapper}>
         <form>
@@ -48,15 +38,25 @@ const Input = ({
       </div>
     );
 
-  return (
-    <input
-      className={`${styles.textInput} ${className || ""}`}
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-    />
-  );
+  if (type === 'file') {
+    // 파일명 css 확인용 로직
+    const [fileName, setFileName] = useState('');
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      e.preventDefault();
+      const file = e.target.files?.[0];
+      setFileName(file ? file.name : '');
+    };
+
+    return (
+      <form className={`${styles.fileInputContainer} ${fileName ? styles.hasFile : ''}`}>
+        <input type="text" readOnly value={fileName} className={styles.fileNameInput} />
+        <input type="file" onChange={handleFileChange} className={styles.hiddenFileInput} />
+        <Button name="찾아보기" />
+      </form>
+    );
+  }
+
+  return <input className={`${styles.textInput} ${className || ''}`} type={type} placeholder={placeholder} value={value} onChange={onChange} />;
 };
 
 export default Input;

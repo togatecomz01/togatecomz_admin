@@ -1,33 +1,51 @@
+@mixin input {
+  width: 100%;
+  height: 50px;
+  padding: 12px 25px;
+
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+
+  &:focus {
+    border: 1px solid #24b2ff;
+    outline: none;
+  }
+}
+
 .selectWrapper {
   position: relative;
-  width: 240px;
+  width: 530px;
   font-size: 1rem;
 }
 
 .selectBox {
-  border: 1px solid #ccc;
-  padding: 0.5rem 1rem;
-  background-color: #fff;
-  border-radius: 6px;
+  @include input;
+  color: #999;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
   cursor: pointer;
-  position: relative;
+  display: flex;
+  align-items: center; /* 텍스트 수직 중앙 정렬 */
 }
 
 .arrow {
   position: absolute;
   top: 50%;
-  right: 1rem;
-  width: 1rem;
-  height: 1rem;
+  right: 20px;
+  width: 20px;
+  height: 20px;
   background-image: url('../../assets/images/ico-spread.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  transform: translateY(-50%) rotate(0deg);
-  transition: transform 0.3s ease;
+  transform: translateY(-50%) rotate(180deg);
   pointer-events: none;
 
   &.open {
-    transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-50%) rotate(0deg);
   }
 }
 
@@ -36,36 +54,33 @@
   top: 100%;
   left: 0;
   z-index: 10;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-top: 0.25rem;
+
+  border-radius: 8px;
+  border: 1.5px solid #eee;
+  background: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04);
+
+  margin-top: 6px;
   width: 100%;
   max-height: 200px;
+  padding: 12px 25px;
   overflow-y: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .optionItem {
-  padding: 0.5rem 1rem;
   cursor: pointer;
 
-  &:hover {
-    background-color: #f2f2f2;
-  }
-
-  &[aria-selected='true'] {
-    background-color: #e6f3ff;
-    font-weight: bold;
-  }
+  color: #333;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
 }
 
 .hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  border: 0;
+  display: none;
 }

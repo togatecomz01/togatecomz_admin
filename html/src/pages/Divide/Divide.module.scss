@@ -1,0 +1,7 @@
+.searchFilterArea {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end; /* 오른쪽 정렬 추가 */
+  margin-bottom: 20px; /* 20250724 추가, list와 너무 딱 붙어있음 */
+}

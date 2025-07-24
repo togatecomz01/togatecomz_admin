@@ -1,23 +1,24 @@
 @use '@/styles/_variables' as vars;
 
 .header {
-  // 사이즈
+  // 전체 너비, 높이
   width: 100%;
   height: 86px;
-  box-sizing: border-box; // 보더를 박스 안에
-  // 보더
+
+  // 배경색, 테두리
+  background: vars.$white-color;
+  box-sizing: border-box; // 테두리가 박스 안쪽에 포함되도록
   border-bottom: 2px solid vars.$gray-line-1;
-  background: vars.$white-color; // 배경색
-  // 고정
-  position: fixed;
-  top: 0;
-  left: 0;
-  // 정렬
+  // z-index 설정
+  z-index: 1;
+
+  // 자식 요소 정렬
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+// 좌측 상단 로고, 홈아이콘 영역
 .LogoHomeWrapper {
   // 가로 배치
   display: flex;
@@ -27,14 +28,12 @@
   // 사이즈
   width: 370px;
   height: 86px;
-  padding: 24px 28px; // 패딩
-  box-sizing: border-box; // 보더를 박스 안에
-  // 보더
+  padding: 24px 28px;
+  box-sizing: border-box;
   border-left: 2px solid vars.$gray-line-1;
   border-right: 2px solid vars.$gray-line-1;
   border-bottom: 1px solid vars.$gray-line-1;
-
-  background: vars.$white-color; // 배경색
+  background: vars.$white-color;
 }
 
 // 투게이트 로고
@@ -47,13 +46,12 @@
 }
 // 홈 아이콘 wrapper
 .HomeWrapper {
+  width: 38px;
+  height: 38px;
   // 중앙 정렬
   display: flex;
   align-items: center;
   justify-content: center;
-  // 사이즈
-  width: 38px;
-  height: 38px;
   // 테두리, 배경
   border-radius: 4px;
   border: 1.5px solid vars.$gray-line-2;
@@ -69,24 +67,65 @@
   background-repeat: no-repeat;
 }
 
+.UserInfoWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+// 우측 상단 사용자 정보 영역
 .userInfo {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 1rem;
-  margin-left: auto;
+  margin-right: 38px;
 }
 
-.image {
-  width: 40px;
+.userImage {
+  width: 56px;
   aspect-ratio: auto 1/1;
 
-  background-image: url('../../../assets/images/user-icon.svg');
-  background-size: 90%;
-  background-position: bottom;
+  background-image: url('@/assets/images/user-profile-example.png');
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
   border-radius: 50%;
-  border: vars.$border;
+}
+
+.userText {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.userProfile {
+  color: #333;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 20px */
+}
+
+.userPosition {
+  color: #757575;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 100%; /* 18px */
+}
+
+.logout {
+  width: 90px;
+  height: 85px;
+
+  background-image: url('@/assets/images/ico-logout.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  box-sizing: border-box;
+  border-left: 2px solid vars.$gray-line-1;
 }
 
 .logout {

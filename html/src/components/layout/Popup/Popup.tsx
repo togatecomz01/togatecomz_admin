@@ -1,20 +1,24 @@
-import { usePopup } from '../../../contexts/PopupContext';
+import type { ReactNode } from 'react';
 import styles from './Popup.module.scss';
+import CloseIcon from '../../../assets/images/Xbutton.svg';
 
-const Popup = () => {
-  const { isOpen, text, closePopup } = usePopup();
-  if (!isOpen) return null;
+interface PopupProps {
+  title: string;
+  children: ReactNode;
+  onClose: () => void;
+}
 
-  const onBackgroundClick = () => closePopup();
-  const onPopupClick = (e: React.MouseEvent) => e.stopPropagation();
-
+const Popup = ({ title, children, onClose }: PopupProps) => {
   return (
-    <div className={styles.popupWrapper} onClick={onBackgroundClick}>
-      <div className={styles.popup} onClick={onPopupClick}>
-        <div className={styles.text}>{text.message}</div>
-        <button className={styles.button} onClick={closePopup}>
-          {text.button}
-        </button>
+    <div className={styles.overlay}>
+      <div className={styles.popup}>
+        <div className={styles.popupHeader}>
+          <h3 className={styles.popupTitle}>{title}</h3>
+          <button type="button" onClick={onClose} className={styles.closeButton}>
+            <img src={CloseIcon} alt="닫기" />
+          </button>
+        </div>
+        <div className={styles.popupContent}>{children}</div>
       </div>
     </div>
   );

@@ -1,14 +1,32 @@
 @use '@/styles/_variables' as vars;
 
 .container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+}
+.title_wrap {
+  display: flex;
+  align-items: center;
   gap: 1rem;
-
-  padding: vars.$padding;
-
-  h1 {
-    font-size: 32px; /* 250722 변경되나 보게 추가만 해봄 */
-    color: #333;
-    margin-bottom: 55px;
-  }
+}
+.title {
+  margin: 5px;
+  // 텍스트
+  color: #111;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 32px */
+}
+.tag {
+  // 배경
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #fff1e6;
+  // 텍스트
+  color: #f76900;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }

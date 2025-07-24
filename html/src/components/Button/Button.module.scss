@@ -1,27 +1,73 @@
 @use '@/styles/_variables' as vars;
 
-.button {
-  width: 100px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: vars.$primary-color;
-  color: white;
-}
-
 .primary {
-  background-color: vars.$primary-color;
+  display: inline-flex;
+  padding: 12px 24px; // 바뀌는 요소
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  // 배경(바뀌는 요소)
+  background: #1755e5;
+
+  // 텍스트(바뀌는 요소)
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  // font-weight: 600; 피그마 코드 그대로 쓰면 육안으로 달라보임
+  line-height: 150%; /* 30px */
 }
 
-.disabled {
-  background-color: vars.$mid-color;
+.list {
+  border: 1.5px solid #1755e5;
+  background: #fff;
+  color: #1755e5;
 }
 
-.cancel {
-  background-color: white;
-  border: 1px solid vars.$mid-color;
-  color: vars.$mid-color;
+.enroll {
+  background-color: #1755e5;
 }
 
-.fullWidth {
-  width: 100%;
+.delete {
+  border: 1.5px solid #ccc;
+  background: #fff;
+  color: #757575;
 }
+
+.check {
+  background: #1692ff;
+  // 텍스트
+  color: #fff;
+  font-size: 18px;
+}
+
+.search {
+  padding: 17px 30px;
+  background: #24b2ff;
+  // 텍스트
+  color: #fff;
+  font-size: 18px;
+  line-height: 100%; /* 18px */
+}
+
+.modify {
+  background: #555ff9;
+}
+
+
+.popupDelete {
+  width: 170px;
+  
+}
+
+.popupModify {
+  width: 170px;
+}
+
+.popupRegister {
+  background-color: #555ff9;
+  width: 358px;
+}
+

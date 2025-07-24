@@ -1,42 +1,97 @@
-@use '@/styles/_variables' as vars;
-@use '@/styles/_mixins' as mixin;
-
-.popupWrapper {
-  @include mixin.flex-center();
+.overlay {
   position: fixed;
-  z-index: 2;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.178);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .popup {
-  max-width: 400px;
-  width: 50%;
-  max-height: 200px;
-  height: 20%;
-  background-color: vars.$white-color;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 650px;
+  max-width: 90%;
+}
+
+.popupHeader {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  position: relative;       
+  margin-bottom: 40px;
+}
+
+.popupTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.closeButton {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.inputWrap {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border-radius: 8px;
-
-  .text {
-    @include mixin.flex-center();
-
-    height: 100%;
-    text-align: center;
-  }
-
-  .button {
-    margin-top: auto;
-    background-color: vars.$primary-color;
-    color: vars.$white-color;
-    width: 100%;
-    padding: 10px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-  }
+  gap: 15px; 
+  margin-bottom: 40px;
 }
+
+.inputWrap p {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.inputWrap:last-of-type {
+  margin-bottom: 50px;
+}
+
+.inputWrap input {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.inputWrap input::placeholder {
+  color: #999;
+}
+
+.inputWrap input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.inputWrap .error {
+  border-color: red;
+}
+
+.warning {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.warning p {
+  color: red;
+  font-size: 14px;
+  font-weight: normal;
+}
+

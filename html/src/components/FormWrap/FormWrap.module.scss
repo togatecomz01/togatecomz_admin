@@ -1,0 +1,50 @@
+@use '@/styles/_variables' as vars;
+
+.formWrap {
+  display: flex;
+  align-items: flex-start;
+  padding: 40px 0 40px 8px;
+
+  .formLabel {
+    flex: 0 0 438px; /* 고정 너비 */
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+
+    h3 {
+      color: #333;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%; /* 20px */
+    }
+
+    .formSubtext {
+      color: #666;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%; /* 16px */
+    }
+  }
+
+  .formChildren {
+    flex: 1; /* 남은넓이 전체 사용 */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input,
+    textarea {
+      max-width: 530px;
+    }
+
+    textarea {
+      min-height: 413px; /* textarea 최소 높이 설정 */
+    }
+  }
+}
+
+.asterisk {
+  color: #1755e5;
+}
