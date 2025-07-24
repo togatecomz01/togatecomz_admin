@@ -3,34 +3,25 @@ import styles from './Button.module.scss';
 type ButtonProps = {
   name: string;
   onClick?: () => void;
-  fullWidth?: boolean;
-  size?: 'retrieve' | 'enroll' | 'check';
 };
 
-function Button({ name, onClick, fullWidth, size }: ButtonProps) {
-  const resolvedColor = () => {
-    if (name === '수정') return 'disabled';
-    if (name === '확인') return 'check';
-    if (name === '목록') return 'list';
-    if (name === '찾아보기') return 'filesearch';
-    if (name === '삭제') return 'delete';
-    if (name === '취소') return 'cancel';
-    if (name === '등록') return 'enrolll';
-    return 'primary';
-  };
+const btnStyleMap: Record<string, string> = {
+  목록: 'list',
+  등록: 'enroll',
+  삭제: 'delete',
+  찾아보기: 'check',
+  'ID 중복확인': 'check',
+  조회: 'search',
+};
 
-  const sizeClass = size ? styles[size] : '';
+const Button = ({ name, onClick }: ButtonProps) => {
+  const resolvedColor = btnStyleMap[name] ?? '';
 
   return (
-    <button
-      className={`${styles.button} ${styles[resolvedColor()]} ${
-        fullWidth && styles.fullWidth
-      } ${sizeClass}`}
-      onClick={onClick}
-    >
+    <button className={`${styles.primary} ${resolvedColor && styles[resolvedColor]}`} onClick={onClick}>
       {name}
     </button>
   );
-}
+};
 
 export default Button;

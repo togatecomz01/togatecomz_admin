@@ -15,12 +15,12 @@ const AdminList = () => {
         </Wrapper>
         <Wrapper subTitle="관리자">
           <List headers={ADMIN_HEADERS} listItems={ADMIN_LIST_ITEMS}></List>
+          <ButtonContainer>
+            <Link to="/admin/register">
+              <Button name="등록" />
+            </Link>
+          </ButtonContainer>
         </Wrapper>
-        <ButtonContainer>
-          <Link to="/admin/register">
-            <Button name="등록" />
-          </Link>
-        </ButtonContainer>
       </Container>
     </>
   );
