@@ -7,7 +7,7 @@ import Container from '../../components/layout/Container/Container';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
 import Input from '../../components/Input/Input';
 import DS_Store from '../../assets/images/DS_Store.png';
-import PaginationButton from '../../components/layout/List/PaginationButton/PaginationButton';
+import PaginationButton from '../../components/layout/PaginationButton/PaginationButton';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 
 const Divide = () => {
