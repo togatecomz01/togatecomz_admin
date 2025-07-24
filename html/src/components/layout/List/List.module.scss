@@ -1,37 +1,40 @@
 @use '@/styles/_variables' as vars;
 
 .list {
-  table-layout: auto;
-  border-collapse: separate;
-  border-spacing: 0;
+  table-layout: fixed;
   overflow: hidden;
   width: 100%;
-  border-bottom: vars.$border;
+
+  border-collapse: separate;
+  border-spacing: 0;
+  border-bottom: 1px solid #e4e5e7;
+  box-sizing: border-box;
 
   th,
   td {
-    border-top: vars.$border; /* 기본 border-top */
+    border-top: 1px solid #e4e5e7; /* 기본 border-top */
     padding: 20px 48px;
     text-align: center;
   }
 
   th {
     background-color: #fbfcfd;
-    border-top: 2px solid vars.$bright-color; /* th의 border-top을 더 두껍게 */
+    border-top: 2px solid #e4e5e7; /* th의 border-top을 더 두껍게 */
 
-    color: var(--Font-45, #454545);
+    color: #454545;
     text-align: center;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: 100%; /* 18px */
   }
+
   tr:hover td {
     background: #eef8ff;
   }
 
   td {
-    color: var(--Text, #333);
+    color: #333;
     text-align: center;
     font-size: 16px;
     font-style: normal;
@@ -41,17 +44,25 @@
 
   th + th,
   td + td {
-    border-left: vars.$border;
+    border-left: 1px solid #e4e5e7;
   }
+}
 
-  th:last-child,
-  td:last-child {
-    border-right: none;
-  }
-
-  tbody {
-    tr:hover {
-      background-color: vars.$bg-color;
-    }
-  }
+.xs {
+  width: 150px;
+}
+.sm {
+  width: 173px;
+}
+.md {
+  width: 225px;
+}
+.lg {
+  width: 249px;
+}
+.xl {
+  width: 292px;
+}
+.auto {
+  width: auto;
 }
