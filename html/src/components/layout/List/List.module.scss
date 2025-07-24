@@ -11,13 +11,32 @@
   th,
   td {
     border-top: vars.$border; /* 기본 border-top */
-    padding: 0.75rem;
+    padding: 20px 48px;
     text-align: center;
   }
 
   th {
-    background-color: #FBFCFD;
+    background-color: #fbfcfd;
     border-top: 2px solid vars.$bright-color; /* th의 border-top을 더 두껍게 */
+
+    color: var(--Font-45, #454545);
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 18px */
+  }
+  tr:hover td {
+    background: #eef8ff;
+  }
+
+  td {
+    color: var(--Text, #333);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
   }
 
   th + th,
@@ -35,12 +54,4 @@
       background-color: vars.$bg-color;
     }
   }
-}
-
-.paginationAndActionButton {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 20px;
-  gap: 10px;
 }

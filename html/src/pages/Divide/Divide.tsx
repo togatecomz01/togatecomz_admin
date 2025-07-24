@@ -1,5 +1,4 @@
 /* import React from 'react'; */
-import { useNavigate } from 'react-router-dom';
 import styles from './Divide.module.scss';
 import List from '../../components/layout/List/List';
 import SelectBox from '../../components/SelectBox/SelectBox';
@@ -8,10 +7,10 @@ import Container from '../../components/layout/Container/Container';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
 import Input from '../../components/Input/Input';
 import DS_Store from '../../assets/images/DS_Store.png';
+import PaginationButton from '../../components/layout/List/PaginationButton/PaginationButton';
+import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 
 const Divide = () => {
-  const navigate = useNavigate();
-
   const generalNoticeData = [
     {
       category: '',
@@ -122,26 +121,21 @@ const Divide = () => {
 
   return (
     <Container title="구분값 등록">
-      <div className={styles.searchFilterArea}> {/* 20250723 컨테이너 컴포넌트를 만들까 싶었는데 .. */}
+      <div className={styles.searchFilterArea}>
+        {/* 20250723 컨테이너 컴포넌트를 만들까 싶었는데 .. */}
         <div className={styles.selectWrapper}>
-          <SelectBox
-            title="구분값 선택"
-            placeholder="구분"
-            options={['구분', '구분값']}
-          />
+          <SelectBox title="구분값 선택" placeholder="구분" options={['구분', '구분값']} />
         </div>
         <Input type="search" placeholder="검색어를 입력하세요" />
-        <Button name="조회" size='retrieve'/>
+        <Button name="조회" />
       </div>
 
-      {generalNoticeData.length > 0 ? (
-        <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" size='enroll' onClick={() => navigate('/notice/enroll')} />} />
-      ) : (
-        <EmptyContent
-          imageSrc={DS_Store}
-          message="일반공지사항이 등록되지 않았습니다."
-        />
-      )}
+      {generalNoticeData.length > 0 ? <List headers={tableHeaders} listItems={generalNoticeData} /> : <EmptyContent imageSrc={DS_Store} message="일반공지사항이 등록되지 않았습니다." />}
+      {/* 페이지네이션 및 버튼 영역 */}
+      <ButtonContainer>
+        <PaginationButton />
+        <Button name="등록" />
+      </ButtonContainer>
     </Container>
   );
 };
