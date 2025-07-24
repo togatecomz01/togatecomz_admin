@@ -1,17 +1,24 @@
-import { usePopup } from '../../../contexts/PopupContext';
+import type { ReactNode } from 'react';
 import styles from './Popup.module.scss';
-import Button from '../../Button/Button';
+import CloseIcon from '../../../assets/images/Xbutton.svg';
 
-const Popup = () => {
-  const { isOpen, text, closePopup } = usePopup();
+interface PopupProps {
+  title: string;
+  children: ReactNode;
+  onClose: () => void;
+}
 
-  if (!isOpen) return null;
-
+const Popup = ({ title, children, onClose }: PopupProps) => {
   return (
     <div className={styles.overlay}>
       <div className={styles.popup}>
-        <p dangerouslySetInnerHTML={{ __html: text.message || '' }}></p>
-        <Button name={text.button || '확인'} onClick={closePopup} />
+        <div className={styles.popupHeader}>
+          <h3 className={styles.popupTitle}>{title}</h3>
+          <button type="button" onClick={onClose} className={styles.closeButton}>
+            <img src={CloseIcon} alt="닫기" />
+          </button>
+        </div>
+        <div className={styles.popupContent}>{children}</div>
       </div>
     </div>
   );
