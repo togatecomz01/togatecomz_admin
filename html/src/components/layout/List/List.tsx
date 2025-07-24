@@ -3,21 +3,12 @@ import { useState } from 'react';
 import EmptyContent from '../../EmptyContent/EmptyContent';
 import DS_Store from '../../../assets/images/DS_Store.png';
 
-function List({
-  headers,
-  listItems,
-  actionButton,
-}: {
-  headers: { text: string; value: string; className?: string; width?: string }[];
-  listItems: Record<string, string | React.ReactNode>[];
-  actionButton?: React.ReactNode;
-}) {
+function List({ headers, listItems }: { headers: { text: string; value: string; className?: string; width?: string }[]; listItems: Record<string, string | React.ReactNode>[] }) {
   const headerKey = headers.map(header => header.value);
 
   // 페이지네이션
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-  const totalPages = Math.ceil(listItems.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = listItems.slice(startIndex, startIndex + itemsPerPage);

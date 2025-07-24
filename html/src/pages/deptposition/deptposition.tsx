@@ -154,7 +154,7 @@ const DeptPosition = () => {
         </div>
       </div>
 
-      {deptPositionData.length > 0 && <List headers={tableHeaders} listItems={deptPositionData} actionButton={<Button name="등록" onClick={() => navigate('/deptposition/enroll')} />} />}
+      {deptPositionData.length > 0 && <List headers={tableHeaders} listItems={deptPositionData} />}
       <Wrapper subTitle="">
         <EmptyContent imageSrc={DS_Store} message="등록된 [부서]나 [직책]이 없습니다" />
       </Wrapper>

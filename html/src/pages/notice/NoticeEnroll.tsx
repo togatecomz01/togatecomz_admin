@@ -8,7 +8,7 @@ import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 
 import styles from './NoticeEnroll.module.scss';
-import formStyles from '../../components/Form/Form.module.scss';
+import formStyles from '../../components/FormWrap/FormWrap.module.scss';
 
 const NoticeEnroll = () => {
   return (

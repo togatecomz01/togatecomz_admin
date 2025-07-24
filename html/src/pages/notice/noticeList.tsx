@@ -181,11 +181,7 @@ const NoticeList = () => {
             </div>
           }
         >
-          {generalNoticeData.length > 0 ? (
-            <List headers={tableHeaders} listItems={generalNoticeData} actionButton={<Button name="등록" onClick={() => navigate('/notice/enroll')} />} />
-          ) : (
-            <EmptyContent imageSrc={DS_Store} message="일반공지사항이 등록되지 않았습니다." />
-          )}
+          {generalNoticeData.length > 0 ? <List headers={tableHeaders} listItems={generalNoticeData} /> : <EmptyContent imageSrc={DS_Store} message="일반공지사항이 등록되지 않았습니다." />}
         </Wrapper>
       </Container>
 
