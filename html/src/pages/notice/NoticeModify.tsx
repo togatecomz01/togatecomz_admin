@@ -1,6 +1,6 @@
 /* import React from 'react'; */
 import Container from '../../components/layout/Container/Container';
-import Wrapper from '../../components/layout/Wrapper/Wrapper';
+import Wrapper from '../../components/layout/SubHeader/SubHeader';
 import FormWrap from '../../components/FormWrap/FormWrap';
 import Input from '../../components/Input/Input';
 import RadioInput from '../../components/RadioInput/RadioInput';

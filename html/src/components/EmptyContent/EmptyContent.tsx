@@ -1,17 +1,14 @@
 import styles from './EmptyContent.module.scss';
 
 type EmptyContentProps = {
-  imageSrc: string;
   message: string;
-  actionButton?: React.ReactNode;
 };
 
-const EmptyContent = ({ imageSrc, message, actionButton }: EmptyContentProps) => {
+const EmptyContent = ({ message }: EmptyContentProps) => {
   return (
     <div className={styles.emptyContentContainer}>
-      <img src={imageSrc} alt="내용 없음" />
+      <i className={styles.cautionIcon}></i>
       <p>{message}</p>
-      {actionButton && <div className={styles.actionButtonContainer}>{actionButton}</div>}
     </div>
   );
 };

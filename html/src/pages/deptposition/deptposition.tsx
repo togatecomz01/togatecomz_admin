@@ -1,18 +1,14 @@
 /* import React from 'react'; */
-import { useNavigate } from 'react-router-dom';
-import styles from './deptposition.module.scss';
 import List from '../../components/layout/List/List';
 import SelectBox from '../../components/SelectBox/SelectBox';
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 import Container from '../../components/layout/Container/Container';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
-import Wrapper from '../../components/layout/Wrapper/Wrapper';
-import DS_Store from '../../assets/images/DS_Store.png';
+import SubHeader from '../../components/layout/SubHeader/SubHeader';
+import PaginationButton from '../../components/layout/PaginationButton/PaginationButton';
 
 const DeptPosition = () => {
-  const navigate = useNavigate();
-
   const deptPositionData = [
     {
       no: 1,
@@ -137,30 +133,25 @@ const DeptPosition = () => {
   ];
 
   const tableHeaders = [
-    { text: '구분', value: 'category', width: '15%' },
-    { text: '부서명', value: 'department', width: '25%' },
-    { text: '등록자', value: 'modifier', width: '10%' },
-    { text: '등록일', value: 'createdAt' },
-    { text: '수정자', value: 'modifier', width: '15%' },
-    { text: '수정일', value: 'modifiedAt' },
+    { text: '구분', value: 'category', width: 'lsm' },
+    { text: '부서명', value: 'department', width: 'lxl' },
+    { text: '등록자', value: 'modifier', width: 'mxs' },
+    { text: '등록일', value: 'createdAt', width: 'lg' },
+    { text: '수정자', value: 'modifier', width: 'msm' },
+    { text: '수정일', value: 'modifiedAt', width: 'lg' },
   ];
+  // 데이터 유무 여부
+  const isDataExist = true;
 
   return (
     <Container title="부서/직책 관리">
-      <div className={styles.topArea}>
-        <div className={styles.searchFilterArea}>
-          <div className={styles.selectWrapper}>
-            <SelectBox title="카테고리" placeholder="부서" options={['부서', '직위']} size='sm' />
-          </div>
-        </div>
-      </div>
-
-      {deptPositionData.length > 0 && <List headers={tableHeaders} listItems={deptPositionData} />}
-      <Wrapper subTitle="">
-        <EmptyContent imageSrc={DS_Store} message="등록된 [부서]나 [직책]이 없습니다" />
-      </Wrapper>
+      <SubHeader>
+        <SelectBox title="카테고리" placeholder="부서" options={['부서', '직책']} size="sm" />
+      </SubHeader>
+      {isDataExist ? <List headers={tableHeaders} listItems={deptPositionData} /> : <EmptyContent message="등록된 [부서]나 [직책]이 없습니다" />}
       <ButtonContainer>
-        <Button name="등록" onClick={() => navigate('/deptposition/resister')} />
+        {isDataExist && <PaginationButton />}
+        <Button name="등록" />
       </ButtonContainer>
     </Container>
   );

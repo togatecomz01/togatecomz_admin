@@ -19,13 +19,6 @@
   font-size: 1rem;
 }
 
-.sm {
-  width: 132px;
-}
-.lg {
-  width: 530px;
-}
-
 .selectBox {
   @include input;
   color: #999;
@@ -37,7 +30,6 @@
   display: flex;
   align-items: center; /* 텍스트 수직 중앙 정렬 */
 }
-
 .arrow {
   position: absolute;
   top: 50%;
@@ -53,6 +45,18 @@
   &.open {
     transform: translateY(-50%) rotate(0deg);
   }
+}
+
+.sm {
+  height: 52px;
+  min-width: 132px;
+}
+.lg {
+  width: 530px;
+}
+
+.sm_arrow {
+  right: 14px;
 }
 
 .optionList {
@@ -85,6 +89,16 @@
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 27px */
+}
+
+.sm_padding {
+  padding: 16px 14px;
+  color: #333;
+}
+
+.sm_text {
+  font-size: 16px;
+  line-height: 100%;
 }
 
 .hidden {
