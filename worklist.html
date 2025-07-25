@@ -164,7 +164,7 @@
                             <col width="8%" />
                             <col width="14%" />
                             <col width="14%" />
-                            <col width="4%" />
+                            <col width="14%" />
                             <col width="15%" />
                             <col width="4%" />
                             <col width="4%" />
@@ -177,8 +177,9 @@
                                 <th scope="col">대분류</th>
                                 <th scope="col">소분류</th>
                                 <th scope="col">depth3</th>
-                                <th scope="col">depth4</th>
+                                <!-- <th scope="col">depth4</th> -->
                                 <th scope="col" class="fileName">화면ID 혹은 파일명</th>
+                                <th scope="col">PopUp 파일</th>
                                 <th scope="col">형태</th>
                                 <th scope="col">담당</th>
                                 <th scope="col">상태</th>
@@ -191,12 +192,12 @@
                                 <td rowspan="3">로그인 페이지</td>
                                 <td>login</td>
                                 <td></td>
-                                <td></td>
                                 <td class="fileName">
                                     <a href="#" target="_blank"
                                         >Pages/Login/Login.tsx</a
                                     >
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -213,12 +214,12 @@
                                 <td rowspan="3">공통 레이아웃</td>
                                 <td>header.tsx</td>
                                 <td></td>
-                                <td></td>
                                 <td class="fileName">
                                     <a href="../IM/login.html" target="_blank"
                                         >components/layout/Header/Header.tsx</a
                                     >
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -228,10 +229,10 @@
                             <tr class="comp">
                                 <td rowspan="3">lnb.tsx</td>
                                 <td></td>
-                                <td></td>
                                 <td class="fileName">
                                     <a href="#" target="_blank">components/layout/LNB/LNB.tsx</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -241,13 +242,13 @@
                         </tbody>
                         <tbody>
                             <tr class="">
-                                <td rowspan="2">공통 팝업</td>
+                                <td rowspan="2">공통 알럿&팝업</td>
                                 <td>공통 알럿</td>
                                 <td></td>
-                                <td></td>
                                 <td class="fileName">
-                                    <a href="#" target="_blank"></a>
+                                    <a href="#" target="_blank">components/Alert/Alert.tsx</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -255,12 +256,12 @@
                                 <td></td>
                             </tr>
                             <tr class="">
-                                <td>공통팝업</td>
-                                <td></td>
+                                <td>공통 팝업</td>
                                 <td></td>
                                 <td class="fileName">
-                                    <a href="#" target="_blank"></a>
+                                    <a href="#" target="_blank">components/layout/Popup.tsx</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -273,10 +274,10 @@
                                 <td rowspan="3">계정관리</td>
                                 <td>관리자 목록</td>
                                 <td></td>
-                                <td></td>
                                 <td class="fileName">
                                     <a href="#" target="_blank">pages/Admin/AdminList.tsx</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -286,10 +287,10 @@
                             <tr class="ing">
                                 <td>관리자 등록</td>
                                 <td></td>
-                                <td></td>
                                 <td class="fileName">
                                     <a href="#" target="_blank">pages/Admin/AdminRegister.tsx</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -299,10 +300,10 @@
                             <tr class="">
                                 <td>관리자 수정/삭제</td>
                                 <td></td>
-                                <td></td>
                                 <td class="fileName">
-                                    <a href="#" target="_blank"></a>
+                                    <a href="#" target="_blank">== AdminRegister</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -315,9 +316,11 @@
                                 <td rowspan="2">구분값등록</td>
                                 <td>구분값등록 목록</td>
                                 <td>구분값 등록팝업(수정/등록)</td>
-                                <td></td>
                                 <td class="fileName">
                                     <a href="#" target="_blank">pages/Divide/Divide.tsx</a>
+                                </td>
+                                <td class="fileName">
+                                    <a href="#" target="_blank">components/layout/Popup/DividePopup.tsx</a>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -328,10 +331,10 @@
                             <tr class="ing">
                                 <td>구분값등록 목록(조회결과x)</td>
                                 <td></td>
-                                <td></td>
                                 <td class="fileName">
-                                    <a href="#" target="_blank"></a>
+                                    <a href="#" target="_blank">== Divide</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -344,9 +347,11 @@
                                 <td rowspan="3">부서 직책관리</td>
                                 <td>부서 직책관리 목록(부서)</td>
                                 <td>부서 직책관리 목록 (팝업)</td>
-                                <td></td>
                                 <td class="fileName">
                                     <a href="#" target="_blank">pages/deptposition/deptposition.tsx</a>
+                                </td>
+                                <td class="fileName">
+                                    <a href="#" target="_blank">components/layout/Popup/DeptPositionPopup.tsx</a>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -357,10 +362,10 @@
                             <tr class="ing">
                                 <td>부서 직책관리 목록(직책)</td>
                                 <td>부서 직책관리 목록 (팝업)</td>
-                                <td></td>
                                 <td class="fileName">
-                                    <a href="#" target="_blank"></a>
+                                    <a href="#" target="_blank">== deptposition</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -370,10 +375,10 @@
                             <tr class="ing">
                                 <td>부서 직책관리 목록(조회결과없음)</td>
                                 <td>부서 직책관리 목록 (팝업)</td>
-                                <td></td>
                                 <td class="fileName">
-                                    <a href="#" target="_blank"></a>
+                                    <a href="#" target="_blank">== deptposition</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -386,10 +391,10 @@
                                 <td rowspan="4">공지사항</td>
                                 <td>공지사항목록</td>
                                 <td></td>
-                                <td></td>
                                 <td class="fileName">
                                     <a href="#" target="_blank">pages/notice/NoticeList.tsx</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -399,10 +404,10 @@
                             <tr class="comp">
                                 <td>공지사항목록(조회결과 없음)</td>
                                 <td></td>
-                                <td></td>
                                 <td class="fileName">
-                                    <a href="#" target="_blank">pages/notice/NoticeList.tsx</a>
+                                    <a href="#" target="_blank">== NoticeList</a>
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="state"></td>
@@ -411,10 +416,12 @@
                             </tr>
                             <tr class="ing">
                                 <td>공지사항 등록</td>
-                                <td>공지사항 등록 확인 팝업</td>
-                                <td></td>
+                                <td>공지사항 등록 확인 알럿</td>
                                 <td class="fileName">
-                                    <a href="#" target="_blank">pages/notice/NoticeEnroll.tsx</a>
+                                    <a href="#" target="_blank">pages/notice/NoticeRegister.tsx</a>
+                                </td>
+                                <td class="fileName"> 
+                                    <a href="#" target="_blank">== Alert</a>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -422,12 +429,14 @@
                                 <td></td>
                                 <td>3depth 작업중 25/07/23</td>
                             </tr>
-                            <tr class="ing">
+                            <tr class="comp">
                                 <td>공지사항 수정</td>
-                                <td>공지사항 수정 확인 팝업</td>
-                                <td></td>
+                                <td>공지사항 수정 확인 알럿</td>
                                 <td class="fileName">
                                     <a href="#" target="_blank">pages/notice/NoticeModify.tsx</a>
+                                </td>
+                                <td class="fileName">
+                                    <a href="#" target="_blank">== Alert</a>
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -462,7 +471,7 @@
                 /*---------------------------------------------
 				tableStateManager 모듈 정의
 			---------------------------------------------*/
-                var tableStateManager = (function () {
+                var tableStateManager = (function () { 
                     // 날짜 관련 배열 (필요시 활용)
                     var fromDate = [],
                         toDate = [],
