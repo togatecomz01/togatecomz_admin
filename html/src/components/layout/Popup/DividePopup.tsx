@@ -8,18 +8,19 @@ import ButtonContainer from '../../Button/ButtonContainer/ButtonContainer';
 import popupStyles from '../Popup/Popup.module.scss';
 import warningIcon from '../../../assets/images/warning-icon.svg';
 
-/*
-interface ModifyPopupProps {
-    isOpen: boolean;
-    onClose: () => void;
+
+interface DividePopupProps {
+    mode: 'register' | 'modify';
 }
-*/
 
-const ModifyPopup = (/*{ isOpen, onClose }: ModifyPopupProps*/) => {
-    /* if (!isOpen) return null; */
 
+const DividePopup = ({ mode }: DividePopupProps) => {
     const navigate = useNavigate();
     const [showError, setShowError] = useState(false);
+    const isRegisterMode = mode === 'register';
+    const title = isRegisterMode ? '등록' : '수정';
+    const submitButtonName = isRegisterMode ? '등록' : '수정';
+
 
     const handleClose = () => {
         navigate(-1);
@@ -30,7 +31,7 @@ const ModifyPopup = (/*{ isOpen, onClose }: ModifyPopupProps*/) => {
     };
 
     return (
-        <Popup title="수정" onClose={handleClose}>
+        <Popup title={title} onClose={handleClose}>
             <button onClick={toggleError} style={{ marginBottom: '20px', background: '#eee', padding: '5px' }}>
                 에러 상태 토글 (확인용)
             </button>
@@ -40,7 +41,7 @@ const ModifyPopup = (/*{ isOpen, onClose }: ModifyPopupProps*/) => {
                 <Input type="text" placeholder="구분 입력" className={showError ? popupStyles.error : ''}/>
                 
                 {showError && (
-                    <div className={popupStyles.warning}> {/* 점점 div가 많아지는데 컴포넌트화를 할지? */}
+                    <div className={popupStyles.warning}>
                         <img src={warningIcon} alt="warning" />
                         <p>구분을 입력해주세요</p>
                     </div>
@@ -53,11 +54,11 @@ const ModifyPopup = (/*{ isOpen, onClose }: ModifyPopupProps*/) => {
             </div>
 
             <ButtonContainer variant="popupDoubleButton">
-                <Button name="삭제" variant="popupDelete" />
-                <Button name="수정" variant="popupModify" />
+                {!isRegisterMode && <Button name="삭제" variant="popupDelete" />}
+                <Button name={submitButtonName} variant="popupModify" />
             </ButtonContainer>
         </Popup>
     );
 };
 
-export default ModifyPopup;
+export default DividePopup;

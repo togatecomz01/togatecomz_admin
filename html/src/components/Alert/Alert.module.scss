@@ -1,0 +1,52 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.alertBox {
+    display: flex;
+    width: 398px;
+    /* min-height: 192px; */
+    padding: 40px 20px 30px;
+    box-sizing: border-box;
+    flex-direction: column;
+    border-radius: 12px;
+    background: #FFF;
+
+    .contentWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 40px;               
+        align-self: stretch;
+
+        .message {
+            font-size: 18px;
+            font-weight: 400;
+            color: #333;
+            line-height: 150%;
+            white-space: pre-wrap;
+            text-align: center;
+        }
+    }
+}
+
+.choiceLayout {
+    height: 219px;
+    justify-content: center;
+    align-items: center;
+
+    .contentWrapper {
+        width: 358px;
+        height: 160px; /* choiceLayout height가 달라서 육안으로 너무 다르게 보여서 추가  */
+    }
+}

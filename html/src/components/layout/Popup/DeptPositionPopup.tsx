@@ -1,5 +1,3 @@
-// src/components/layout/Popup/DeptPositionPopup.tsx (새 파일)
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Popup from './Popup';
@@ -10,10 +8,18 @@ import ButtonContainer from '../../Button/ButtonContainer/ButtonContainer';
 import popupStyles from '../Popup/Popup.module.scss';
 import warningIcon from '../../../assets/images/warning-icon.svg';
 
-const DeptPositionPopup = () => {
+interface DeptPositionPopupProps {
+    mode: 'register' | 'modify';
+}
+
+const DeptPositionPopup = ({ mode }: DeptPositionPopupProps) => {
     const navigate = useNavigate();
-    // 이 에러 상태는 이제 두 번째 Input 필드에 적용해 보겠습니다.
     const [showError, setShowError] = useState(false);
+
+    const isRegisterMode = mode === 'register';
+
+    const title = isRegisterMode ? '등록' : '수정';
+    const submitButtonName = isRegisterMode ? '등록' : '수정';
 
     const handleClose = () => {
         navigate(-1);
@@ -24,7 +30,7 @@ const DeptPositionPopup = () => {
     };
 
     return (
-        <Popup title="부서/직책 수정" onClose={handleClose}>
+        <Popup title={title} onClose={handleClose}>
             <button onClick={toggleError} style={{ marginBottom: '20px', background: '#eee', padding: '5px' }}>
                 에러 상태 토글 (확인용)
             </button>
@@ -34,7 +40,6 @@ const DeptPositionPopup = () => {
                 <RadioInput 
                     items={['부서', '직책']} 
                     name="dept_position_type"
-                    /*  */
                 />
             </div>
             
@@ -47,7 +52,7 @@ const DeptPositionPopup = () => {
                 />
                 
                 {showError && (
-                    <div className={popupStyles.warning}> {/* 점점 div가 많아지는데 컴포넌트화를 할지? */}
+                    <div className={popupStyles.warning}>
                         <img src={warningIcon} alt="warning" />
                         <p>구분을 입력해주세요</p>
                     </div>
@@ -55,8 +60,8 @@ const DeptPositionPopup = () => {
             </div>
 
             <ButtonContainer variant="popupDoubleButton">
-                <Button name="삭제" variant="popupDelete" />
-                <Button name="수정" variant="popupModify" />
+                {!isRegisterMode && <Button name="삭제" variant="popupDelete" />}
+                <Button name={submitButtonName} variant="popupModify" />
             </ButtonContainer>
         </Popup>
     );
