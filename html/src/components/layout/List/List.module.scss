@@ -4,16 +4,15 @@
   table-layout: fixed;
   overflow: hidden;
   width: 100%;
-
   border-collapse: separate;
   border-spacing: 0;
   border-bottom: 1px solid #e4e5e7;
   box-sizing: border-box;
-
+  
   th,
   td {
     border-top: 1px solid #e4e5e7; /* 기본 border-top */
-    padding: 20px 48px;
+    padding: 20px;
     text-align: center;
   }
 
@@ -40,6 +39,9 @@
     font-style: normal;
     font-weight: 500;
     line-height: 100%; /* 16px */
+    white-space: nowrap;    
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   th + th,
