@@ -5,9 +5,10 @@ type SelectBoxProps = {
   title: string;
   placeholder: string;
   options: string[];
+  size?: string;
 };
 
-const SelectBox = ({ title, placeholder, options }: SelectBoxProps) => {
+const SelectBox = ({ title, placeholder, options, size }: SelectBoxProps) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
 
@@ -19,7 +20,7 @@ const SelectBox = ({ title, placeholder, options }: SelectBoxProps) => {
   };
 
   return (
-    <div className={styles.selectWrapper}>
+    <div className={`${styles.selectWrapper} ${size && styles[size]}`}>
       <label className={styles.hidden}>{title}</label>
       <div className={styles.selectBox} onClick={toggleOpen} tabIndex={0} role="button" aria-haspopup="listbox" aria-expanded={open}>
         {selected || placeholder}

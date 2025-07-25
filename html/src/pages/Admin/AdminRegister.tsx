@@ -38,8 +38,8 @@ const AdminRegister = () => {
 
             {/* 부서/직책 선택 */}
             <FormWrap label="부서/직책 선택" subText="비밀번호는 영문, 숫자 포함 8자리 이상 입력해야 합니다." isAsterisk={true}>
-              <SelectBox title={'부서/직책 선택'} placeholder={'부서를 선택해 주세요'} options={['부서1', '부서2', '부서3']} />
-              <SelectBox title={'부서/직책 선택'} placeholder={'직책을 선택해 주세요'} options={['직책1', '직책2', '직책3']} />
+              <SelectBox title={'부서/직책 선택'} placeholder={'부서를 선택해 주세요'} options={['부서1', '부서2', '부서3']} size="lg" />
+              <SelectBox title={'부서/직책 선택'} placeholder={'직책을 선택해 주세요'} options={['직책1', '직책2', '직책3']} size="lg" />
             </FormWrap>
 
             {/* 주소입력 */}
