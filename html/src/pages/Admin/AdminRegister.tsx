@@ -1,5 +1,6 @@
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
+import CheckboxInput from '../../components/CheckboxInput/CheckboxInput';
 import FormTable from '../../components/FormTable/FormTable';
 import FormWrap from '../../components/FormWrap/FormWrap';
 import Input from '../../components/Input/Input';
@@ -81,44 +82,16 @@ const AdminRegister = () => {
             <FormWrap label="구분">
               <RadioInput items={['일반관리자', '보조관리자']} name="option1" />
             </FormWrap>
-            {/* 구분값설정 */}
-            <FormWrap label="구분값설정">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 공지사항 */}
-            <FormWrap label="공지사항">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 답변형게시판 */}
-            <FormWrap label="답변형게시판">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 이력관리 */}
-            <FormWrap label="이력관리">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 이벤트 */}
-            <FormWrap label="이벤트">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 채용공고 */}
-            <FormWrap label="채용공고">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 자료실 */}
-            <FormWrap label="자료실">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* QnA */}
-            <FormWrap label="QnA">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
+            {['구분값설정', '공지사항', '답변형게시판', '이력관리', '이벤트', '채용공고', '자료실', 'QnA'].map(i => (
+              <FormWrap label={i}>
+                <CheckboxInput items={['등록', '수정', '삭제']} name={i} />
+              </FormWrap>
+            ))}
           </FormTable>
         </Wrapper>
         <ButtonContainer>
           <Button name="목록" />
-          <Button name="저장" />
-          <Button name="삭제" />
+          <Button name="등록" />
         </ButtonContainer>
       </Container>
     </>

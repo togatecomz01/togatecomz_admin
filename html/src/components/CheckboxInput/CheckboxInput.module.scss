@@ -3,7 +3,7 @@
   gap: 58px;
 }
 
-.radio {
+.checkbox {
   display: flex;
   gap: 6px;
   align-items: center;
@@ -17,20 +17,21 @@
 
   box-sizing: border-box;
 
-  input[type='radio'] {
+  input[type='checkbox'] {
     appearance: none;
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    border: 7px solid #ddd;
+    background-color: #ddd;
+    background: #ddd url('@/assets/images/ico-check.svg') no-repeat center/16px 16px;
   }
-  input[type='radio']:checked {
-    border: 7px solid #1692ff;
+  input[type='checkbox']:checked {
+    background: #1692ff url('@/assets/images/ico-check.svg') no-repeat center/16px 16px;
   }
   label {
     color: #757575;
   }
-  input[type='radio']:checked + label {
+  input[type='checkbox']:checked + label {
     color: #222;
   }
 }
