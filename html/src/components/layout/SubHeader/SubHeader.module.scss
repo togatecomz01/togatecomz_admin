@@ -1,11 +1,12 @@
 @use '@/styles/_variables' as vars;
 
-.wrapper {
+.subHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 40px 0 24px 0;
   min-height: 52px;
+
   h2 {
     margin-left: 5px;
     // 텍스트

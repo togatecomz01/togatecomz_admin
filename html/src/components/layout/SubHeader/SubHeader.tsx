@@ -1,13 +1,13 @@
 import styles from './SubHeader.module.scss';
 
-type WrapperProps = {
+type SubHeaderProps = {
   subTitle?: string;
   children?: React.ReactNode;
 };
 
-const SubHeader = ({ subTitle, children }: WrapperProps) => {
+const SubHeader = ({ subTitle, children }: SubHeaderProps) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.subHeader}>
       <h2>{subTitle}</h2>
       <div className={styles.rightActions}>{children}</div>
     </div>
