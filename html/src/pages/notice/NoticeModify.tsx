@@ -12,8 +12,8 @@ import formStyles from '../../components/FormWrap/FormWrap.module.scss';
 
 const NoticeModify = () => {
   return (
-    <Container title="공지사항" tag="상세">
-      <Wrapper subTitle="등록">
+    <Container title="공지사항" tag='상세'>
+      <Wrapper subTitle="수정">
         <FormWrap label="구분" className={styles.BorderTop}>
           <RadioInput items={['일반 공지', '특별 공지']} name="visibility" />
         </FormWrap>
