@@ -118,7 +118,7 @@ const Divide = () => {
     { text: '수정일', value: 'modifiedAt', width: 'lg' },
   ];
   // 데이터 유무 여부
-  const isDataExist = false;
+  const isDataExist = true;
 
   return (
     <Container title="구분값등록">
