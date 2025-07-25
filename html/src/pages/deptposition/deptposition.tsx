@@ -8,7 +8,6 @@ import ButtonContainer from '../../components/Button/ButtonContainer/ButtonConta
 import Container from '../../components/layout/Container/Container';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
 import Wrapper from '../../components/layout/Wrapper/Wrapper';
-import DS_Store from '../../assets/images/DS_Store.png';
 
 const DeptPosition = () => {
   const navigate = useNavigate();
@@ -157,7 +156,7 @@ const DeptPosition = () => {
 
       {deptPositionData.length > 0 && <List headers={tableHeaders} listItems={deptPositionData} />}
       <Wrapper subTitle="">
-        <EmptyContent imageSrc={DS_Store} message="등록된 [부서]나 [직책]이 없습니다" />
+        <EmptyContent message="등록된 [부서]나 [직책]이 없습니다" />
       </Wrapper>
       <ButtonContainer>
         <Button name="등록" onClick={() => navigate('/deptposition/resister')} />
