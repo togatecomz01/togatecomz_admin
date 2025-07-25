@@ -1,33 +1,36 @@
 import styles from './PaginationButton.module.scss';
-import paginationRight1 from '@/assets/images/paginationRight1.png';
-import paginationRight2 from '@/assets/images/paginationRight2.png';
 
 const PaginationButton = () => {
+  // prev, first 버튼 존재 유무
+  const isPrevFirst = true;
+  const isNextLast = true;
+
   return (
     <div className={styles.pagination}>
-      <>
-        <button>
-          <img src={paginationRight2} alt="first page" /> {/* 일단 button에 img 두면 별로라고 했는데 숫자와 png를 스타일을 다르게 가져가야해서 편의상 이렇게.. */}
-        </button>
-        <button>
-          <img src={paginationRight1} alt="previous page" />
-        </button>
-      </>
+      {isPrevFirst && (
+        <div className={styles.navBtnContainer}>
+          <button className={styles.firstBtn} />
+          <button className={styles.prevBtn} />
+        </div>
+      )}
 
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => (
-        <button key={i} className={styles.activePage}>
-          {i + 1}
-        </button>
-      ))}
+      {/* 현재 페이지(active style) */}
+      <div className={styles.numBtnContainer}>
+        <button className={`${styles.numberBtn} ${styles.activePage}`}>1</button>
+        {/* 다른 페이지들(default style) */}
+        {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => (
+          <button key={i} className={styles.numberBtn}>
+            {i + 2}
+          </button>
+        ))}
+      </div>
 
-      <>
-        <button>
-          <img src={paginationRight1} alt="next page" />
-        </button>
-        <button>
-          <img src={paginationRight2} alt="last page" />
-        </button>
-      </>
+      {isNextLast && (
+        <div className={styles.navBtnContainer}>
+          <button className={styles.nextBtn} />
+          <button className={styles.lastBtn} />
+        </div>
+      )}
     </div>
   );
 };

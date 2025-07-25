@@ -1,5 +1,6 @@
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
+import CheckboxInput from '../../components/CheckboxInput/CheckboxInput';
 import FormTable from '../../components/FormTable/FormTable';
 import FormWrap from '../../components/FormWrap/FormWrap';
 import Input from '../../components/Input/Input';
@@ -37,8 +38,8 @@ const AdminRegister = () => {
 
             {/* 부서/직책 선택 */}
             <FormWrap label="부서/직책 선택" subText="비밀번호는 영문, 숫자 포함 8자리 이상 입력해야 합니다." isAsterisk={true}>
-              <SelectBox title={'부서/직책 선택'} placeholder={'부서를 선택해 주세요'} options={['부서1', '부서2', '부서3']} />
-              <SelectBox title={'부서/직책 선택'} placeholder={'직책을 선택해 주세요'} options={['직책1', '직책2', '직책3']} />
+              <SelectBox title={'부서/직책 선택'} placeholder={'부서를 선택해 주세요'} options={['부서1', '부서2', '부서3']} size="lg" />
+              <SelectBox title={'부서/직책 선택'} placeholder={'직책을 선택해 주세요'} options={['직책1', '직책2', '직책3']} size="lg" />
             </FormWrap>
 
             {/* 주소입력 */}
@@ -81,44 +82,16 @@ const AdminRegister = () => {
             <FormWrap label="구분">
               <RadioInput items={['일반관리자', '보조관리자']} name="option1" />
             </FormWrap>
-            {/* 구분값설정 */}
-            <FormWrap label="구분값설정">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 공지사항 */}
-            <FormWrap label="공지사항">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 답변형게시판 */}
-            <FormWrap label="답변형게시판">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 이력관리 */}
-            <FormWrap label="이력관리">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 이벤트 */}
-            <FormWrap label="이벤트">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 채용공고 */}
-            <FormWrap label="채용공고">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* 자료실 */}
-            <FormWrap label="자료실">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
-            {/* QnA */}
-            <FormWrap label="QnA">
-              <Input type="checkbox" items={['등록', '수정', '삭제']} />
-            </FormWrap>
+            {['구분값설정', '공지사항', '답변형게시판', '이력관리', '이벤트', '채용공고', '자료실', 'QnA'].map(i => (
+              <FormWrap label={i}>
+                <CheckboxInput items={['등록', '수정', '삭제']} name={i} />
+              </FormWrap>
+            ))}
           </FormTable>
         </Wrapper>
         <ButtonContainer>
           <Button name="목록" />
-          <Button name="저장" />
-          <Button name="삭제" />
+          <Button name="등록" />
         </ButtonContainer>
       </Container>
     </>

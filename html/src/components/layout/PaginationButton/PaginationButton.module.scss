@@ -2,46 +2,72 @@
 
 .pagination {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  gap: 0.5rem;
-  margin-right: 40px;
+  margin-right: 22px;
+  gap: 12px;
 
-  button {
+  .numBtnContainer {
+    display: flex;
+    gap: 4px;
+  }
+  .numberBtn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    font-size: large;
-    border-radius: 5px;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 8px;
+
+    // 텍스트
     color: #666;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
 
     // 숫자 버튼 호버 스타일
     &:not(:has(img)):hover {
-      background: #ddd;
+      background: #eef8ff;
     }
 
     &.activePage {
-      color: vars.$primary-color;
-      background: #eee; /* 회색 배경 */
-      font-weight: bold;
-      border: none;
+      color: #1755e5;
+      background: #f8f8f8;
     }
   }
 
-  .firstPageIcon,
-  .prevPageIcon,
-  .nextPageIcon,
-  .lastPageIcon {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  .navBtnContainer {
+    display: flex;
+    gap: 12px;
   }
 
-  
+  @mixin navigationBtn {
+    width: 46px;
+    height: 46px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  .firstBtn {
+    @include navigationBtn();
+    background: url('@/assets/images/ico-last.svg') center no-repeat;
+    transform: rotate(180deg); // 회전
+  }
+  .prevBtn {
+    @include navigationBtn();
+    background: url('@/assets/images/ico-spread.svg') center no-repeat;
+    transform: rotate(-90deg); // 회전
+  }
+  .nextBtn {
+    @include navigationBtn();
+    background: url('@/assets/images/ico-spread.svg') center no-repeat;
+    transform: rotate(90deg); // 회전
+  }
+  .lastBtn {
+    @include navigationBtn();
+    background: url('@/assets/images/ico-last.svg') center no-repeat;
+  }
 }

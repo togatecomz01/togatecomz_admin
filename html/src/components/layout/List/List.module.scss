@@ -48,20 +48,22 @@
   }
 }
 
-.xs {
-  width: 150px;
-}
-.sm {
-  width: 173px;
-}
-.md {
-  width: 225px;
-}
-.lg {
-  width: 249px;
-}
-.xl {
-  width: 292px;
+$sizes: (
+  xs: 150px,
+  mxs: 162px,
+  sm: 173px,
+  msm: 197px,
+  lsm: 211px,
+  md: 225px,
+  lg: 249px,
+  xl: 292px,
+  lxl: 384px,
+);
+
+@each $name, $width in $sizes {
+  .#{$name} {
+    width: $width;
+  }
 }
 .auto {
   width: auto;

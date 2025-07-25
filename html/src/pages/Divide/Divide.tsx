@@ -111,31 +111,42 @@ const Divide = () => {
   ];
 
   const tableHeaders = [
-    { text: '구분', value: 'category', width: '15%' },
-    { text: '구분값', value: 'value', width: '25%' },
-    { text: '등록자', value: 'author', width: '15%' },
-    { text: '등록일', value: 'createdAt', width: '15%' },
-    { text: '수정자', value: 'modifier', width: '15%' },
-    { text: '수정일', value: 'modifiedAt', width: '15%' },
+    { text: '구분', value: 'category', width: 'lsm' },
+    { text: '구분값', value: 'value', width: 'lxl' },
+    { text: '등록자', value: 'author', width: 'mxs' },
+    { text: '등록일', value: 'createdAt', width: 'lg' },
+    { text: '수정자', value: 'modifier', width: 'msm' },
+    { text: '수정일', value: 'modifiedAt', width: 'lg' },
   ];
+  // false로 바꾸면 '조회 결과가 없습니다' 컴포넌트 노출
+  const isDataExist = true;
 
   return (
-    <Container title="구분값 등록">
+    <Container title="구분값등록">
       <div className={styles.searchFilterArea}>
-        {/* 20250723 컨테이너 컴포넌트를 만들까 싶었는데 .. */}
         <div className={styles.selectWrapper}>
-          <SelectBox title="구분값 선택" placeholder="구분" options={['구분', '구분값']} />
+          <SelectBox title="구분값 선택" placeholder="구분" options={['구분', '구분값']} size="sm" />
         </div>
         <Input type="search" placeholder="검색어를 입력하세요" />
         <Button name="조회" />
       </div>
-
-      {generalNoticeData.length > 0 ? <List headers={tableHeaders} listItems={generalNoticeData} /> : <EmptyContent imageSrc={DS_Store} message="일반공지사항이 등록되지 않았습니다." />}
+      {isDataExist ? (
+        <>
+          <List headers={tableHeaders} listItems={generalNoticeData} />{' '}
+          <ButtonContainer>
+            <PaginationButton />
+            <Button name="등록" />
+          </ButtonContainer>
+        </>
+      ) : (
+        <>
+          <EmptyContent imageSrc={DS_Store} message="조회 결과가 없습니다." />
+          <ButtonContainer>
+            <Button name="등록" />
+          </ButtonContainer>
+        </>
+      )}
       {/* 페이지네이션 및 버튼 영역 */}
-      <ButtonContainer>
-        <PaginationButton />
-        <Button name="등록" />
-      </ButtonContainer>
     </Container>
   );
 };

@@ -1,7 +1,7 @@
 import styles from './Wrapper.module.scss';
 
 type WrapperProps = {
-  subTitle: string;
+  subTitle?: string;
   children: React.ReactNode;
   rightContent?: React.ReactNode;
 };
