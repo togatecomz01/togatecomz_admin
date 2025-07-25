@@ -4,6 +4,7 @@ import styles from './deptposition.module.scss';
 import List from '../../components/layout/List/List';
 import SelectBox from '../../components/SelectBox/SelectBox';
 import Button from '../../components/Button/Button';
+import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 import Container from '../../components/layout/Container/Container';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
 import Wrapper from '../../components/layout/Wrapper/Wrapper';
@@ -158,9 +159,9 @@ const DeptPosition = () => {
       <Wrapper subTitle="">
         <EmptyContent imageSrc={DS_Store} message="등록된 [부서]나 [직책]이 없습니다" />
       </Wrapper>
-      <div className={styles.bottomRightButtonContainer}>
-        <Button name="등록" onClick={() => navigate('/deptposition/enroll')} />
-      </div>
+      <ButtonContainer>
+        <Button name="등록" onClick={() => navigate('/deptposition/resister')} />
+      </ButtonContainer>
     </Container>
   );
 };

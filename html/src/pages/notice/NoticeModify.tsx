@@ -7,13 +7,12 @@ import RadioInput from '../../components/RadioInput/RadioInput';
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 
-import styles from './NoticeEnroll.module.scss';
+import styles from './NoticeModify.module.scss';
 import formStyles from '../../components/FormWrap/FormWrap.module.scss';
 
-const NoticeEnroll = () => {
+const NoticeModify = () => {
   return (
-    <Container title="공지사항">
-      <div className={styles.detailBadge}>상세</div>
+    <Container title="공지사항" tag='상세'>
       <Wrapper subTitle="등록">
         <FormWrap label="구분" className={styles.BorderTop}>
           <RadioInput items={['일반 공지', '특별 공지']} name="visibility" />
@@ -39,4 +38,4 @@ const NoticeEnroll = () => {
   );
 };
 
-export default NoticeEnroll;
+export default NoticeModify;

@@ -213,7 +213,7 @@ const NoticeList = () => {
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <EmptyContent imageSrc={DS_Store} message="조회결과가 없습니다." />
             <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-              <Button name="등록" onClick={() => navigate('/notice/enroll')} />
+              <Button name="등록" onClick={() => navigate('/notice/register')} />
             </div>
           </div>
         </Wrapper>
