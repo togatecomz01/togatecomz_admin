@@ -3,7 +3,7 @@ import styles from "./ButtonContainer.module.scss";
 interface ButtonContainerProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'popupDoubleButton' | 'popupSingleButton'; //20250724 variant prop 확장
+  variant?: 'popupDoubleButton' | 'popupSingleButton' | 'alertSingleButton' | 'alertDoubleButton'; //20250724 variant prop 확장
 }
 
 const ButtonContainer = ({ children, className, variant }: ButtonContainerProps) => {

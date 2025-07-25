@@ -16,7 +16,7 @@
   color: #fff;
   font-size: 20px;
   font-style: normal;
-  // font-weight: 600; 피그마 코드 그대로 쓰면 육안으로 달라보임
+  font-weight: 600; /* 피그마 코드 그대로 쓰면 육안으로 달라보임 */
   line-height: 150%; /* 30px */
 }
 
@@ -68,5 +68,11 @@
 .popupRegister {
   background-color: #555ff9;
   width: 358px;
+}
+
+.alertConfirm {
+  background-color: #555ff9;
+  width: 358px;
+  padding: 14px 0;
 }
 

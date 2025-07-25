@@ -172,7 +172,7 @@ const NoticeList = () => {
           rightContent={
             <div className={styles.searchFilterArea}>
               <div className={styles.selectWrapper}>
-                <SelectBox title="검색 기준" placeholder="제목" options={['제목', '작성자']} />
+                <SelectBox title="검색 기준" placeholder="제목" options={['제목', '작성자']} size='sm' />
               </div>
               <div style={{ width: '350px' }}>
                 <Input type="search" placeholder="검색어를 입력하세요" />
@@ -201,7 +201,7 @@ const NoticeList = () => {
           rightContent={
             <div className={styles.searchFilterArea}>
               <div className={styles.selectWrapper}>
-                <SelectBox title="검색 기준" placeholder="제목" options={['제목', '작성자']} />
+                <SelectBox title="검색 기준" placeholder="제목" options={['제목', '작성자']} size='sm'/>
               </div>
               <div style={{ width: '350px' }}>
                 <Input type="search" placeholder="검색어를 입력하세요" />

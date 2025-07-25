@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
 import styles from './Input.module.scss';
 import Button from '../Button/Button';
-
+ 
 type InputProps = {
   type: string;
   placeholder?: string;
   value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void; /* 250725 e의 정의 */
   className?: string;
 };
 
@@ -37,7 +37,7 @@ const Input = ({ type, placeholder, value, onChange, className }: InputProps) =>
       setFileName(file ? file.name : '');
     };
 
-    const handleButtonClick = e => {
+    const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => { /* 20250725 e가 정확히 어느이벤트를 나타내는지 정확히 정의 */ 
       e.preventDefault();
       fileInputRef.current?.click(); // 숨겨진 input 클릭
     };

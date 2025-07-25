@@ -150,7 +150,7 @@ const DeptPosition = () => {
       <div className={styles.topArea}>
         <div className={styles.searchFilterArea}>
           <div className={styles.selectWrapper}>
-            <SelectBox title="카테고리" placeholder="부서" options={['부서', '직위']} />
+            <SelectBox title="카테고리" placeholder="부서" options={['부서', '직위']} size='sm' />
           </div>
         </div>
       </div>

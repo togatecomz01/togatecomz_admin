@@ -2,9 +2,9 @@ import styles from './Button.module.scss';
 
 type ButtonProps = {
   name: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void; //20250725 input에서 onClick 타입을 'e'를 받을 수 있도록 수정;
   className?: string;
-  variant?: 'popupDelete' | 'popupModify' | 'popupRegister' //20250724 variant prop 확장
+  variant?: 'popupDelete' | 'popupModify' | 'popupRegister' | 'alertConfirm'  //20250724 variant prop 확장
 };
 
 const btnStyleMap: Record<string, string> = {
@@ -15,6 +15,7 @@ const btnStyleMap: Record<string, string> = {
   'ID 중복확인': 'check',
   조회: 'search',
   수정: 'modify',
+  취소: 'delete',
 };
 
 const Button = ({ name, onClick, className, variant }: ButtonProps) => {
