@@ -11,6 +11,8 @@ type InputProps = {
 };
 
 const Input = ({ type, placeholder, value, onChange, className }: InputProps) => {
+  // TODO: textarea css
+  // TODO: input 컴포넌트 분리
   if (type === 'textarea') return <textarea className={styles.contentInput} placeholder={placeholder} />;
 
   if (type === 'search')
