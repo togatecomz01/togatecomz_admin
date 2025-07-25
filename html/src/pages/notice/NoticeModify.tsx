@@ -1,6 +1,6 @@
 /* import React from 'react'; */
 import Container from '../../components/layout/Container/Container';
-import Wrapper from '../../components/layout/Wrapper/Wrapper';
+import Wrapper from '../../components/layout/SubHeader/SubHeader';
 import FormWrap from '../../components/FormWrap/FormWrap';
 import Input from '../../components/Input/Input';
 import RadioInput from '../../components/RadioInput/RadioInput';
@@ -12,7 +12,7 @@ import formStyles from '../../components/FormWrap/FormWrap.module.scss';
 
 const NoticeModify = () => {
   return (
-    <Container title="공지사항" tag='상세'>
+    <Container title="공지사항" tag="상세">
       <Wrapper subTitle="등록">
         <FormWrap label="구분" className={styles.BorderTop}>
           <RadioInput items={['일반 공지', '특별 공지']} name="visibility" />

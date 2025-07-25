@@ -19,14 +19,6 @@
   font-size: 1rem;
 }
 
-.sm {
-  height: 52px;
-  width: 132px;
-}
-.lg {
-  width: 530px;
-}
-
 .selectBox {
   @include input;
   color: #999;
@@ -53,6 +45,14 @@
   &.open {
     transform: translateY(-50%) rotate(0deg);
   }
+}
+
+.sm {
+  height: 52px;
+  min-width: 132px;
+}
+.lg {
+  width: 530px;
 }
 
 .sm_arrow {

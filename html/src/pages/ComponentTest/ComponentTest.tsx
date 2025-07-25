@@ -3,7 +3,7 @@ import ButtonContainer from '../../components/Button/ButtonContainer/ButtonConta
 import FormWrap from '../../components/FormWrap/FormWrap';
 import Input from '../../components/Input/Input';
 import Container from '../../components/layout/Container/Container';
-import Wrapper from '../../components/layout/Wrapper/Wrapper';
+import Wrapper from '../../components/layout/SubHeader/SubHeader';
 import RadioInput from '../../components/RadioInput/RadioInput';
 import { usePopup } from '../../contexts/PopupContext';
 

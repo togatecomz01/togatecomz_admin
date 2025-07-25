@@ -2,19 +2,10 @@
 
 .wrapper {
   display: flex;
-  flex-direction: column;
-
-  background: vars.$white-color;
-
-  padding: 50px 0;
-}
-
-.header {
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 36px;
-
+  margin: 40px 0 24px 0;
+  min-height: 52px;
   h2 {
     margin-left: 5px;
     // 텍스트
@@ -24,4 +15,10 @@
     font-weight: 700;
     line-height: 100%; /* 26px */
   }
+}
+
+.rightActions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
