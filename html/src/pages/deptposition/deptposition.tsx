@@ -7,7 +7,7 @@ import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 import Container from '../../components/layout/Container/Container';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
-import Wrapper from '../../components/layout/Wrapper/Wrapper';
+import Wrapper from '../../components/layout/SubHeader/SubHeader';
 
 const DeptPosition = () => {
   const navigate = useNavigate();
@@ -149,7 +149,7 @@ const DeptPosition = () => {
       <div className={styles.topArea}>
         <div className={styles.searchFilterArea}>
           <div className={styles.selectWrapper}>
-            <SelectBox title="카테고리" placeholder="부서" options={['부서', '직위']} />
+            <SelectBox title="카테고리" placeholder="부서" options={['부서', '직위']} size="sm" />
           </div>
         </div>
       </div>

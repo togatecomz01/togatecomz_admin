@@ -1,5 +1,4 @@
 /* import React from 'react'; */
-import styles from './Divide.module.scss';
 import List from '../../components/layout/List/List';
 import SelectBox from '../../components/SelectBox/SelectBox';
 import Button from '../../components/Button/Button';
@@ -8,6 +7,7 @@ import EmptyContent from '../../components/EmptyContent/EmptyContent';
 import Input from '../../components/Input/Input';
 import PaginationButton from '../../components/layout/PaginationButton/PaginationButton';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
+import SubHeader from '../../components/layout/SubHeader/SubHeader';
 
 const Divide = () => {
   const generalNoticeData = [
@@ -122,13 +122,11 @@ const Divide = () => {
 
   return (
     <Container title="구분값등록">
-      <div className={styles.searchFilterArea}>
-        <div className={styles.selectWrapper}>
-          <SelectBox title="구분값 선택" placeholder="구분" options={['구분', '구분값']} size="sm" />
-        </div>
+      <SubHeader subTitle="테스트">
+        <SelectBox title="구분값 선택" placeholder="구분" options={['구분', '구분값']} size="sm" />
         <Input type="search" placeholder="검색어 입력" />
         <Button name="조회" />
-      </div>
+      </SubHeader>
       {isDataExist ? (
         <>
           <List headers={tableHeaders} listItems={generalNoticeData} />
