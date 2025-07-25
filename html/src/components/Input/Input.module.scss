@@ -36,15 +36,11 @@
 }
 
 .searchBarWrapper {
+  width: 100%;
+  max-width: 350px;
   display: flex;
-
-  form {
-    width: 100%;
-    max-width: 350px;
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
+  align-items: center;
+  position: relative;
 
   input {
     @include input;
@@ -52,25 +48,32 @@
     padding: 1rem;
     padding-left: 2.5rem;
   }
-
-  button {
-    position: absolute;
-    left: 0.5rem; /* 왼쪽으로 이동 */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    height: 60%;
-    aspect-ratio: auto 1 / 1;
+  input::placeholder {
+    padding-left: 10px;
+    color: #757575;
+    text-align: left;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
   }
 
-  .image {
-    width: 16px; /* 아이콘 크기 줄임 */
-    height: 16px;
-    background-image: url('../../assets/images/search.svg');
-    background-size: contain;
+  .searchIcon {
+    position: absolute;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    background: url('@/assets/images/ico-search.svg') no-repeat center;
+    background-size: auto;
+  }
+
+  .reloadIcon {
+    position: absolute;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background: url('@/assets/images/ico-reload.svg') no-repeat center;
+    background-size: auto;
   }
 }
 

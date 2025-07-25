@@ -15,14 +15,11 @@ const Input = ({ type, placeholder, value, onChange, className }: InputProps) =>
 
   if (type === 'search')
     return (
-      <div className={styles.searchBarWrapper}>
-        <form>
-          <input type={type} id="user-search" />
-          <button>
-            <div className={styles.image}></div>
-          </button>
-        </form>
-      </div>
+      <form className={styles.searchBarWrapper}>
+        <i className={styles.searchIcon}></i>
+        <input type={type} id="user-search" placeholder={placeholder} />
+        <i className={styles.reloadIcon}></i>
+      </form>
     );
 
   if (type === 'file') {
