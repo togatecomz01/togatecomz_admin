@@ -49,6 +49,7 @@
 }
 
 $sizes: (
+  xxs: 104px,
   xs: 150px,
   mxs: 162px,
   sm: 173px,
@@ -58,6 +59,7 @@ $sizes: (
   lg: 249px,
   xl: 292px,
   lxl: 384px,
+  xlxl: 565px,
 );
 
 @each $name, $width in $sizes {

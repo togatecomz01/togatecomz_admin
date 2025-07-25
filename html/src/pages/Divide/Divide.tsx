@@ -122,27 +122,16 @@ const Divide = () => {
 
   return (
     <Container title="구분값등록">
-      <SubHeader subTitle="테스트">
+      <SubHeader>
         <SelectBox title="구분값 선택" placeholder="구분" options={['구분', '구분값']} size="sm" />
         <Input type="search" placeholder="검색어 입력" />
         <Button name="조회" />
       </SubHeader>
-      {isDataExist ? (
-        <>
-          <List headers={tableHeaders} listItems={generalNoticeData} />
-          <ButtonContainer>
-            <PaginationButton />
-            <Button name="등록" />
-          </ButtonContainer>
-        </>
-      ) : (
-        <>
-          <EmptyContent message="조회 결과가 없습니다." />
-          <ButtonContainer>
-            <Button name="등록" />
-          </ButtonContainer>
-        </>
-      )}
+      {isDataExist ? <List headers={tableHeaders} listItems={generalNoticeData} /> : <EmptyContent message="조회 결과가 없습니다." />}
+      <ButtonContainer>
+        {isDataExist && <PaginationButton />}
+        <Button name="등록" />
+      </ButtonContainer>
     </Container>
   );
 };
