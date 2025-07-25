@@ -6,7 +6,6 @@ import Button from '../../components/Button/Button';
 import Container from '../../components/layout/Container/Container';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
 import Input from '../../components/Input/Input';
-import DS_Store from '../../assets/images/DS_Store.png';
 import PaginationButton from '../../components/layout/PaginationButton/PaginationButton';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 
@@ -118,7 +117,7 @@ const Divide = () => {
     { text: '수정자', value: 'modifier', width: 'msm' },
     { text: '수정일', value: 'modifiedAt', width: 'lg' },
   ];
-  // false로 바꾸면 '조회 결과가 없습니다' 컴포넌트 노출
+  // 데이터 유무 여부
   const isDataExist = true;
 
   return (
@@ -127,12 +126,12 @@ const Divide = () => {
         <div className={styles.selectWrapper}>
           <SelectBox title="구분값 선택" placeholder="구분" options={['구분', '구분값']} size="sm" />
         </div>
-        <Input type="search" placeholder="검색어를 입력하세요" />
+        <Input type="search" placeholder="검색어 입력" />
         <Button name="조회" />
       </div>
       {isDataExist ? (
         <>
-          <List headers={tableHeaders} listItems={generalNoticeData} />{' '}
+          <List headers={tableHeaders} listItems={generalNoticeData} />
           <ButtonContainer>
             <PaginationButton />
             <Button name="등록" />
@@ -140,13 +139,12 @@ const Divide = () => {
         </>
       ) : (
         <>
-          <EmptyContent imageSrc={DS_Store} message="조회 결과가 없습니다." />
+          <EmptyContent message="조회 결과가 없습니다." />
           <ButtonContainer>
             <Button name="등록" />
           </ButtonContainer>
         </>
       )}
-      {/* 페이지네이션 및 버튼 영역 */}
     </Container>
   );
 };

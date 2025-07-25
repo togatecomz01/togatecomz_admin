@@ -36,41 +36,45 @@
 }
 
 .searchBarWrapper {
+  width: 100%;
+  max-width: 350px;
   display: flex;
-
-  form {
-    width: 100%;
-    max-width: 350px;
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
+  align-items: center;
+  position: relative;
 
   input {
     @include input;
     width: 100%;
     padding: 1rem;
-    padding-left: 2.5rem;
+    padding-left: 50px;
   }
-
-  button {
+  input::placeholder {
+    color: #757575;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+  }
+  input[type='search']::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .searchIcon {
     position: absolute;
-    left: 0.5rem; /* 왼쪽으로 이동 */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    height: 60%;
-    aspect-ratio: auto 1 / 1;
+    margin: 0 16px;
+    width: 24px;
+    height: 24px;
+    background: url('@/assets/images/ico-search.svg') no-repeat center;
+    background-size: auto;
   }
 
-  .image {
-    width: 16px; /* 아이콘 크기 줄임 */
-    height: 16px;
-    background-image: url('../../assets/images/search.svg');
-    background-size: contain;
+  .reloadIcon {
+    position: absolute;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background: url('@/assets/images/ico-reload.svg') no-repeat center;
+    background-size: auto;
   }
 }
 

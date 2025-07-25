@@ -8,7 +8,6 @@ import Container from '../../components/layout/Container/Container';
 import Wrapper from '../../components/layout/Wrapper/Wrapper';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
 import SelectBox from '../../components/SelectBox/SelectBox';
-import DS_Store from '../../assets/images/DS_Store.png';
 
 const NoticeList = () => {
   const navigate = useNavigate();
@@ -160,7 +159,7 @@ const NoticeList = () => {
     <>
       <Container title="공지사항 (정상 특별 공지)" /*  paddingTop='40px' */>
         <Wrapper subTitle="특별공지">
-          {specialNoticeData.length > 0 ? <List headers={tableHeaders} listItems={specialNoticeData} /> : <EmptyContent imageSrc={DS_Store} message="특별공지사항이 등록되지 않았습니다." />}
+          {specialNoticeData.length > 0 ? <List headers={tableHeaders} listItems={specialNoticeData} /> : <EmptyContent message="특별공지사항이 등록되지 않았습니다." />}
         </Wrapper>
       </Container>
 
@@ -181,7 +180,7 @@ const NoticeList = () => {
             </div>
           }
         >
-          {generalNoticeData.length > 0 ? <List headers={tableHeaders} listItems={generalNoticeData} /> : <EmptyContent imageSrc={DS_Store} message="일반공지사항이 등록되지 않았습니다." />}
+          {generalNoticeData.length > 0 ? <List headers={tableHeaders} listItems={generalNoticeData} /> : <EmptyContent message="일반공지사항이 등록되지 않았습니다." />}
         </Wrapper>
       </Container>
 
@@ -189,7 +188,7 @@ const NoticeList = () => {
 
       <Container title="공지사항 (빈 공지)">
         <Wrapper subTitle="특별공지">
-          <EmptyContent imageSrc={DS_Store} message="특별공지사항이 등록되지 않았습니다." />
+          <EmptyContent message="특별공지사항이 등록되지 않았습니다." />
         </Wrapper>
       </Container>
 
@@ -211,7 +210,7 @@ const NoticeList = () => {
           }
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <EmptyContent imageSrc={DS_Store} message="조회결과가 없습니다." />
+            <EmptyContent message="조회결과가 없습니다." />
             <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
               <Button name="등록" onClick={() => navigate('/notice/register')} />
             </div>
