@@ -9,6 +9,7 @@ import SelectBox from '../../components/SelectBox/SelectBox';
 import SubHeader from '../../components/layout/SubHeader/SubHeader';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 import PaginationButton from '../../components/layout/PaginationButton/PaginationButton';
+import Wrapper from '../../components/Wrapper/Wrapper';
 
 const NoticeList = () => {
   const specialNoticeData = [
@@ -158,13 +159,17 @@ const NoticeList = () => {
 
   return (
     <Container title="공지사항">
-      <SubHeader subTitle="특별공지" />
-      {isDataExist ? <List headers={tableHeaders} listItems={specialNoticeData} /> : <EmptyContent message="특별공지사항이 등록되지 않았습니다." />}
-      <SubHeader subTitle="일반공지">
-        <SelectBox title="검색 기준" placeholder="제목" options={['제목', '작성자']} size="sm" />
-        <Input type="search" placeholder="검색어 입력" />
-        <Button name="조회" />
-      </SubHeader>
+      <Wrapper>
+        <SubHeader subTitle="특별공지" />
+        {isDataExist ? <List headers={tableHeaders} listItems={specialNoticeData} /> : <EmptyContent message="특별공지사항이 등록되지 않았습니다." />}
+      </Wrapper>
+      <Wrapper>
+        <SubHeader subTitle="일반공지">
+          <SelectBox title="검색 기준" placeholder="제목" options={['제목', '작성자']} size="sm" />
+          <Input type="search" placeholder="검색어 입력" />
+          <Button name="조회" />
+        </SubHeader>
+      </Wrapper>
       {isDataExist ? <List headers={tableHeaders} listItems={generalNoticeData} /> : <EmptyContent message="일반공지사항이 등록되지 않았습니다." />}
       <ButtonContainer>
         {isDataExist && <PaginationButton />}
