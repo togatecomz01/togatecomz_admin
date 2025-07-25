@@ -33,8 +33,8 @@ const DeptPositionPopup = () => {
                 <p>구분</p>
                 <RadioInput 
                     items={['부서', '직책']} 
-                    name="dept_position_type" 
-                    defaultValue="부서"
+                    name="dept_position_type"
+                    /*  */
                 />
             </div>
             
