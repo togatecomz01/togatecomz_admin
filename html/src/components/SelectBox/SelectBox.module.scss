@@ -21,7 +21,7 @@
 
 .selectBox {
   @include input;
-  color: #999;
+  color: #757575;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -52,7 +52,7 @@
   min-width: 132px;
 }
 .lg {
-  width: 530px;
+  max-width: 530px;
 }
 
 .sm_arrow {

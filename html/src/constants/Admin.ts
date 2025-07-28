@@ -67,6 +67,7 @@ type InputConfig = {
   type: string;
   placeholder?: string;
   withButton?: string; // optional
+  suffix?: string;
 };
 type FieldConfig = {
   label: string;
@@ -79,6 +80,7 @@ type FieldConfig = {
   }[];
 };
 
+// 등록
 export const BASIC_FIELDS: FieldConfig[] = [
   { label: '성명', subText: '관리자 등록을 위해 필요한 정보를 입력해 주세요.', required: true, inputs: [{ type: 'text', placeholder: '성명을 입력해 주세요.' }] },
   { label: '아이디', subText: '사용하실 아이디를 입력해 주세요.', required: true, inputs: [{ type: 'text', placeholder: '아이디를 입력해 주세요.', withButton: 'ID 중복확인' }] },
@@ -115,21 +117,22 @@ export const BASIC_FIELDS: FieldConfig[] = [
   { label: '첨부파일', subText: '썸네일 이미지를 첨부해 주세요. ex) 증명사진', inputs: [{ type: 'file' }] },
 ];
 
+// 수정
 export const MODIFY_FIELDS: FieldConfig[] = [
-  { label: '성명', subText: '관리자 등록을 위해 필요한 정보를 입력해 주세요.', required: true, inputs: [{ type: 'text', placeholder: '성명을 입력해 주세요.' }] },
+  { label: '성명', subText: '관리자 등록을 위해 필요한 정보를 입력해 주세요.', required: false, inputs: [{ type: 'text', placeholder: '성명을 입력해 주세요.', suffix: '(abcd1234)' }] },
   {
     label: '비밀번호',
     subText: '비밀번호를 변경 하시려면, 신규비밀번호 및 신규비밀번호 확인에 새롭게 사용할 비밀번호를 입력해 주세요.',
-    required: true,
+    required: false,
     inputs: [
-      { type: 'password', placeholder: '비밀번호를 입력해 주세요.' },
-      { type: 'password', placeholder: '비밀번호를 다시 입력해 주세요.' },
+      { type: 'password', suffix: '비밀번호 입력' },
+      { type: 'password', suffix: '비밀번호 다시 입력' },
     ],
   },
   {
     label: '부서/직책 선택',
     subText: '부서와 직책을 선택해 주세요.',
-    required: true,
+    required: false,
     selects: [
       { placeholder: '부서를 선택해 주세요', options: ['부서1', '부서2', '부서3'] },
       { placeholder: '직책을 선택해 주세요', options: ['직책1', '직책2', '직책3'] },

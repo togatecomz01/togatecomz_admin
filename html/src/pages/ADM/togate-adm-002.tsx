@@ -18,7 +18,7 @@ const AdminForm = ({ mode }: { mode: 'register' | 'modify' }) => {
       <SubHeader subTitle="기본정보" />
       <FormTable>
         {(mode === 'modify' ? MODIFY_FIELDS : BASIC_FIELDS).map(field => (
-          <FormWrap key={field.label} label={field.label} subText={field.subText} isAsterisk={field.required}>
+          <FormWrap key={field.label} label={field.label} subText={field.subText} isAsterisk={field.required} subTextClassName={mode === 'modify' && field.label === '비밀번호' ? 'redText' : ''}>
             {field.inputs?.map((input, idx) =>
               input.withButton ? (
                 <InputBtnContainer key={idx}>
@@ -26,7 +26,7 @@ const AdminForm = ({ mode }: { mode: 'register' | 'modify' }) => {
                   <Button name={input.withButton} />
                 </InputBtnContainer>
               ) : (
-                <Input key={idx} type={input.type} placeholder={input.placeholder} />
+                <Input key={idx} type={input.type} placeholder={input.placeholder} suffix={input.suffix} />
               )
             )}
             {field.selects?.map((select, idx) => (
