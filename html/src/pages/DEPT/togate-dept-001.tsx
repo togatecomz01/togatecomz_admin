@@ -2,107 +2,130 @@
 import List from '../../components/List/List';
 import SelectBox from '../../components/SelectBox/SelectBox';
 import Button from '../../components/Button/Button';
+import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 import Container from '../../components/layout/Container/Container';
 import EmptyContent from '../../components/EmptyContent/EmptyContent';
-import Input from '../../components/Input/Input';
-import PaginationButton from '../../components/PaginationButton/PaginationButton';
-import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 import SubHeader from '../../components/layout/SubHeader/SubHeader';
+import PaginationButton from '../../components/PaginationButton/PaginationButton';
 
-const Divide = () => {
-  const generalNoticeData = [
+const DeptPosition = () => {
+  const deptPositionData = [
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 1,
+      category: '부서',
+      department: '개발팀',
+      position: '팀장',
+      members: 5,
       createdAt: '2025-07-22',
       modifier: '관리자',
       modifiedAt: '2025-07-22',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 2,
+      category: '부서',
+      department: '개발팀',
+      position: '팀원',
+      members: 10,
       createdAt: '2025-07-21',
       modifier: '관리자',
       modifiedAt: '2025-07-21',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 3,
+      category: '부서',
+      department: '디자인팀',
+      position: '팀장',
+      members: 3,
       createdAt: '2025-07-20',
       modifier: '관리자',
       modifiedAt: '2025-07-20',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 4,
+      category: '부서',
+      department: '디자인팀',
+      position: '팀원',
+      members: 7,
       createdAt: '2025-07-19',
       modifier: '관리자',
       modifiedAt: '2025-07-19',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 5,
+      category: '부서',
+      department: '영업팀',
+      position: '팀장',
+      members: 4,
       createdAt: '2025-07-18',
       modifier: '관리자',
       modifiedAt: '2025-07-18',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 6,
+      category: '부서',
+      department: '영업팀',
+      position: '팀원',
+      members: 8,
       createdAt: '2025-07-17',
       modifier: '관리자',
       modifiedAt: '2025-07-17',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 7,
+      category: '부서',
+      department: '마케팅팀',
+      position: '팀장',
+      members: 2,
       createdAt: '2025-07-16',
       modifier: '관리자',
       modifiedAt: '2025-07-16',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 8,
+      category: '부서',
+      department: '마케팅팀',
+      position: '팀원',
+      members: 6,
       createdAt: '2025-07-15',
       modifier: '관리자',
       modifiedAt: '2025-07-15',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 9,
+      category: '부서',
+      department: '인사팀',
+      position: '팀장',
+      members: 1,
       createdAt: '2025-07-14',
       modifier: '관리자',
       modifiedAt: '2025-07-14',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 10,
+      category: '부서',
+      department: '인사팀',
+      position: '팀원',
+      members: 3,
       createdAt: '2025-07-13',
       modifier: '관리자',
       modifiedAt: '2025-07-13',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 11,
+      category: '부서',
+      department: '회계팀',
+      position: '팀장',
+      members: 2,
       createdAt: '2025-07-12',
       modifier: '관리자',
       modifiedAt: '2025-07-12',
     },
     {
-      category: '',
-      value: '',
-      author: '관리자',
+      no: 12,
+      category: '부서',
+      department: '회계팀',
+      position: '팀원',
+      members: 4,
       createdAt: '2025-07-11',
       modifier: '관리자',
       modifiedAt: '2025-07-11',
@@ -111,23 +134,22 @@ const Divide = () => {
 
   const tableHeaders = [
     { text: '구분', value: 'category', width: 'lsm' },
-    { text: '구분값', value: 'value', width: 'lxl' },
-    { text: '등록자', value: 'author', width: 'mxs' },
+    { text: '부서명', value: 'department', width: 'lxl' },
+    { text: '등록자', value: 'modifier', width: 'mxs' },
     { text: '등록일', value: 'createdAt', width: 'lg' },
     { text: '수정자', value: 'modifier', width: 'msm' },
     { text: '수정일', value: 'modifiedAt', width: 'lg' },
   ];
-  // 데이터 유무 여부
+
+  // 데이터 유무 여부 (t/f로 렌더링제어 (등록된 ~나 ~이 없습니다.))
   const isDataExist = true;
 
   return (
-    <Container title="구분값등록">
+    <Container title="부서/직책 관리">
       <SubHeader>
-        <SelectBox title="구분값 선택" placeholder="구분" options={['구분', '구분값']} size="sm" />
-        <Input type="search" placeholder="검색어 입력" />
-        <Button name="조회" />
+        <SelectBox title="카테고리" placeholder="부서" options={['부서', '직책']} size="sm" />
       </SubHeader>
-      {isDataExist ? <List headers={tableHeaders} listItems={generalNoticeData} /> : <EmptyContent message="조회 결과가 없습니다." />}
+      {isDataExist ? <List headers={tableHeaders} listItems={deptPositionData} /> : <EmptyContent message="등록된 [부서]나 [직책]이 없습니다" />}
       <ButtonContainer>
         {isDataExist && <PaginationButton />}
         <Button name="등록" />
@@ -136,4 +158,4 @@ const Divide = () => {
   );
 };
 
-export default Divide;
+export default DeptPosition;
