@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import styles from './Popup.module.scss';
-import CloseIcon from '../../../assets/images/Xbutton.svg';
+import CloseIcon from '@/assets/images/Xbutton.svg';
 
 interface PopupProps {
   title: string;
