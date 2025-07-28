@@ -10,7 +10,8 @@
   background: #fff;
 
   &::placeholder {
-    color: #999;
+    color: #757575;
+    font-family: Pretendard;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -27,8 +28,13 @@
   @include input;
 }
 
-.contentInput {
+.textArea {
   @include input;
+  resize: none;
+
+  &::placeholder {
+    font-family: Pretendard;
+  }
 }
 
 .itemsWrapper {

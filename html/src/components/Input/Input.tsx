@@ -1,20 +1,20 @@
 import React, { useRef, useState } from 'react';
 import styles from './Input.module.scss';
 import Button from '../Button/Button';
- 
+
 type InputProps = {
   type: string;
   placeholder?: string;
   value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void; /* 250725 e의 정의 */
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void /* 250725 e의 정의 */;
   className?: string;
 };
 
 const Input = ({ type, placeholder, value, onChange, className }: InputProps) => {
-  // TODO: textarea css
-  // TODO: input 컴포넌트 분리
-  if (type === 'textarea') return <textarea className={styles.contentInput} placeholder={placeholder} />;
+  // textarea
+  if (type === 'textarea') return <textarea className={styles.textArea} id="content" placeholder={placeholder} />;
 
+  // 검색
   if (type === 'search')
     return (
       <form className={styles.searchBarWrapper}>
@@ -24,6 +24,7 @@ const Input = ({ type, placeholder, value, onChange, className }: InputProps) =>
       </form>
     );
 
+  // 첨부파일
   if (type === 'file') {
     // 파일명 css 확인용 로직
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -36,7 +37,8 @@ const Input = ({ type, placeholder, value, onChange, className }: InputProps) =>
       setFileName(file ? file.name : '');
     };
 
-    const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => { /* 20250725 e가 정확히 어느이벤트를 나타내는지 정확히 정의 */ 
+    const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      /* 20250725 e가 정확히 어느이벤트를 나타내는지 정확히 정의 */
       e.preventDefault();
       fileInputRef.current?.click(); // 숨겨진 input 클릭
     };
@@ -50,6 +52,7 @@ const Input = ({ type, placeholder, value, onChange, className }: InputProps) =>
     );
   }
 
+  // 일반
   return <input className={`${styles.textInput} ${className || ''}`} type={type} placeholder={placeholder} value={value} onChange={onChange} />;
 };
 
