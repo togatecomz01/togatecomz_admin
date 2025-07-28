@@ -1,572 +1,564 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>togatecomz_admin worklist</title>
-        <meta charset="utf-8" />
-        <meta http-equiv="Content-Script-Type" content="text/javascript" />
-        <meta http-equiv="Content-Style-Type" content="text/css" />
-        <meta name="keywords" content="SGA UX/UI" />
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width" />
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>togatecomz_admin worklist</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="SGA UX/UI" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
 
-        <!-- 일반 Favicon 설정 -->
+    <!-- 일반 Favicon 설정 -->
 
-        <!-- css -->
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="./guide/css/pub-worklist.css"
-        />
-        <!-- javascript -->
-        <script src="./guide/js/jquery-1.11.3.min.js"></script>
-        <script
-            type="text/javascript"
-            src="./guide/js/jquery.form.min.js"
-        ></script>
-        <style>
-            .header .etc {
-                color: yellowgreen;
-            }
-            .cont table {
-                display: none;
-            }
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="./guide/css/pub-worklist.css" />
+    <!-- javascript -->
+    <script src="./guide/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./guide/js/jquery.form.min.js"></script>
+    <style>
+      .header .etc {
+        color: yellowgreen;
+      }
+      .cont table {
+        display: none;
+      }
 
-            .cont .tit {
-                cursor: pointer;
-            }
+      .cont .tit {
+        cursor: pointer;
+      }
 
-            .cont .tit.on ~ table {
-                display: table;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="wrapper pc">
-            <section class="ifr_view">
-                <iframe
-                    id="iframe"
-                    width="100%"
-                    height="100%"
-                    src="./button.html"
-                ></iframe>
-            </section>
-            <section class="container">
-                <div class="header">
-                    <h1>togatecomz worklist</h1>
-                    <ul class="stateArea">
-                        <li><strong>진행상태 :</strong></li>
-                        <li class="typeCommon"><span>공통</span></li>
-                        <li class="typeIng"><span>진행 중</span></li>
-                        <li class="typeComp"><span>완료</span></li>
-                        <li class="typeNon"><span>삭제</span></li>
-                    </ul>
-                    <ul class="stateCnt">
-                        <li>총 <span id="totCnt"></span>개</li>
-                        <li>작업중 <span id="progressCnt"></span>개</li>
-                        <li>완료 <span id="compCnt"></span>개</li>
-                    </ul>
-                    <ul class="etc">
-                        <li>
-                            테이블 열 진행 클래스(tr에 적용) : 완료 [comp],
-                            비활성화 [non], 진행중 [ing] <br />** renewal.css로
-                            작업. **
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="cont guide">
-                    <h3 class="tit on">common</h3>
-                    <table>
-                        <summary></summary>
-                        <caption></caption>
-                        <colgroup>
-                            <col width="8%" />
-                            <col width="8%" />
-                            <col width="8%" />
-                            <col width="6%" />
-                            <col width="6%" />
-                            <col width="10%" />
-                            <col width="8%" />
-                            <col width="4%" />
-                            <col width="15%" />
-                            <col width="*" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th scope="col">depth1</th>
-                                <th scope="col">depth2</th>
-                                <th scope="col">depth3</th>
-                                <th scope="col">depth4</th>
-                                <th scope="col" class="fileName">화면ID</th>
-                                <th scope="col">형태</th>
-                                <th scope="col">담당</th>
-                                <th scope="col">상태</th>
-                                <th scope="col">사용 소스</th>
-                                <th scope="col">비고</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="">
-                                <td>table 리스트</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a
-                                        href="../IM/guide/views/table.html"
-                                        target="_blank"
-                                        >table.html</a
-                                    >
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td>
-                                    [사용 소스] :: <br /><br /><b
-                                        >*스크립트 클래스 :: <br
-                                    /></b>
-                                </td>
-                            </tr>
-                            <tr class="">
-                                <td>grid 리스트</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a
-                                        href="../IM/guide/views/grid.html"
-                                        target="_blank"
-                                        >grid.html</a
-                                    >
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td>
-                                    [사용 소스] :: <br /><br /><b
-                                        >*스크립트 클래스 :: <br
-                                    /></b>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="cont page">
-                    <h3 class="tit on">worklist</h3>
-                    <table>
-                        <summary></summary>
-                        <caption></caption>
-                        <colgroup>
-                            <col width="8%" />
-                            <col width="14%" />
-                            <col width="14%" />
-                            <col width="14%" />
-                            <col width="15%" />
-                            <col width="4%" />
-                            <col width="4%" />
-                            <col width="4%" />
-                            <col width="15%" />
-                            <col width="*" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th scope="col">대분류</th>
-                                <th scope="col">소분류</th>
-                                <th scope="col">depth3</th>
-                                <!-- <th scope="col">depth4</th> -->
-                                <th scope="col" class="fileName">화면ID 혹은 파일명</th>
-                                <th scope="col">PopUp 파일</th>
-                                <th scope="col">형태</th>
-                                <th scope="col">담당</th>
-                                <th scope="col">상태</th>
-                                <th scope="col">사용 소스</th>
-                                <th scope="col">비고</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="comp">
-                                <td rowspan="3">로그인 페이지</td>
-                                <td>login</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank"
-                                        >Pages/Login/Login.tsx</a
-                                    >
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td>
-                                    [사용 소스] :: <br /><br /><b
-                                        >*스크립트 클래스 :: <br
-                                    /></b>
-                                </td>
-                                <td>기본 로그인 화면</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr class="comp">
-                                <td rowspan="3">공통 레이아웃</td>
-                                <td>header.tsx</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="../IM/login.html" target="_blank"
-                                        >components/layout/Header/Header.tsx</a
-                                    >
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td>기본 header</td>
-                            </tr>
-                            <tr class="comp">
-                                <td rowspan="3">lnb.tsx</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">components/layout/LNB/LNB.tsx</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>기본 lnb</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr class="">
-                                <td rowspan="2">공통 알럿&팝업</td>
-                                <td>공통 알럿</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">components/Alert/Alert.tsx</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="">
-                                <td>공통 팝업</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">components/layout/Popup.tsx</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr class="comp">
-                                <td rowspan="3">계정관리</td>
-                                <td>관리자 목록</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">pages/Admin/AdminList.tsx</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="ing">
-                                <td>관리자 등록</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">pages/Admin/AdminRegister.tsx</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="">
-                                <td>관리자 수정/삭제</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">== AdminRegister</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr class="ing">
-                                <td rowspan="2">구분값등록</td>
-                                <td>구분값등록 목록</td>
-                                <td>구분값 등록팝업(수정/등록)</td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">pages/Divide/Divide.tsx</a>
-                                </td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">components/layout/Popup/DividePopup.tsx</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td>3depth 작업중 25/07/23</td>
-                            </tr>
-                            <tr class="ing">
-                                <td>구분값등록 목록(조회결과x)</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">== Divide</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr class="ing">
-                                <td rowspan="3">부서 직책관리</td>
-                                <td>부서 직책관리 목록(부서)</td>
-                                <td>부서 직책관리 목록 (팝업)</td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">pages/deptposition/deptposition.tsx</a>
-                                </td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">components/layout/Popup/DeptPositionPopup.tsx</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td>3depth 작업중 25/07/23</td>
-                            </tr>
-                            <tr class="ing">
-                                <td>부서 직책관리 목록(직책)</td>
-                                <td>부서 직책관리 목록 (팝업)</td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">== deptposition</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="ing">
-                                <td>부서 직책관리 목록(조회결과없음)</td>
-                                <td>부서 직책관리 목록 (팝업)</td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">== deptposition</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr class="comp">
-                                <td rowspan="4">공지사항</td>
-                                <td>공지사항목록</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">pages/notice/NoticeList.tsx</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="comp">
-                                <td>공지사항목록(조회결과 없음)</td>
-                                <td></td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">== NoticeList</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="ing">
-                                <td>공지사항 등록</td>
-                                <td>공지사항 등록 확인 알럿</td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">pages/notice/NoticeRegister.tsx</a>
-                                </td>
-                                <td class="fileName"> 
-                                    <a href="#" target="_blank">== Alert</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td>3depth 작업중 25/07/23</td>
-                            </tr>
-                            <tr class="comp">
-                                <td>공지사항 수정</td>
-                                <td>공지사항 수정 확인 알럿</td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">pages/notice/NoticeModify.tsx</a>
-                                </td>
-                                <td class="fileName">
-                                    <a href="#" target="_blank">== Alert</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td class="state"></td>
-                                <td></td>
-                                <td>3depth 작업중 25/07/23</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+      .cont .tit.on ~ table {
+        display: table;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper pc">
+      <section class="ifr_view">
+        <iframe id="iframe" width="100%" height="100%" src="./button.html"></iframe>
+      </section>
+      <section class="container">
+        <div class="header">
+          <h1>togatecomz_admin worklist</h1>
+          <ul class="stateArea">
+            <li><strong>진행상태 :</strong></li>
+            <li class="typeCommon"><span>공통</span></li>
+            <li class="typeIng"><span>진행 중</span></li>
+            <li class="typeComp"><span>완료</span></li>
+            <li class="typeNon"><span>삭제</span></li>
+          </ul>
+          <ul class="stateCnt">
+            <li>총 <span id="totCnt"></span>개</li>
+            <li>작업중 <span id="progressCnt"></span>개</li>
+            <li>완료 <span id="compCnt"></span>개</li>
+          </ul>
+          <ul class="etc">
+            <li>테이블 열 진행 클래스(tr에 적용) : 완료 [comp], 비활성화 [non], 진행중 [ing] <br />** renewal.css로 작업. **</li>
+          </ul>
         </div>
 
-        <script>
-            $(document).ready(function () {
-                /*---------------------------------------------
+        <div class="cont guide">
+          <h3 class="tit on">common</h3>
+          <table>
+            <summary></summary>
+            <caption></caption>
+            <colgroup>
+              <col width="8%" />
+              <col width="8%" />
+              <col width="8%" />
+              <col width="10%" />
+              <col width="8%" />
+              <col width="6%" />
+              <col width="6%" />
+              <col width="4%" />
+              <col width="15%" />
+              <col width="*" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">depth1</th>
+                <th scope="col">depth2</th>
+                <th scope="col">depth3</th>
+                <th scope="col" class="fileName">화면ID</th>
+                <th scope="col">형태</th>
+                <th scope="col">담당</th>
+                <th scope="col">날짜</th>
+                <th scope="col">상태</th>
+                <th scope="col">사용 소스</th>
+                <th scope="col">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Layout -->
+              <tr class="comp">
+                <td>Layout</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="@/components/layout/Layout.tsx" target="_blank">Layout.tsx</a>
+                </td>
+                <td></td>
+                <td>강민정</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td>
+                  [사용 소스] :: <br /><br /><b>*스크립트 클래스 :: <br /></b>
+                </td>
+              </tr>
+              <!-- Header -->
+              <tr class="comp">
+                <td>Header</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="@/components/layout/Layout.tsx" target="_blank">Header.tsx</a>
+                </td>
+                <td></td>
+                <td>강민정</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td>
+                  [사용 소스] :: <br /><br /><b>*스크립트 클래스 :: <br /></b>
+                </td>
+              </tr>
+              <!-- LNB -->
+              <tr class="comp">
+                <td>LNB</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="@/components/layout/Layout.tsx" target="_blank">LNB.tsx</a>
+                </td>
+                <td></td>
+                <td>강민정</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td>
+                  [사용 소스] :: <br /><br /><b>*스크립트 클래스 :: <br /></b>
+                </td>
+              </tr>
+              <!-- Alert -->
+              <tr class="comp">
+                <td>Alert</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="@/components/layout/Layout.tsx" target="_blank">Alert.tsx</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td>
+                  [사용 소스] :: <br /><br /><b>*스크립트 클래스 :: <br /></b>
+                </td>
+              </tr>
+              <!-- Popup -->
+              <tr class="comp">
+                <td>Popup</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="@/components/layout/Layout.tsx" target="_blank">Popup.tsx</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td>
+                  [사용 소스] :: <br /><br /><b>*스크립트 클래스 :: <br /></b>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cont page">
+          <h3 class="tit on">pages</h3>
+          <table>
+            <summary></summary>
+            <caption></caption>
+            <colgroup>
+              <col width="8%" />
+              <col width="8%" />
+              <col width="8%" />
+              <col width="8%" />
+              <col width="10%" />
+              <col width="8%" />
+              <col width="6%" />
+              <col width="6%" />
+              <col width="4%" />
+              <col width="15%" />
+              <col width="*" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>분류</th>
+                <th scope="col">depth1</th>
+                <th scope="col">depth2</th>
+                <th scope="col">depth3</th>
+                <th scope="col" class="fileName">화면ID</th>
+                <th scope="col">형태</th>
+                <th scope="col">담당</th>
+                <th scope="col">날짜</th>
+                <th scope="col">상태</th>
+                <th scope="col">사용 소스</th>
+                <th scope="col">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="comp">
+                <td>로그인</td>
+                <td rowspan="3">로그인</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-log-001</a>
+                </td>
+                <td></td>
+                <td>강민정</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td>
+                  [사용 소스] :: <br /><br /><b>*스크립트 클래스 :: <br /></b>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="comp">
+                <td rowspan="3">계정관리</td>
+                <td>목록</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-adm-001</a>
+                </td>
+                <td></td>
+                <td>강민정</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="comp">
+                <td>관리자 등록</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-adm-002</a>
+                </td>
+                <td></td>
+                <td>강민정</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="ing">
+                <td>관리자 수정/삭제</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-adm-002</a>
+                </td>
+                <td></td>
+                <td>강민정</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="comp">
+                <td rowspan="3">구분값등록</td>
+                <td>목록</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-dvn-001</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td>3depth 작업중 25/07/23</td>
+              </tr>
+              <tr class="comp">
+                <td>목록(조회결과 X)</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-dvn-001</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="comp">
+                <td>목록</td>
+                <td>팝업(수정/등록)</td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-dvn-00101</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="comp">
+                <td rowspan="4">부서/직책관리</td>
+                <td>목록(부서)</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-dept-001</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="comp">
+                <td>목록(직책)</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-dept-001</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="comp">
+                <td>목록(조회결과 X)</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-dept-001</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="comp">
+                <td>목록</td>
+                <td>팝업(수정/등록)</td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-dept-00101</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="comp">
+                <td rowspan="4">공지사항</td>
+                <td>목록</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-notc-001</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="comp">
+                <td>목록(조회결과 X)</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-notc-001</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="comp">
+                <td>등록</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-notc-002</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="comp">
+                <td>수정</td>
+                <td></td>
+                <td></td>
+                <td class="fileName">
+                  <a href="#" target="_blank">togate-notc-002</a>
+                </td>
+                <td></td>
+                <td>최지순</td>
+                <td>2025.07.21</td>
+                <td class="state"></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        /*---------------------------------------------
 				ready, load
 			---------------------------------------------*/
-                // 모든 리소스(이미지 등)가 로드된 후 fnPreload()를 호출하여 초기화
-                $(window).on('load', function () {
-                    fnPreload();
-                });
+        // 모든 리소스(이미지 등)가 로드된 후 fnPreload()를 호출하여 초기화
+        $(window).on("load", function () {
+          fnPreload();
+        });
 
-                /*---------------------------------------------
+        /*---------------------------------------------
 				preload, init
 			---------------------------------------------*/
-                /* preload */
-                function fnPreload() {
-                    tableStateManager.init();
-                }
+        /* preload */
+        function fnPreload() {
+          tableStateManager.init();
+        }
 
-                /*---------------------------------------------
+        /*---------------------------------------------
 				tableStateManager 모듈 정의
 			---------------------------------------------*/
-                var tableStateManager = (function () { 
-                    // 날짜 관련 배열 (필요시 활용)
-                    var fromDate = [],
-                        toDate = [],
-                        dateGap = [];
+        var tableStateManager = (function () {
+          // 날짜 관련 배열 (필요시 활용)
+          var fromDate = [],
+            toDate = [],
+            dateGap = [];
 
-                    // 상태별 개수 변수
-                    var progressCnt = 0, // 진행 중 개수
-                        compCnt = 0, // 완료 개수
-                        delCnt = 0; // 삭제 개수
+          // 상태별 개수 변수
+          var progressCnt = 0, // 진행 중 개수
+            compCnt = 0, // 완료 개수
+            delCnt = 0; // 삭제 개수
 
-                    return {
-                        // 테이블 각 행의 상태를 업데이트하는 함수
-                        updateStates: function () {
-                            // 호출 시마다 카운트 초기화
-                            progressCnt = 0;
-                            compCnt = 0;
-                            delCnt = 0;
+          return {
+            // 테이블 각 행의 상태를 업데이트하는 함수
+            updateStates: function () {
+              // 호출 시마다 카운트 초기화
+              progressCnt = 0;
+              compCnt = 0;
+              delCnt = 0;
 
-                            $('.cont table tbody tr').each(function () {
-                                var $row = $(this);
-                                var $stateCell = $row.find('.state');
+              $(".cont table tbody tr").each(function () {
+                var $row = $(this);
+                var $stateCell = $row.find(".state");
 
-                                if ($row.hasClass('non')) {
-                                    $stateCell.html('<span>삭제</span>');
-                                    delCnt++;
-                                } else if ($row.hasClass('ing')) {
-                                    $stateCell.html('<span>진행 중</span>');
-                                    progressCnt++;
-                                } else if ($row.hasClass('comp')) {
-                                    $stateCell.html('<span>완료</span>');
-                                    compCnt++;
-                                } else {
-                                    $stateCell.text('');
-                                }
-                            });
-                        },
+                if ($row.hasClass("non")) {
+                  $stateCell.html("<span>삭제</span>");
+                  delCnt++;
+                } else if ($row.hasClass("ing")) {
+                  $stateCell.html("<span>진행 중</span>");
+                  progressCnt++;
+                } else if ($row.hasClass("comp")) {
+                  $stateCell.html("<span>완료</span>");
+                  compCnt++;
+                } else {
+                  $stateCell.text("");
+                }
+              });
+            },
 
-                        // 상태별 카운트를 업데이트
-                        updateCounts: function () {
-                            var totCnt = $('.page table tbody tr').length; // 전체 행 개수
-                            $('#compCnt').text(compCnt);
-                            $('#totCnt').text(totCnt);
-                            $('#progressCnt').text(progressCnt);
-                        },
-                        // 레이아웃(마진) 조정
-                        adjustLayout: function () {
-                            var headerH = $('.container .header').outerHeight();
-                            $('.container .guide').css(
-                                'margin-top',
-                                headerH + 'px'
-                            );
-                        },
+            // 상태별 카운트를 업데이트
+            updateCounts: function () {
+              var totCnt = $(".page table tbody tr").length; // 전체 행 개수
+              $("#compCnt").text(compCnt);
+              $("#totCnt").text(totCnt);
+              $("#progressCnt").text(progressCnt);
+            },
+            // 레이아웃(마진) 조정
+            adjustLayout: function () {
+              var headerH = $(".container .header").outerHeight();
+              $(".container .guide").css("margin-top", headerH + "px");
+            },
 
-                        // 전체 초기화: 상태 업데이트, 카운트 갱신, 레이아웃 조정 실행
-                        init: function () {
-                            // 반환된 객체의 메서드를 호출
-                            this.updateStates();
-                            this.updateCounts();
-                            this.adjustLayout();
-                        },
-                        // 상태와 카운트만 갱신
-                        update: function () {
-                            this.updateStates();
-                            this.updateCounts();
-                        },
-                    };
-                })();
+            // 전체 초기화: 상태 업데이트, 카운트 갱신, 레이아웃 조정 실행
+            init: function () {
+              // 반환된 객체의 메서드를 호출
+              this.updateStates();
+              this.updateCounts();
+              this.adjustLayout();
+            },
+            // 상태와 카운트만 갱신
+            update: function () {
+              this.updateStates();
+              this.updateCounts();
+            },
+          };
+        })();
 
-                /**
-                 * #테이블 토글
-                 **/
-                var tableListToggle = function (el) {
-                    var $el = $(el);
-                    return {
-                        open: function () {
-                            $el.addClass('on');
-                        },
-                        close: function () {
-                            $el.removeClass('on');
-                        },
-                        toggle: function () {
-                            if ($el.hasClass('on')) {
-                                this.close();
-                            } else {
-                                this.open();
-                            }
-                        },
-                    };
-                };
+        /**
+         * #테이블 토글
+         **/
+        var tableListToggle = function (el) {
+          var $el = $(el);
+          return {
+            open: function () {
+              $el.addClass("on");
+            },
+            close: function () {
+              $el.removeClass("on");
+            },
+            toggle: function () {
+              if ($el.hasClass("on")) {
+                this.close();
+              } else {
+                this.open();
+              }
+            },
+          };
+        };
 
-                //event
-                $(document).on('click', '.cont .tit', function () {
-                    tableListToggle(this).toggle();
-                });
-            });
-        </script>
-    </body>
+        //event
+        $(document).on("click", ".cont .tit", function () {
+          tableListToggle(this).toggle();
+        });
+      });
+    </script>
+  </body>
 </html>
