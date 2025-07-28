@@ -1,7 +1,10 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Layout from '../components/layout/Layout.tsx';
 import Home from '../pages/Home/Home.tsx';
+
 import NoticeList from '../pages/notice/noticeList.tsx';
+import NoticeForm from '../pages/notice/NoticeForm.tsx';
+
 import ComponentTest from '../pages/ComponentTest/ComponentTest.tsx';
 import Login from '../pages/Login/Login.tsx';
 
@@ -9,15 +12,11 @@ import AdminList from '../pages/Admin/AdminList.tsx';
 import AdminRegister from '../pages/Admin/AdminRegister.tsx';
 import AdminLayout from '../pages/Admin/AdminLayout.tsx';
 
-import NoticeRegister from '../pages/notice/NoticeRegister.tsx';
-import NoticeModify from '../pages/notice/NoticeModify.tsx';
-
 import DeptPosition from '../pages/deptposition/deptposition.tsx';
 import DeptPositionPopup from '../components/layout/Popup/DeptPositionPopup.tsx';
 
 import Divide from '../pages/Divide/Divide.tsx';
 import DividePopup from '../components/layout/Popup/DividePopup.tsx';
-
 
 import ConfirmAlert from '../components/Alert/ConfirmAlert.tsx';
 import ChoiceAlert from '../components/Alert/ChoiceAlert.tsx';
@@ -35,11 +34,11 @@ const Router = () => {
           </Route>
 
           <Route path="/notice" element={<NoticeList />} />
-          <Route path="/notice/register" element={<NoticeRegister />} />
-          <Route path="/notice/modify" element={<NoticeModify />} />
+          <Route path="/notice/register" element={<NoticeForm mode="register" />} /> {/* 250728 라우터 수정 해야할지 고민 (admin처럼 중첩라우팅 필요한가?) */}
+          <Route path="/notice/modify" element={<NoticeForm mode="modify" />} />
 
           <Route path="/deptposition" element={<DeptPosition />} />
-          <Route path="/deptposition/register" element={<DeptPositionPopup mode="register" />} />
+          <Route path="/deptposition/register" element={<DeptPositionPopup mode="register" />} /> 
           <Route path="/deptposition/modify" element={<DeptPositionPopup mode="modify" />} />
 
           <Route path="/divide" element={<Divide />} />

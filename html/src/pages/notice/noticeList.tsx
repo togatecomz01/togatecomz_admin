@@ -76,7 +76,7 @@ const NoticeList = () => {
       views: 80,
       author: '홍길동',
       createdAt: '2025-07-12',
-      modifier: '홍길동',
+      modifier: '홍길동', 
       modifiedAt: '2025-07-12',
     },
     {
