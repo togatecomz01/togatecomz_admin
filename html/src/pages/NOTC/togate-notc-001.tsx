@@ -154,7 +154,7 @@ const NoticeList = () => {
     { text: '수정일', value: 'modifiedAt', width: 'mxs' },
   ];
 
-  // 데이터 유무 여부
+  // 데이터 유무 여부 (t/f로 렌더링제어 (공지사항이 등록되지 않았습니다.))
   const isDataExist = true;
 
   return (
