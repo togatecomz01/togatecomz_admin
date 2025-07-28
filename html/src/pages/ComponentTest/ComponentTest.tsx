@@ -7,7 +7,6 @@ import Wrapper from '../../components/layout/SubHeader/SubHeader';
 import RadioInput from '../../components/RadioInput/RadioInput';
 
 const ComponentTest = () => {
-
   return (
     <>
       <Container title="컴포넌트 테스트">
