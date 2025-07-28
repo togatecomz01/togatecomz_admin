@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 import Container from '../../components/layout/Container/Container';
-import List from '../../components/layout/List/List';
+import List from '../../components/List/List';
 import { ADMIN_HEADERS, ADMIN_LIST_ITEMS, ADMIN_LIST_ITEMS_MAIN } from '../../constants/Admin';
 import SubHeader from '../../components/layout/SubHeader/SubHeader';
 import Wrapper from '../../components/Wrapper/Wrapper';

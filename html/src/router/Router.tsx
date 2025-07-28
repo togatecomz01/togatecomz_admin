@@ -6,20 +6,20 @@ import NoticeList from '../pages/notice/noticeList.tsx';
 import NoticeForm from '../pages/notice/NoticeForm.tsx';
 
 import ComponentTest from '../pages/ComponentTest/ComponentTest.tsx';
-import Login from '../pages/Login/Login.tsx';
+import Login from '../pages/LOG/togate-log-001.tsx';
 
-import AdminList from '../pages/Admin/AdminList.tsx';
-import AdminRegister from '../pages/Admin/AdminRegister.tsx';
-import AdminLayout from '../pages/Admin/AdminLayout.tsx';
+import AdminList from '../pages/ADM/togate-adm-001.tsx';
+import AdminLayout from '../pages/ADM/AdminLayout.tsx';
 
 import DeptPosition from '../pages/deptposition/deptposition.tsx';
-import DeptPositionPopup from '../components/layout/Popup/DeptPositionPopup.tsx';
+import DeptPositionPopup from '../components/Popup/DeptPositionPopup.tsx';
 
 import Divide from '../pages/Divide/Divide.tsx';
-import DividePopup from '../components/layout/Popup/DividePopup.tsx';
+import DividePopup from '../components/Popup/DividePopup.tsx';
 
 import ConfirmAlert from '../components/Alert/ConfirmAlert.tsx';
 import ChoiceAlert from '../components/Alert/ChoiceAlert.tsx';
+import AdminForm from '../pages/ADM/togate-adm-002.tsx';
 
 const Router = () => {
   return (
@@ -30,21 +30,18 @@ const Router = () => {
           <Route path="component-test" element={<ComponentTest />} />
           <Route path="admin" element={<AdminLayout />}>
             <Route index element={<AdminList />} />
-            <Route path="register" element={<AdminRegister />} />
+            <Route path="register" element={<AdminForm mode="register" />} />
+            <Route path="modify" element={<AdminForm mode="modify" />} />
           </Route>
-
           <Route path="/notice" element={<NoticeList />} />
           <Route path="/notice/register" element={<NoticeForm mode="register" />} /> {/* 250728 라우터 수정 해야할지 고민 (admin처럼 중첩라우팅 필요한가?) */}
           <Route path="/notice/modify" element={<NoticeForm mode="modify" />} />
-
           <Route path="/deptposition" element={<DeptPosition />} />
-          <Route path="/deptposition/register" element={<DeptPositionPopup mode="register" />} /> 
+          <Route path="/deptposition/register" element={<DeptPositionPopup mode="register" />} />
           <Route path="/deptposition/modify" element={<DeptPositionPopup mode="modify" />} />
-
           <Route path="/divide" element={<Divide />} />
           <Route path="/divide/register" element={<DividePopup mode="register" />} />
           <Route path="/divide/modify" element={<DividePopup mode="modify" />} />
-
           <Route path="/alert/confirm" element={<ConfirmAlert message="저장이 완료되었습니다." />} />
           <Route path="/alert/choice" element={<ChoiceAlert message="수정된 사항을 반영하시겠습니까?" />} />
         </Route>

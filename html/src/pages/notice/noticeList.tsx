@@ -1,6 +1,6 @@
 /* import React from 'react'; */
 
-import List from '../../components/layout/List/List';
+import List from '../../components/List/List';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import Container from '../../components/layout/Container/Container';
@@ -8,7 +8,7 @@ import EmptyContent from '../../components/EmptyContent/EmptyContent';
 import SelectBox from '../../components/SelectBox/SelectBox';
 import SubHeader from '../../components/layout/SubHeader/SubHeader';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
-import PaginationButton from '../../components/layout/PaginationButton/PaginationButton';
+import PaginationButton from '../../components/PaginationButton/PaginationButton';
 import Wrapper from '../../components/Wrapper/Wrapper';
 
 const NoticeList = () => {
@@ -76,7 +76,7 @@ const NoticeList = () => {
       views: 80,
       author: '홍길동',
       createdAt: '2025-07-12',
-      modifier: '홍길동', 
+      modifier: '홍길동',
       modifiedAt: '2025-07-12',
     },
     {

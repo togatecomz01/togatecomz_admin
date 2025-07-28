@@ -1,12 +1,7 @@
 import Router from './router/Router.tsx';
-import { PopupProvider } from './contexts/PopupContext';
 
 function App() {
-  return (
-    <PopupProvider>
-      <Router />
-    </PopupProvider>
-  );
+  return <Router />;
 }
 
 export default App;

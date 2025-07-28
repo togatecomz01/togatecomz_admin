@@ -1,5 +1,5 @@
 import Copyright from '../../components/layout/Copyright/Copyright';
-import styles from './Login.module.scss';
+import styles from './togate-log-001.module.scss';
 import LoginButton from './LoginButton/LoginButton';
 import LoginInput from './LoginInput/LoginInput';
 
