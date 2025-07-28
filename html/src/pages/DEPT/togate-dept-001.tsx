@@ -135,7 +135,7 @@ const DeptPosition = () => {
   const tableHeaders = [
     { text: '구분', value: 'category', width: 'lsm' },
     { text: '부서명', value: 'department', width: 'lxl' },
-    { text: '등록자', value: 'modifier', width: 'mxs' },
+    { text: '등록자', value: 'registrant', width: 'mxs' },
     { text: '등록일', value: 'createdAt', width: 'lg' },
     { text: '수정자', value: 'modifier', width: 'msm' },
     { text: '수정일', value: 'modifiedAt', width: 'lg' },
