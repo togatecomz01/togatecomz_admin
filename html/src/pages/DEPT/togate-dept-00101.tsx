@@ -1,21 +1,23 @@
-/* import React from 'react'; */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Popup from './Popup';
-import Input from '../Input/Input';
-import Button from '../Button/Button';
-import ButtonContainer from '../Button/ButtonContainer/ButtonContainer';
-import popupStyles from '../Popup/Popup.module.scss';
+import Popup from '../../components/Popup/Popup';
+import Input from '../../components/Input/Input';
+import RadioInput from '../../components/RadioInput/RadioInput';
+import Button from '../../components/Button/Button';
+import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
+import popupStyles from '../../components/Popup/Popup.module.scss'
 import warningIcon from '@/assets/images/warning-icon.svg';
 
-interface DividePopupProps {
+interface DeptPositionPopupProps {
   mode: 'register' | 'modify';
 }
 
-const DividePopup = ({ mode }: DividePopupProps) => {
+const DeptPositionPopup = ({ mode }: DeptPositionPopupProps) => {
   const navigate = useNavigate();
   const [showError, setShowError] = useState(false);
+
   const isRegisterMode = mode === 'register';
+
   const title = isRegisterMode ? '등록' : '수정';
   const submitButtonName = isRegisterMode ? '등록' : '수정';
 
@@ -35,7 +37,12 @@ const DividePopup = ({ mode }: DividePopupProps) => {
 
       <div className={popupStyles.inputWrap}>
         <p>구분</p>
-        <Input type="text" placeholder="구분 입력" className={showError ? popupStyles.error : ''} />
+        <RadioInput items={['부서', '직책']} name="dept_position_type" />
+      </div>
+
+      <div className={popupStyles.inputWrap}>
+        <p>구분값</p>
+        <Input type="text" placeholder="부서 또는 직책명을 입력" className={showError ? popupStyles.error : ''} />
 
         {showError && (
           <div className={popupStyles.warning}>
@@ -43,11 +50,6 @@ const DividePopup = ({ mode }: DividePopupProps) => {
             <p>구분을 입력해주세요</p>
           </div>
         )}
-      </div>
-
-      <div className={popupStyles.inputWrap}>
-        <p>구분값</p>
-        <Input type="text" placeholder="구분값 입력" />
       </div>
 
       <ButtonContainer variant="popupDoubleButton">
@@ -58,4 +60,4 @@ const DividePopup = ({ mode }: DividePopupProps) => {
   );
 };
 
-export default DividePopup;
+export default DeptPositionPopup;

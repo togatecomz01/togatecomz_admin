@@ -5,17 +5,15 @@ import Input from '../../components/Input/Input';
 import Container from '../../components/layout/Container/Container';
 import Wrapper from '../../components/layout/SubHeader/SubHeader';
 import RadioInput from '../../components/RadioInput/RadioInput';
-import { usePopup } from '../../contexts/PopupContext';
 
 const ComponentTest = () => {
-  const { openPopup } = usePopup();
 
   return (
     <>
       <Container title="컴포넌트 테스트">
         <Wrapper subTitle="컴포넌트 테스트">
           <ButtonContainer>
-            <Button name="삭제" onClick={() => openPopup({ message: '저장되었습니다', button: '확인' })} />
+            <Button name="삭제" />
             <Button name="등록" />
             <Button name="수정" />
           </ButtonContainer>
