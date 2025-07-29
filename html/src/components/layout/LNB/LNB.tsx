@@ -13,8 +13,8 @@ function LNB() {
             <ul className={styles.SubMenu}>
               {menu.children.map(child => (
                 <li key={child.name}>
-                  <Link to={child.path} className={styles.SubMenuItem}>
-                    <i className={`${styles.Icon} ${styles[child.path]}`}></i>
+                  <Link to={child.path ? child.path : '#'} className={styles.SubMenuItem}>
+                    <i className={`${styles.Icon} ${styles[child.class]}`}></i>
                     {child.name}
                   </Link>
                 </li>
