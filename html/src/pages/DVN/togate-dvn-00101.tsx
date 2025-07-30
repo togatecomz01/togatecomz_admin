@@ -5,7 +5,7 @@ import Popup from '../../components/Popup/Popup';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
-import popupStyles from '../../components/Popup/Popup.module.scss'
+import popupStyles from '../../components/Popup/Popup.module.scss';
 import warningIcon from '@/assets/images/warning-icon.svg';
 
 interface DividePopupProps {
@@ -36,7 +36,7 @@ const DividePopup = ({ mode }: DividePopupProps) => {
 
       <div className={popupStyles.inputWrap}>
         <p>구분</p>
-        <Input type="text" placeholder="구분 입력" className={showError ? popupStyles.error : ''} />
+        <Input type="text" placeholder="구분 입력" className={showError ? popupStyles.error : ''} largeWrapper="largeWrapper" />
 
         {showError && (
           <div className={popupStyles.warning}>
@@ -48,7 +48,7 @@ const DividePopup = ({ mode }: DividePopupProps) => {
 
       <div className={popupStyles.inputWrap}>
         <p>구분값</p>
-        <Input type="text" placeholder="구분값 입력" />
+        <Input type="text" placeholder="구분값 입력" largeWrapper="largeWrapper" />
       </div>
 
       <ButtonContainer variant="popupDoubleButton">

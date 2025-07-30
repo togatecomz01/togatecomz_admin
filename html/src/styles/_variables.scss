@@ -2,6 +2,7 @@ $color-1755e5: #1755e5;
 $color-1692ff: #1692ff;
 $color-24b2ff: #24b2ff;
 $color-555ff9: #555ff9;
+$color-55a3f6: #55a3f6;
 $color-f3f6f8: #f3f6f8;
 $color-e4e5e7: #e4e5e7;
 $color-fbfcfd: #fbfcfd;
@@ -27,3 +28,5 @@ $color-f8f8f8: #f8f8f8;
 
 $color-fff1e6: #fff1e6;
 $color-f76900: #f76900;
+
+$color-gradient: linear-gradient(90deg, $color-55a3f6 0%, $color-555ff9 50.48%, $color-55a3f6 100%);

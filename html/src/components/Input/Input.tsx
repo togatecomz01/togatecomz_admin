@@ -9,9 +9,10 @@ type InputProps = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void /* 250725 e의 정의 */;
   className?: string;
   suffix?: string;
+  largeWrapper?: string;
 };
 
-const Input = ({ type, placeholder, value, onChange, className, suffix }: InputProps) => {
+const Input = ({ type, placeholder, value, onChange, className, suffix, largeWrapper }: InputProps) => {
   // textarea
   if (type === 'textarea') return <textarea className={styles.textArea} id="content" placeholder={placeholder} />;
 
@@ -59,7 +60,7 @@ const Input = ({ type, placeholder, value, onChange, className, suffix }: InputP
 
   // 일반
   return (
-    <div className={styles.inputWrapper}>
+    <div className={`${largeWrapper ? largeWrapper : styles.inputWrapper}`}>
       <input className={`${styles.textInput} ${className || ''}`} type={type} placeholder={placeholder} value={value} onChange={onChange} />
       {suffix && <span className={styles.suffix}>{suffix}</span>}
     </div>

@@ -1,3 +1,5 @@
+@use '@/styles/_variables' as vars;
+
 .button {
   width: 100%;
   height: auto;
@@ -5,12 +7,12 @@
 
   box-sizing: border-box;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid vars.$color-ddd;
 
-  background: linear-gradient(90deg, #55a3f6 0%, #555ff9 50.48%, #55a3f6 100%);
+  background: vars.$color-gradient;
 
   // 텍스트
-  color: #fff;
+  color: vars.$color-fff;
   text-align: center;
   font-size: 24px;
   font-style: normal;
