@@ -18,6 +18,7 @@ const DividePopup = ({ mode }: DividePopupProps) => {
   const isRegisterMode = mode === 'register';
   const title = isRegisterMode ? '등록' : '수정';
   const submitButtonName = isRegisterMode ? '등록' : '수정';
+  const submitButtonVariant = isRegisterMode ? 'popupRegister' : 'popupModify';
 
   const handleClose = () => {
     navigate(-1);
@@ -52,7 +53,7 @@ const DividePopup = ({ mode }: DividePopupProps) => {
 
       <ButtonContainer variant="popupDoubleButton">
         {!isRegisterMode && <Button name="삭제" variant="popupDelete" />}
-        <Button name={submitButtonName} variant="popupModify" />
+        <Button name={submitButtonName} variant={submitButtonVariant}  />
       </ButtonContainer>
     </Popup>
   );
