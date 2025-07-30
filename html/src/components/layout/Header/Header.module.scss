@@ -6,9 +6,9 @@
   height: 86px;
 
   // 배경색, 테두리
-  background: vars.$white-color;
+  background: vars.$color-fff;
   box-sizing: border-box; // 테두리가 박스 안쪽에 포함되도록
-  border-bottom: 2px solid vars.$gray-line-1;
+  border-bottom: 2px solid vars.$color-eee;
   // z-index 설정
   z-index: 1;
 
@@ -30,10 +30,10 @@
   height: 86px;
   padding: 24px 28px;
   box-sizing: border-box;
-  border-left: 2px solid vars.$gray-line-1;
-  border-right: 2px solid vars.$gray-line-1;
-  border-bottom: 1px solid vars.$gray-line-1;
-  background: vars.$white-color;
+  border-left: 2px solid vars.$color-eee;
+  border-right: 2px solid vars.$color-eee;
+  border-bottom: 1px solid vars.$color-eee;
+  background: vars.$color-fff;
 }
 
 // 투게이트 로고
@@ -54,8 +54,8 @@
   justify-content: center;
   // 테두리, 배경
   border-radius: 4px;
-  border: 1.5px solid vars.$gray-line-2;
-  background: vars.$white-color;
+  border: 1.5px solid vars.$color-ddd;
+  background: vars.$color-fff;
 }
 
 // 홈 아이콘
@@ -99,7 +99,7 @@
 }
 
 .userProfile {
-  color: #333;
+  color: vars.$color-333;
 
   font-size: 20px;
   font-style: normal;
@@ -108,7 +108,7 @@
 }
 
 .userPosition {
-  color: #757575;
+  color: vars.$color-757575;
 
   font-size: 18px;
   font-style: normal;
@@ -125,5 +125,5 @@
   background-position: center;
 
   box-sizing: border-box;
-  border-left: 2px solid vars.$gray-line-1;
+  border-left: 2px solid vars.$color-eee;
 }

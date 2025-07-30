@@ -13,7 +13,7 @@
 .title {
   margin: 5px;
   // 텍스트
-  color: #111;
+  color: vars.$color-111;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -23,9 +23,9 @@
   // 배경
   padding: 8px 12px;
   border-radius: 20px;
-  background: #fff1e6;
+  background: vars.$color-fff1e6;
   // 텍스트
-  color: #f76900;
+  color: vars.$color-f76900;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;

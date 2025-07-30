@@ -1,3 +1,5 @@
+@use '@/styles/_variables' as vars;
+
 @mixin input {
   width: 100%;
   height: 50px;
@@ -5,11 +7,11 @@
 
   box-sizing: border-box;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  background: #fff;
+  border: 1px solid vars.$color-ddd;
+  background: vars.$color-fff;
 
   &:focus {
-    border: 1px solid #24b2ff;
+    border: 1px solid vars.$color-24b2ff;
     outline: none;
   }
 }
@@ -21,7 +23,7 @@
 
 .selectBox {
   @include input;
-  color: #757575;
+  color: vars.$color-757575;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -66,8 +68,8 @@
   z-index: 10;
 
   border-radius: 8px;
-  border: 1.5px solid #eee;
-  background: #fff;
+  border: 1.5px solid vars.$color-eee;
+  background: vars.$color-fff;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04);
 
   margin-top: 6px;
@@ -84,7 +86,7 @@
 .optionItem {
   cursor: pointer;
 
-  color: #333;
+  color: vars.$color-333;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -93,7 +95,7 @@
 
 .sm_padding {
   padding: 16px 14px;
-  color: #333;
+  color: vars.$color-333;
 }
 
 .sm_text {
