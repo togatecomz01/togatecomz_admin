@@ -57,20 +57,15 @@
   background: vars.$color-555ff9;
 }
 
-.popupDelete {
-  width: 170px;
-}
-
+.popupDelete,
 .popupModify {
   width: 170px;
+  font-size: 18px;
+  padding: 14px 0;
 }
 
+.alertConfirm,
 .popupRegister {
-  background-color: vars.$color-555ff9;
-  width: 358px;
-}
-
-.alertConfirm {
   background-color: vars.$color-555ff9;
   width: 358px;
   padding: 14px 0;
