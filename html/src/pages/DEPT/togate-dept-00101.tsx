@@ -5,7 +5,7 @@ import Input from '../../components/Input/Input';
 import RadioInput from '../../components/RadioInput/RadioInput';
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
-import popupStyles from '../../components/Popup/Popup.module.scss'
+import popupStyles from '../../components/Popup/Popup.module.scss';
 import warningIcon from '@/assets/images/warning-icon.svg';
 
 interface DeptPositionPopupProps {
@@ -42,7 +42,7 @@ const DeptPositionPopup = ({ mode }: DeptPositionPopupProps) => {
 
       <div className={popupStyles.inputWrap}>
         <p>구분값</p>
-        <Input type="text" placeholder="부서 또는 직책명을 입력" className={showError ? popupStyles.error : ''} />
+        <Input type="text" placeholder="부서 또는 직책명을 입력" className={showError ? popupStyles.error : ''} largeWrapper="largeWrapper" />
 
         {showError && (
           <div className={popupStyles.warning}>

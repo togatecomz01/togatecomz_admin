@@ -104,11 +104,9 @@
   flex-grow: 1;
   padding-left: 59px; // 아이콘 공간 확보
 
-  color: vars.$color-1755e5;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 150%; /* 27px */
+  color: vars.$color-1755e5 !important;
+  font-family: Pretendard;
+
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: auto;
@@ -140,4 +138,8 @@
 
 .textInput {
   @include input;
+}
+
+.largeWrapper {
+  position: relative;
 }

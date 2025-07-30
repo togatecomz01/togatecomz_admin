@@ -1,15 +1,14 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Layout from '../components/layout/Layout.tsx';
 import Home from '../pages/Home/Home.tsx';
+import ComponentTest from '../pages/ComponentTest/ComponentTest.tsx';
+
+import AdminLayout from '../pages/ADM/AdminLayout.tsx';
+import AdminList from '../pages/ADM/togate-adm-001.tsx';
+import AdminForm from '../pages/ADM/togate-adm-002.tsx';
 
 import NoticeList from '../pages/NOTC/togate-notc-001.tsx';
 import NoticeForm from '../pages/NOTC/togate-notc-002.tsx';
-
-import ComponentTest from '../pages/ComponentTest/ComponentTest.tsx';
-import Login from '../pages/LOG/togate-log-001.tsx';
-
-import AdminList from '../pages/ADM/togate-adm-001.tsx';
-import AdminLayout from '../pages/ADM/AdminLayout.tsx';
 
 import DeptPosition from '../pages/DEPT/togate-dept-001.tsx';
 import DeptPositionPopup from '../pages/DEPT/togate-dept-00101.tsx';
@@ -19,7 +18,7 @@ import DividePopup from '../pages/DVN/togate-dvn-00101.tsx';
 
 import ConfirmAlert from '../components/Alert/ConfirmAlert.tsx';
 import ChoiceAlert from '../components/Alert/ChoiceAlert.tsx';
-import AdminForm from '../pages/ADM/togate-adm-002.tsx';
+import Login from '../pages/LOG/togate-log-001.tsx';
 
 const Router = () => {
   return (
