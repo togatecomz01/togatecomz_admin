@@ -1,10 +1,12 @@
+@use '@/styles/_variables' as vars;
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: vars.$color-00000066;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,19 +14,18 @@
 }
 
 .popup {
-  background: white;
+  background: vars.$color-fff;
   padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 650px;
   max-width: 90%;
 }
 
 .popupHeader {
   display: flex;
-  justify-content: center; 
-  align-items: center;    
-  position: relative;       
+  justify-content: center;
+  align-items: center;
+  position: relative;
   margin-bottom: 40px;
 }
 
@@ -48,7 +49,7 @@
 .inputWrap {
   display: flex;
   flex-direction: column;
-  gap: 15px; 
+  gap: 15px;
   margin-bottom: 40px;
 }
 
@@ -64,22 +65,17 @@
 .inputWrap input {
   width: 100%;
   height: 45px;
-  border: 1px solid #ccc;
+  border: 1px solid vars.$color-ccc;
   border-radius: 5px;
- /*  padding: 0 5px; */
+  /*  padding: 0 5px; */
 }
 
 .inputWrap input::placeholder {
-  color: #999;
-}
-
-.inputWrap input:focus {
-  outline: none;
-  border-color: #007bff;
+  color: vars.$color-999;
 }
 
 .inputWrap .error {
-  border-color: red;
+  border-color: vars.$color-f00;
 }
 
 .warning {
@@ -90,8 +86,7 @@
 }
 
 .warning p {
-  color: red;
+  color: vars.$color-f00;
   font-size: 14px;
   font-weight: normal;
 }
-

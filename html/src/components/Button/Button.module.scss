@@ -10,10 +10,10 @@
   border-radius: 8px;
 
   // 배경(바뀌는 요소)
-  background: #1755e5;
+  background: vars.$color-1755e5;
 
   // 텍스트(바뀌는 요소)
-  color: #fff;
+  color: vars.$color-fff;
   font-size: 20px;
   font-style: normal;
   font-weight: 600; /* 피그마 코드 그대로 쓰면 육안으로 달라보임 */
@@ -21,40 +21,40 @@
 }
 
 .list {
-  border: 1.5px solid #1755e5;
-  background: #fff;
-  color: #1755e5;
+  border: 1.5px solid vars.$color-1755e5;
+  background: vars.$color-fff;
+  color: vars.$color-1755e5;
 }
 
 .enroll {
-  background-color: #1755e5;
+  background-color: vars.$color-1755e5;
 }
 
 .delete {
-  border: 1.5px solid #ccc;
-  background: #fff;
-  color: #757575;
+  border: 1.5px solid vars.$color-ccc;
+  background: vars.$color-fff;
+  color: vars.$color-757575;
 }
 
 .check {
-  background: #1692ff;
+  background: vars.$color-1692ff;
   // 텍스트
-  color: #fff;
+  color: vars.$color-fff;
   font-size: 18px;
 }
 
 .search {
   padding: 17px 30px;
-  background: #24b2ff;
+  background: vars.$color-24b2ff;
   // 텍스트
-  color: #fff;
+  color: vars.$color-fff;
   font-size: 18px;
   line-height: 100%; /* 18px */
   min-width: 94px;
 }
 
 .modify {
-  background: #555ff9;
+  background: vars.$color-555ff9;
 }
 
 .popupDelete {
@@ -66,13 +66,12 @@
 }
 
 .popupRegister {
-  background-color: #555ff9;
+  background-color: vars.$color-555ff9;
   width: 358px;
 }
 
 .alertConfirm {
-  background-color: #555ff9;
+  background-color: vars.$color-555ff9;
   width: 358px;
   padding: 14px 0;
 }
-

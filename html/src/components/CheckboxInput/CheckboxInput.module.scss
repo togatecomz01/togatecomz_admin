@@ -1,3 +1,5 @@
+@use '@/styles/_variables' as vars;
+
 .itemsWrapper {
   display: flex;
   gap: 58px;
@@ -9,7 +11,7 @@
   align-items: center;
 
   // 텍스트
-  color: #757575;
+  color: vars.$color-757575;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -22,16 +24,16 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-color: #ddd;
-    background: #ddd url('@/assets/images/ico-check.svg') no-repeat center/16px 16px;
+    background-color: vars.$color-ddd;
+    background: vars.$color-ddd url('@/assets/images/ico-check.svg') no-repeat center/16px 16px;
   }
   input[type='checkbox']:checked {
-    background: #1692ff url('@/assets/images/ico-check.svg') no-repeat center/16px 16px;
+    background: vars.$color-1692ff url('@/assets/images/ico-check.svg') no-repeat center/16px 16px;
   }
   label {
-    color: #757575;
+    color: vars.$color-757575;
   }
   input[type='checkbox']:checked + label {
-    color: #222;
+    color: vars.$color-222;
   }
 }

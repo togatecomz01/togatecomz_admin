@@ -1,5 +1,7 @@
+@use '@/styles/_variables' as vars;
+
 .Copyright {
-  color: #757575;
+  color: vars.$color-757575;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

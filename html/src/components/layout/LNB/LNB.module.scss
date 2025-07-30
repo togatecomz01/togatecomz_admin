@@ -2,23 +2,23 @@
 @use '@/styles/_mixins.scss' as mixin;
 
 .Lnb {
-  width: vars.$LNB-width;
+  width: 370px;
   height: 100%;
-  background: vars.$white-color;
-  color: vars.$dark-color;
+  background: vars.$color-fff;
+  color: vars.$color-333;
   display: block;
   overflow-y: auto;
   padding: 0 14px;
-  border-right: 2px solid #eee;
-  border-bottom: 2px solid #eee;
-  border-left: 2px solid #eee;
+  border-right: 2px solid vars.$color-eee;
+  border-bottom: 2px solid vars.$color-eee;
+  border-left: 2px solid vars.$color-eee;
 }
 
 .Menu {
   display: flex;
   flex-direction: column;
   section + section {
-    border-top: 1px solid #eee;
+    border-top: 1px solid vars.$color-eee;
     margin-top: 30px;
   }
 }
@@ -28,7 +28,7 @@
   margin-top: 4px;
 
   // 텍스트
-  color: #757575;
+  color: vars.$color-757575;
   text-align: left;
   font-size: 18px;
   font-style: normal;
@@ -47,7 +47,7 @@
   align-items: center;
   padding: 18px;
   // 텍스트
-  color: #333;
+  color: vars.$color-333;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -55,7 +55,7 @@
   // 상자
   border-radius: 4px;
   &:hover {
-    background: #f3f6f8;
+    background: vars.$color-f3f6f8;
   }
 }
 

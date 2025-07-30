@@ -6,11 +6,11 @@
   height: 50px;
   padding: 12px 25px;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  background: #fff;
+  border: 1px solid vars.$color-ddd;
+  background: vars.$color-fff;
 
   &::placeholder {
-    color: #757575;
+    color: vars.$color-757575;
     font-family: Pretendard;
     font-size: 18px;
     font-style: normal;
@@ -19,7 +19,7 @@
   }
 
   &:focus {
-    border: 1px solid #24b2ff;
+    border: 1px solid vars.$color-24b2ff;
     outline: none;
   }
 }
@@ -51,7 +51,7 @@
     padding-left: 50px;
   }
   input::placeholder {
-    color: #757575;
+    color: vars.$color-757575;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -104,7 +104,7 @@
   flex-grow: 1;
   padding-left: 59px; // 아이콘 공간 확보
 
-  color: #1755e5;
+  color: vars.$color-1755e5;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -122,6 +122,7 @@
 
 .inputWrapper {
   position: relative;
+  max-width: 530px;
 
   .suffix {
     position: absolute;
@@ -129,7 +130,7 @@
     top: 50%;
     transform: translateY(-50%);
 
-    color: #757575;
+    color: vars.$color-757575;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;

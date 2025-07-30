@@ -6,21 +6,21 @@
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  border-bottom: 1px solid #e4e5e7;
+  border-bottom: 1px solid vars.$color-e4e5e7;
   box-sizing: border-box;
-  
+
   th,
   td {
-    border-top: 1px solid #e4e5e7; /* 기본 border-top */
+    border-top: 1px solid vars.$color-e4e5e7; /* 기본 border-top */
     padding: 20px;
     text-align: center;
   }
 
   th {
-    background-color: #fbfcfd;
-    border-top: 2px solid #e4e5e7; /* th의 border-top을 더 두껍게 */
+    background-color: vars.$color-fbfcfd;
+    border-top: 2px solid vars.$color-e4e5e7; /* th의 border-top을 더 두껍게 */
 
-    color: #454545;
+    color: vars.$color-454545;
     text-align: center;
     font-size: 18px;
     font-style: normal;
@@ -29,24 +29,24 @@
   }
 
   tr:hover td {
-    background: #eef8ff;
+    background: vars.$color-eef8ff;
   }
 
   td {
-    color: #333;
+    color: vars.$color-333;
     text-align: center;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 100%; /* 16px */
-    white-space: nowrap;    
+    white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
 
   th + th,
   td + td {
-    border-left: 1px solid #e4e5e7;
+    border-left: 1px solid vars.$color-e4e5e7;
   }
 }
 

@@ -21,7 +21,7 @@
     border-radius: 8px;
 
     // 텍스트
-    color: #666;
+    color: vars.$color-666;
     text-align: center;
     font-size: 16px;
     font-style: normal;
@@ -30,12 +30,12 @@
 
     // 숫자 버튼 호버 스타일
     &:not(:has(img)):hover {
-      background: #eef8ff;
+      background: vars.$color-eef8ff;
     }
 
     &.activePage {
-      color: #1755e5;
-      background: #f8f8f8;
+      color: vars.$color-1755e5;
+      background: vars.$color-f8f8f8;
     }
   }
 
@@ -49,7 +49,7 @@
     height: 46px;
     box-sizing: border-box;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid vars.$color-ddd;
   }
   .firstBtn {
     @include navigationBtn();
