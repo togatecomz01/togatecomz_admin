@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Popup from '../../components/Popup/Popup';
 import Input from '../../components/Input/Input';
 import RadioInput from '../../components/RadioInput/RadioInput';
+import RadioStyles from '../../components/RadioInput/RadioInput.module.scss'; 
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 import popupStyles from '../../components/Popup/Popup.module.scss'
@@ -20,6 +21,7 @@ const DeptPositionPopup = ({ mode }: DeptPositionPopupProps) => {
 
   const title = isRegisterMode ? '등록' : '수정';
   const submitButtonName = isRegisterMode ? '등록' : '수정';
+  const submitButtonVariant = isRegisterMode ? 'popupRegister' : 'popupModify';
 
   const handleClose = () => {
     navigate(-1);
@@ -37,12 +39,12 @@ const DeptPositionPopup = ({ mode }: DeptPositionPopupProps) => {
 
       <div className={popupStyles.inputWrap}>
         <p>구분</p>
-        <RadioInput items={['부서', '직책']} name="dept_position_type" />
+        <RadioInput items={['부서', '직책']} name="dept_position_type" className={RadioStyles.deptpoWrapper} />
       </div>
 
       <div className={popupStyles.inputWrap}>
         <p>구분값</p>
-        <Input type="text" placeholder="부서 또는 직책명을 입력" className={showError ? popupStyles.error : ''} />
+        <Input type="text" placeholder="구분값 입력" className={showError ? popupStyles.error : ''} />
 
         {showError && (
           <div className={popupStyles.warning}>
@@ -54,7 +56,7 @@ const DeptPositionPopup = ({ mode }: DeptPositionPopupProps) => {
 
       <ButtonContainer variant="popupDoubleButton">
         {!isRegisterMode && <Button name="삭제" variant="popupDelete" />}
-        <Button name={submitButtonName} variant="popupModify" />
+        <Button name={submitButtonName} variant={submitButtonVariant}  />
       </ButtonContainer>
     </Popup>
   );

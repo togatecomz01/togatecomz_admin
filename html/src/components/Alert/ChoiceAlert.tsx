@@ -16,7 +16,7 @@ const ChoiceAlert = ({ /* message */ }: ChoiceAlertProps) => {
         <Alert message={'수정된 사항을\n반영하시겠습니까?'} className={alertStyles.choiceLayout}> {/* 250725 기존과 스타일이 달라서 메시지를 여기서는 따로 줌 */}
             <ButtonContainer variant="alertDoubleButton">
                 <Button name="취소" onClick={handleChoice} variant='popupDelete' className='delete'/>
-                <Button name="확인" onClick={handleChoice} variant='popupModify'/>
+                <Button name="확인" onClick={handleChoice} variant='alertSmallConfirm'/>
             </ButtonContainer>
         </Alert>
     );
