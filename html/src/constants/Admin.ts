@@ -83,7 +83,7 @@ type FieldConfig = {
 // 등록
 export const BASIC_FIELDS: FieldConfig[] = [
   { label: '성명', subText: '관리자 등록을 위해 필요한 정보를 입력해 주세요.', required: true, inputs: [{ type: 'text', placeholder: '성명을 입력해 주세요.' }] },
-  { label: '아이디', subText: '사용하실 아이디를 입력해 주세요.', required: true, inputs: [{ type: 'text', placeholder: '아이디를 입력해 주세요.', withButton: 'ID 중복확인' }] },
+  { label: '아이디', subText: '사용하실 아이디를 입력해 주세요.', required: true, inputs: [{ type: 'id', placeholder: '아이디를 입력해 주세요.', withButton: 'ID 중복확인' }] },
   {
     label: '비밀번호',
     subText: '비밀번호는 영문, 숫자 포함 8자리 이상 입력해야 합니다.',

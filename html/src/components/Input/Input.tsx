@@ -53,6 +53,10 @@ const Input = ({ type, placeholder, value, onChange, className, suffix }: InputP
     );
   }
 
+  if (type === 'id') {
+    return <input className={`${styles.textInput} ${className || ''}`} type="text" placeholder={placeholder} value={value} onChange={onChange} />;
+  }
+
   // 일반
   return (
     <div className={styles.inputWrapper}>
