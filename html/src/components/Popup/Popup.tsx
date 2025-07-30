@@ -18,7 +18,7 @@ const Popup = ({ title, children, onClose }: PopupProps) => {
             <img src={CloseIcon} alt="닫기" />
           </button>
         </div>
-        <div className={styles.popupContent}>{children}</div>
+        <div>{children}</div>
       </div>
     </div>
   );
