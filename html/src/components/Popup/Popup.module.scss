@@ -67,24 +67,25 @@
   width: 100%;
   height: 45px;
   border: 1px solid vars.$color-ccc;
+  /* padding: 0; */
 }
 
 .inputWrap input::placeholder {
   color: vars.$color-999;
 }
 
-.inputWrap .error {
+.inputWrap input.error {
   border-color: vars.$color-f00;
 }
 
-.warning {
+.inputWrap .warning {
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
-.warning p {
+.inputWrap .warning p {
   color: vars.$color-f00;
   font-size: 14px;
   font-weight: normal;
