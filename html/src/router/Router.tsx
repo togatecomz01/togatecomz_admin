@@ -11,13 +11,9 @@ import NoticeList from '../pages/NOTC/togate-notc-001.tsx';
 import NoticeForm from '../pages/NOTC/togate-notc-002.tsx';
 
 import DeptPosition from '../pages/DEPT/togate-dept-001.tsx';
-import DeptPositionPopup from '../pages/DEPT/togate-dept-00101.tsx';
 
 import Divide from '../pages/DVN/togate-dvn-001.tsx';
-import DividePopup from '../pages/DVN/togate-dvn-00101.tsx';
 
-import ConfirmAlert from '../components/Alert/ConfirmAlert.tsx';
-import ChoiceAlert from '../components/Alert/ChoiceAlert.tsx';
 import Login from '../pages/LOG/togate-log-001.tsx';
 
 const Router = () => {
@@ -37,13 +33,7 @@ const Router = () => {
           <Route path="/notice/modify" element={<NoticeForm mode="modify" />} />
           {/* notc-003 (002,003 동일한 페이지)*/}
           <Route path="/deptpo" element={<DeptPosition />} />
-          <Route path="/deptpo/register" element={<DeptPositionPopup mode="register" />} />
-          <Route path="/deptpo/modify" element={<DeptPositionPopup mode="modify" />} />
           <Route path="/divide" element={<Divide />} />
-          <Route path="/divide/register" element={<DividePopup mode="register" />} />
-          <Route path="/divide/modify" element={<DividePopup mode="modify" />} />
-          <Route path="/alert/confirm" element={<ConfirmAlert message="저장이 완료되었습니다." />} />
-          <Route path="/alert/choice" element={<ChoiceAlert message="수정된 사항을 반영하시겠습니까?" />} />
         </Route>
 
         <Route path="login" element={<Login />} />

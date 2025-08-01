@@ -1,6 +1,6 @@
 /* import React from 'react'; */
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+/* import { useNavigate } from 'react-router-dom'; */
 import Popup from '../../components/Popup/Popup';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
@@ -10,18 +10,23 @@ import warningIcon from '@/assets/images/warning-icon.svg';
 
 interface DividePopupProps {
   mode: 'register' | 'modify';
+  onClose: () => void;
 }
 
-const DividePopup = ({ mode }: DividePopupProps) => {
-  const navigate = useNavigate();
+const DividePopup = ({ mode, onClose }: DividePopupProps) => {
+  /* const navigate = useNavigate(); */
   const [showError, setShowError] = useState(false);
   const isRegisterMode = mode === 'register';
   const title = isRegisterMode ? '등록' : '수정';
   const submitButtonName = isRegisterMode ? '등록' : '수정';
   const submitButtonVariant = isRegisterMode ? 'popupRegister' : 'popupModify';
 
-  const handleClose = () => {
+  /* const handleClose = () => {
     navigate(-1);
+  }; */
+
+  const handleClose = () => {
+    onClose();
   };
 
   const toggleError = () => {
