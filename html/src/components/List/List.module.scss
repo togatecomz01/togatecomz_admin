@@ -12,7 +12,7 @@
   th,
   td {
     border-top: 1px solid vars.$color-e4e5e7; /* 기본 border-top */
-    padding: 20px;
+    padding: 20px 10px;
     text-align: center;
   }
 
@@ -51,17 +51,13 @@
 }
 
 $sizes: (
-  xxs: 104px,
-  xs: 150px,
-  mxs: 162px,
-  sm: 173px,
-  msm: 197px,
-  lsm: 211px,
-  md: 225px,
-  lg: 249px,
-  xl: 292px,
-  lxl: 384px,
-  xlxl: 565px,
+  xxs: 80px,
+  xs: 120px,
+  sm: 10%,
+  md: 14%,
+  lg: 17%,
+  xl: 20%,
+  lxl: 27%,
 );
 
 @each $name, $width in $sizes {
