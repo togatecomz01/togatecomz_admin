@@ -1,21 +1,23 @@
-import { useNavigate } from 'react-router-dom';
+/* import { useNavigate } from 'react-router-dom'; */
 import Alert from './Alert';
 import Button from '../Button/Button';
 import ButtonContainer from '../Button/ButtonContainer/ButtonContainer';
 
 interface ConfirmAlertProps {
     message: string;
+    onConfirm: () => void;
 }
 
-const ConfirmAlert = ({ message }: ConfirmAlertProps) => {
-    const navigate = useNavigate();
-    const handleConfirm = () => navigate(-1);
+const ConfirmAlert = ({ message, onConfirm }: ConfirmAlertProps) => {
+    const handleConfirm = () => {
+        onConfirm();
+    };
 
     return (
         <Alert message={message}>
-        <ButtonContainer variant="alertSingleButton">
-            <Button name="확인" onClick={handleConfirm} variant='alertConfirm'/>
-        </ButtonContainer>
+            <ButtonContainer variant="alertSingleButton">
+                <Button name="확인" onClick={handleConfirm} variant="alertConfirm" />
+            </ButtonContainer>
         </Alert>
     );
 };

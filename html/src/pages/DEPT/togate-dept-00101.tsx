@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Popup from '../../components/Popup/Popup';
 import Input from '../../components/Input/Input';
 import RadioInput from '../../components/RadioInput/RadioInput';
@@ -11,20 +10,19 @@ import warningIcon from '@/assets/images/warning-icon.svg';
 
 interface DeptPositionPopupProps {
   mode: 'register' | 'modify';
+  onClose: () => void;
 }
 
-const DeptPositionPopup = ({ mode }: DeptPositionPopupProps) => {
-  const navigate = useNavigate();
+const DeptPositionPopup = ({ mode, onClose }: DeptPositionPopupProps) => {
   const [showError, setShowError] = useState(false);
 
   const isRegisterMode = mode === 'register';
-
   const title = isRegisterMode ? '등록' : '수정';
   const submitButtonName = isRegisterMode ? '등록' : '수정';
   const submitButtonVariant = isRegisterMode ? 'popupRegister' : 'popupModify';
 
   const handleClose = () => {
-    navigate(-1);
+    onClose();
   };
 
   const toggleError = () => {
