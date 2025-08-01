@@ -11,7 +11,7 @@ interface Props {
 
 const FormWrap = ({ label, subText, children, className, isAsterisk, subTextClassName }: Props) => {
   return (
-    <form className={`${styles.formWrap} ${className || ''}`}>
+    <div className={`${styles.formWrap} ${className || ''}`}>
       <label className={styles.formLabel}>
         <h3>
           {label} {isAsterisk && <span className={styles.asterisk}>*</span>}
@@ -19,7 +19,7 @@ const FormWrap = ({ label, subText, children, className, isAsterisk, subTextClas
         {subText && <span className={`${styles.formSubtext} ${subTextClassName && styles[subTextClassName]}`}>{subText}</span>}
       </label>
       <div className={styles.formChildren}>{children}</div>
-    </form>
+    </div>
   );
 };
 
