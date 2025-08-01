@@ -26,13 +26,15 @@
   align-items: center; // 세로 중앙 정렬
   justify-content: space-between; // 가로 양끝 정렬
   // 사이즈
-  width: 370px;
-  height: 86px;
+  width: 20%;
+  max-width: 370px;
+  height: 100%;
+  max-height: 86px;
+
   padding: 24px 28px;
   box-sizing: border-box;
   border-left: 2px solid vars.$color-eee;
   border-right: 2px solid vars.$color-eee;
-  border-bottom: 1px solid vars.$color-eee;
   background: vars.$color-fff;
 }
 

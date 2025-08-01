@@ -8,7 +8,6 @@
   background: vars.$color-fff;
   color: vars.$color-333;
   display: block;
-  overflow-y: auto;
   padding: 0 14px;
   border-right: 2px solid vars.$color-eee;
   border-bottom: 2px solid vars.$color-eee;
@@ -18,6 +17,8 @@
 .Menu {
   display: flex;
   flex-direction: column;
+  height: calc(100% - 94px);
+  overflow-y: auto;
   section + section {
     border-top: 1px solid vars.$color-eee;
     margin-top: 30px;
