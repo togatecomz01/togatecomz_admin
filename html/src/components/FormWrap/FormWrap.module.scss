@@ -4,6 +4,7 @@
   display: flex;
   align-items: flex-start;
   padding: 40px 0 40px 8px;
+  border-bottom: 1px solid vars.$color-ddd;
 
   .formLabel {
     flex: 0 0 438px; /* 고정 너비 */

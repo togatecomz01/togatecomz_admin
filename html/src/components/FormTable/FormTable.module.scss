@@ -2,8 +2,4 @@
 
 .FormTable {
   border-top: 1.5px solid vars.$color-ccc;
-
-  form + form {
-    border-top: 1px solid vars.$color-ddd;
-  }
 }
