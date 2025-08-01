@@ -2,7 +2,8 @@
 @use '@/styles/_mixins.scss' as mixin;
 
 .Lnb {
-  width: 370px;
+  width: 20%;
+  max-width: 370px;
   height: 100%;
   background: vars.$color-fff;
   color: vars.$color-333;
@@ -54,7 +55,8 @@
   line-height: 100%; /* 20px */
   // 상자
   border-radius: 4px;
-  &:hover {
+  &:hover,
+  &.selected {
     background: vars.$color-f3f6f8;
   }
 }
@@ -67,27 +69,24 @@
   background-size: contain;
   margin-right: 1rem;
 }
-.admin {
-  background-image: url('@/assets/images/ico-admin.svg');
-}
-.policy {
-  background-image: url('@/assets/images/ico-policy.svg');
-}
-.stats {
-  background-image: url('@/assets/images/ico-stats.svg');
-}
-.notice {
-  background-image: url('@/assets/images/ico-notice.svg');
-}
-.answer-board {
-  background-image: url('@/assets/images/ico-answer-board.svg');
-}
-.event {
-  background-image: url('@/assets/images/ico-event.svg');
-}
-.resources {
-  background-image: url('@/assets/images/ico-resources.svg');
-}
-.faq {
-  background-image: url('@/assets/images/ico-faq.svg');
+$icons: (
+  admin: 'ico-admin',
+  policy: 'ico-policy',
+  stats: 'ico-stats',
+  notice: 'ico-notice',
+  answer-board: 'ico-answer-board',
+  event: 'ico-event',
+  resources: 'ico-resources',
+  faq: 'ico-faq',
+);
+
+@each $name, $file in $icons {
+  .#{$name} {
+    background-image: url('@/assets/images/#{$file}.svg');
+
+    .SubMenuItem:hover &,
+    .SubMenuItem.selected & {
+      background-image: url('@/assets/images/#{$file}-selected.svg');
+    }
+  }
 }
