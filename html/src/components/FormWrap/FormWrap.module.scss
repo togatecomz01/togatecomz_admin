@@ -7,7 +7,8 @@
   border-bottom: 1px solid vars.$color-ddd;
 
   .formLabel {
-    flex: 0 0 438px; /* 고정 너비 */
+    width: 30%;
+    max-width: 438px;
     display: flex;
     flex-direction: column;
     gap: 26px;
