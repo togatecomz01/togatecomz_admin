@@ -11,14 +11,17 @@ const AdminList = () => {
   return (
     <>
       <Container title="계정관리">
+        {/* 메인관리자 리스트 */}
         <Wrapper>
           <SubHeader subTitle="메인관리자" />
           <List headers={ADMIN_HEADERS} listItems={ADMIN_LIST_ITEMS_MAIN} />
         </Wrapper>
+        {/* 관리자 리스트 */}
         <Wrapper>
           <SubHeader subTitle="관리자" />
           <List headers={ADMIN_HEADERS} listItems={ADMIN_LIST_ITEMS} />
         </Wrapper>
+        {/* 버튼(관리자 등록 페이지로 이동) */}
         <ButtonContainer>
           <Link to="/admin/register">
             <Button name="등록" />

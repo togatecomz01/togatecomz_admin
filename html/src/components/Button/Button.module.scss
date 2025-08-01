@@ -12,6 +12,9 @@
   // 배경(바뀌는 요소)
   background: vars.$color-1755e5;
 
+  // 텍스트(줄바꿈 X)
+  white-space: nowrap;
+
   // 텍스트(바뀌는 요소)
   color: vars.$color-fff;
   font-size: 20px;

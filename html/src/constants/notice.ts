@@ -132,10 +132,10 @@ export const generalNoticeData = [
 
 export const tableHeaders = [
   { text: 'NO', value: 'no', width: 'xxs' },
-  { text: '제목', value: 'title', width: 'xlxl' },
-  { text: '조회', value: 'views', width: 'mxs' },
+  { text: '제목', value: 'title', width: 'auto' },
+  { text: '조회', value: 'views', width: 'xs' },
   { text: '작성자', value: 'author', width: 'xs' },
   { text: '작성일', value: 'createdAt', width: 'xs' },
   { text: '수정자', value: 'modifier', width: 'xs' },
-  { text: '수정일', value: 'modifiedAt', width: 'mxs' },
+  { text: '수정일', value: 'modifiedAt', width: 'xs' },
 ];

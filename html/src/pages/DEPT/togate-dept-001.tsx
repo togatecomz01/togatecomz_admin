@@ -133,12 +133,12 @@ const DeptPosition = () => {
   ];
 
   const tableHeaders = [
-    { text: '구분', value: 'category', width: 'lsm' },
-    { text: '부서명', value: 'department', width: 'lxl' },
-    { text: '등록자', value: 'registrant', width: 'mxs' },
-    { text: '등록일', value: 'createdAt', width: 'lg' },
-    { text: '수정자', value: 'modifier', width: 'msm' },
-    { text: '수정일', value: 'modifiedAt', width: 'lg' },
+    { text: '구분', value: 'category', width: 'md' },
+    { text: '부서명', value: 'department', width: 'xs' },
+    { text: '등록자', value: 'registrant', width: 'md' },
+    { text: '등록일', value: 'createdAt', width: 'md' },
+    { text: '수정자', value: 'modifier', width: 'md' },
+    { text: '수정일', value: 'modifiedAt', width: 'md' },
   ];
 
   // 데이터 유무 여부 (t/f로 렌더링제어 (등록된 ~나 ~이 없습니다.))
