@@ -10,9 +10,10 @@ type InputProps = {
   className?: string;
   suffix?: string;
   largeWrapper?: string;
+  children?: React.ReactNode; //250801 children props 추가
 };
 
-const Input = ({ type, placeholder, value, onChange, className, suffix, largeWrapper }: InputProps) => {
+const Input = ({ type, placeholder, value, onChange, className, suffix, largeWrapper, children }: InputProps) => {
   // textarea
   if (type === 'textarea') return <textarea className={styles.textArea} id="content" placeholder={placeholder} />;
 
@@ -63,6 +64,7 @@ const Input = ({ type, placeholder, value, onChange, className, suffix, largeWra
     <div className={`${largeWrapper ? largeWrapper : styles.inputWrapper}`}>
       <input className={`${styles.textInput} ${className || ''}`} type={type} placeholder={placeholder} value={value} onChange={onChange} />
       {suffix && <span className={styles.suffix}>{suffix}</span>}
+      {children}
     </div>
   );
 };

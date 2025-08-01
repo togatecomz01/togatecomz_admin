@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Popup from '../../components/Popup/Popup';
 import Input from '../../components/Input/Input';
 import RadioInput from '../../components/RadioInput/RadioInput';
-import RadioStyles from '../../components/RadioInput/RadioInput.module.scss'; 
+import RadioStyles from '../../components/RadioInput/RadioInput.module.scss';
 import Button from '../../components/Button/Button';
 import ButtonContainer from '../../components/Button/ButtonContainer/ButtonContainer';
 import popupStyles from '../../components/Popup/Popup.module.scss';
@@ -33,7 +33,8 @@ const DeptPositionPopup = ({ mode }: DeptPositionPopupProps) => {
 
   return (
     <Popup title={title} onClose={handleClose}>
-      <button onClick={toggleError} style={{ marginBottom: '20px', background: '#eee', padding: '5px' }}>
+      {/* 확인 필요 시 display: none 해제 후 확인 */}
+      <button onClick={toggleError} style={{ marginBottom: '20px', background: '#eee', padding: '5px', display: 'none' }}>
         에러 상태 토글 (확인용)
       </button>
 
@@ -44,19 +45,19 @@ const DeptPositionPopup = ({ mode }: DeptPositionPopupProps) => {
 
       <div className={popupStyles.inputWrap}>
         <p>구분값</p>
-        <Input type="text" placeholder="구분값 입력" className={showError ? popupStyles.error : ''} largeWrapper="largeWrapper" />
-
-        {showError && (
-          <div className={popupStyles.warning}>
-            <img src={warningIcon} alt="warning" />
-            <p>구분을 입력해주세요</p>
-          </div>
-        )}
+        <Input type="text" placeholder="구분값 입력" className={showError ? popupStyles.error : ''} largeWrapper="largeWrapper">
+          {showError && (
+            <div className={popupStyles.warning}>
+              <img src={warningIcon} alt="warning" />
+              <p>구분을 입력해주세요</p>
+            </div>
+          )}
+        </Input>
       </div>
 
       <ButtonContainer variant="popupDoubleButton">
         {!isRegisterMode && <Button name="삭제" variant="popupDelete" />}
-        <Button name={submitButtonName} variant={submitButtonVariant}  />
+        <Button name={submitButtonName} variant={submitButtonVariant} />
       </ButtonContainer>
     </Popup>
   );
