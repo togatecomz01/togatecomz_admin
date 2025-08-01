@@ -14,7 +14,7 @@ import { BASIC_FIELDS, MODIFY_FIELDS } from '../../constants/Admin';
 const AdminForm = ({ mode }: { mode: 'register' | 'modify' }) => {
   return (
     <Container title="계정관리" tag="상세">
-      {/* 1. 기본정보 */}
+      {/* 기본정보 */}
       <SubHeader subTitle="기본정보" />
       <FormTable>
         {(mode === 'modify' ? MODIFY_FIELDS : BASIC_FIELDS).map(field => (
@@ -26,6 +26,7 @@ const AdminForm = ({ mode }: { mode: 'register' | 'modify' }) => {
                   <Button name={input.withButton} />
                 </InputBtnContainer>
               ) : (
+                // mode === modify 일 때, input 우측에 suffix가 생성(ex. id, '비밀번호 입력' 메시지 등)
                 <Input key={idx} type={input.type} placeholder={input.placeholder} suffix={input.suffix} />
               )
             )}
@@ -36,7 +37,7 @@ const AdminForm = ({ mode }: { mode: 'register' | 'modify' }) => {
         ))}
       </FormTable>
 
-      {/* 2. 권한정보 */}
+      {/* 권한정보 */}
       <SubHeader subTitle="권한정보" />
       <FormTable>
         {/* 구분 */}
