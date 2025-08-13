@@ -163,11 +163,11 @@ $main-bg-color: #f4f5fa;
   }
 
   .specialNotices {
-    flex: 6; 
+    flex: 5.8; 
   }
 
   .recentNotices {
-    flex: 4;
+    flex: 4.2;
   }
 }
 
@@ -278,7 +278,7 @@ $main-bg-color: #f4f5fa;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        
+
         &.waitText {
           color: $color-brand-secondary;
         }
