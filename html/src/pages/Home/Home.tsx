@@ -149,7 +149,7 @@ const Home = () => {
             <li>
               <a href="javascript:void(0)">
                 <span className={`${styles.qnaStatus} ${styles.wait}`}>대기 중</span>
-                <span className={styles.qnaText}>REST API 통합에 대한 문서를 찾고 있습니다. 텍스트가 길어지면 이 부분이 잘려야 합니다.</span>
+                <span className={`${styles.qnaText} ${styles.waitText}`}>REST API 통합에 대한 문서를 찾고 있습니다. 텍스트가 길어지면 이 부분이 잘려야 합니다.</span>
               </a>
             </li>
             <li>
