@@ -108,16 +108,12 @@ $main-bg-color: #f4f5fa;
       gap: 22px;
     }
 
-    li {
+    a {
       display: flex;
       align-items: center;
       gap: 16px;
       padding-bottom: 22px;
       border-bottom: 1px dotted $color-eee;
-
-      &:last-child {
-        border-bottom: none;
-      }
 
       .dateBadge {
         background-color: $color-brand-secondary;;
@@ -161,6 +157,10 @@ $main-bg-color: #f4f5fa;
           text-overflow: ellipsis;
         }
       }
+    }
+  li:last-child a {
+      border-bottom: none;
+      padding-bottom: 0;;
     }
   }
 

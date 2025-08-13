@@ -55,70 +55,88 @@ const Home = () => {
           <h2>특별 공지사항</h2>
           <ul>
             <li>
-              <div className={styles.dateBadge}>
-                <span className={styles.day}>10</span>
-                <span className={styles.month}>2023.05</span>
-              </div>
-              <div className={styles.noticeContent}>
-                <p className={styles.title}>[전사 공지] 연말 프로젝트 일정 조율</p>
-                <p className={styles.description}>현재 진행 중인 모든 프로젝트의 마감일과 리뷰 일정을 재조정하였습니다. 각 팀은 일정표를 확인 바랍니다.</p>
-              </div>
+              <a href="javascript:void(0)">
+                <div className={styles.dateBadge}>
+                  <span className={styles.day}>10</span>
+                  <span className={styles.month}>2023.05</span>
+                </div>
+                <div className={styles.noticeContent}>
+                  <p className={styles.title}>[전사 공지] 연말 프로젝트 일정 조율</p>
+                  <p className={styles.description}>현재 진행 중인 모든 프로젝트의 마감일과 리뷰 일정을 재조정하였습니다. 각 팀은 일정표를 확인 바랍니다.</p>
+                </div>
+              </a>
             </li>
+
             <li>
-              <div className={styles.dateBadge}>
-                <span className={styles.day}>10</span>
-                <span className={styles.month}>2023.05</span>
-              </div>
-              <div className={styles.noticeContent}>
-                <p className={styles.title}>[HR] 12월 워크숍 일정 안내</p>
-                <p className={styles.description}>전 직원 대상 워크숍이 12월 20일 진행됩니다. 일정표와 준비 사항은 별도 공지 예정입니다.</p>
-              </div>
+              <a href="javascript:void(0)">
+                <div className={styles.dateBadge}>
+                  <span className={styles.day}>10</span>
+                  <span className={styles.month}>2023.05</span>
+                </div>
+                <div className={styles.noticeContent}>
+                  <p className={styles.title}>[HR] 12월 워크숍 일정 안내</p>
+                  <p className={styles.description}>전 직원 대상 워크숍이 12월 20일 진행됩니다. 일정표와 준비 사항은 별도 공지 예정입니다.</p>
+                </div>
+              </a>
             </li>
+            
             <li>
-              <div className={styles.dateBadge}>
-                <span className={styles.day}>10</span>
-                <span className={styles.month}>2023.05</span>
-              </div>
-              <div className={styles.noticeContent}>
-                <p className={styles.title}>[HR] 12월 휴무 일정 안내</p>
-                <p className={styles.description}>연속 폭설로 고속도로 통행에 철처 대비, 연속 폭설로 고속도로 통행에 철처 대비, 연속 폭설로 고속도로 통행에 철처 대비연속 폭설로 고속도로 통행에...</p>
-              </div>
+              <a href="javascript:void(0)">
+                <div className={styles.dateBadge}>
+                  <span className={styles.day}>10</span>
+                  <span className={styles.month}>2023.05</span>
+                </div>
+                <div className={styles.noticeContent}>
+                  <p className={styles.title}>[HR] 12월 휴무 일정 안내</p>
+                  <p className={styles.description}>연속 폭설로 고속도로 통행에 철처 대비, 연속 폭설로 고속도로 통행에 철처 대비, 연속 폭설로 고속도로 통행에 철처 대비연속 폭설로 고속도로 통행에...</p>
+                </div>
+              </a>
             </li>
           </ul>
         </div>
+
         <div className={`${styles.noticeBox} ${styles.recentNotices}`}>
           <h2>최근 공지사항</h2>
           <ul>
             <li>
-              <div className={styles.dateBadge}>
-                <span className={styles.day}>10</span>
-                <span className={styles.month}>2023.05</span>
-              </div>
-              <div className={styles.noticeContent}>
-                <p className={styles.title}>[개발팀] Figma 플러그인 사용 정책 변경 안내</p>
-                <p className={styles.description}>프로젝트별 플러그인 사용 제한 및 권장 플러그인 리스트를 공유드립니다.</p>
-              </div>
+              <a href="javascript:void(0)">
+                <div className={styles.dateBadge}>
+                  <span className={styles.day}>10</span>
+                  <span className={styles.month}>2023.05</span>
+                </div>
+                <div className={styles.noticeContent}>
+                  <p className={styles.title}>[개발팀] Figma 플러그인 사용 정책 변경 안내</p>
+                  <p className={styles.description}>프로젝트별 플러그인 사용 제한 및 권장 플러그인 리스트를 공유드립니다.</p>
+                </div>
+              </a>
             </li>
+
             <li>
-              <div className={styles.dateBadge}>
-                <span className={styles.day}>10</span>
-                <span className={styles.month}>2023.05</span>
-              </div>
-              <div className={styles.noticeContent}>
-                <p className={styles.title}>[디자인팀] 신규 디자인 가이드라인 배포</p>
-                <p className={styles.description}>UI/UX 일관성을 위해 새로운 디자인 가이드라인을 배포했습니다. 프로젝트 진행 시 반드시 참고 바랍니다.</p>
-              </div>
+              <a href="javascript:void(0)">
+                <div className={styles.dateBadge}>
+                  <span className={styles.day}>10</span>
+                  <span className={styles.month}>2023.05</span>
+                </div>
+                <div className={styles.noticeContent}>
+                  <p className={styles.title}>[디자인팀] 신규 디자인 가이드라인 배포</p>
+                  <p className={styles.description}>UI/UX 일관성을 위해 새로운 디자인 가이드라인을 배포했습니다. 프로젝트 진행 시 반드시 참고 바랍니다.</p>
+                </div>
+              </a>
             </li>
+
             <li>
-              <div className={styles.dateBadge}>
-                <span className={styles.day}>10</span>
-                <span className={styles.month}>2023.05</span>
-              </div>
-              <div className={styles.noticeContent}>
-                <p className={styles.title}>[PMO] 시안 검수 프로세스 개선</p>
-                <p className={styles.description}>검수 절차를 간소화하고 승인 시간을 단축했습니다. 세부 내용은 내부 위키에서 확인 가능합니다.</p>
-              </div>
+              <a href="javascript:void(0)">
+                <div className={styles.dateBadge}>
+                  <span className={styles.day}>10</span>
+                  <span className={styles.month}>2023.05</span>
+                </div>
+                <div className={styles.noticeContent}>
+                  <p className={styles.title}>[PMO] 시안 검수 프로세스 개선</p>
+                  <p className={styles.description}>검수 절차를 간소화하고 승인 시간을 단축했습니다. 세부 내용은 내부 위키에서 확인 가능합니다.</p>
+                </div>
+              </a>
             </li>
+
           </ul>
         </div>
       </section>
